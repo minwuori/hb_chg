@@ -198,9 +198,6 @@ body {
     .hb-chg .social-list__item:hover {
       opacity: 0.5; }
   .hb-chg .screen {
-    max-width: 100%;
-    max-width: 100vw;
-    min-height: 100vh;
     position: relative;
     z-index: 1; }
   .hb-chg .screen__container {
@@ -235,8 +232,8 @@ body {
   .hb-chg .screen__content {
     position: relative;
     z-index: 5;
-    max-width: 100%;
-    margin: auto;
+    max-width: 620px;
+    margin: 0 auto;
     text-align: center;
     display: -webkit-box;
     display: -webkit-flex;
@@ -277,26 +274,11 @@ body {
   .hb-chg .greeting {
     background: #27AAE1; }
   .hb-chg .greeting .screen__content {
-    font-size: 1.25rem; }
-  .hb-chg .greeting .screen__title img {
-    -webkit-transform: scale(0.6);
-        -ms-transform: scale(0.6);
-            transform: scale(0.6);
-    -webkit-animation: title 1500ms linear forwards;
-            animation: title 1500ms linear forwards;
-    -webkit-animation-delay: 1700ms;
-            animation-delay: 1700ms; }
+    width: 780px; }
+  .hb-chg .greeting .screen__title {
+    font-size: 91px; }
   .hb-chg .greeting .screen__description {
-    color: #0060AE;
-    color: var(--color-ny-blue, #0060AE);
-    -webkit-transform: scale(0);
-        -ms-transform: scale(0);
-            transform: scale(0);
-    -webkit-animation: title 1500ms linear forwards;
-            animation: title 1500ms linear forwards;
-    -webkit-animation-delay: 700ms;
-            animation-delay: 700ms;
-    margin-top: 2em; }
+    color: #0060AE; }
   .hb-chg .map {
     position: relative;
     width: 100%;
@@ -560,7 +542,7 @@ body {
   .hb-chg .official-list ol li:before {
     content: counter(main) "." counter(list) ". "; }
   .hb-chg .footer {
-    background-image: url("/ii/img/project_name/footer.png");
+    background-image: url("");
     background-repeat: repeat-x;
     background-position: 0 2px; }
   .hb-chg .footer .container {

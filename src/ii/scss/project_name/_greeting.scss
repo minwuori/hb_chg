@@ -27,20 +27,13 @@
   background: $color_blue;
 }
 .greeting .screen__content {
-  font-size: 1.25rem;
+  width: 780px;
 }
 
-.greeting .screen__title img {
-  transform: scale(0.6);
-  animation: title 1500ms linear forwards;
-  animation-delay: 1700ms;
+.greeting .screen__title {
+  font-size: 91px;
 }
 
 .greeting .screen__description {
   color: #0060AE;
-  color: var(--color-ny-blue, #0060AE);
-  transform: scale(0);
-  animation: title 1500ms linear forwards;
-  animation-delay: 700ms;
-  margin-top: 2em;
 }
