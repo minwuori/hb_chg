@@ -1,0 +1,76 @@
+/* полный экран */
+.screen {
+  max-width: 100%;
+  max-width: 100vw;
+
+  min-height: 100vh;
+  
+  position: relative;
+  z-index: 1;
+}
+
+.screen__container {
+  position: relative;
+}
+
+.screen-bg {
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
+/* фон с елочками */
+.screen-bg__inner {
+  //width: 101%;
+  //height: 100vh;
+  min-height: 800px;
+  position: relative;
+}
+/* svg с елочками */
+.screen-bg__inner .bg {
+  display: block;
+  margin: auto;
+
+  min-width: 140vh;
+
+  position: absolute;
+  height: 100%;
+  left: 50%;
+  top: -1px;
+  transform: translateX(-50%);
+  
+  overflow: visible;
+  text-align: center;
+  pointer-events: none;
+}
+
+.bg_snow {
+  z-index: 10;
+}
+
+[data-parallax] {
+  transition: all 200ms;
+}
+
+.screen__content {
+  position: relative;
+  z-index: 5;
+  max-width: 100%;
+  margin: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 200px;
+  width: 27em;
+  height: 100%;
+}
+
+.screen__title img {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.screen__description {
+  margin-top: 0.8em;
+}

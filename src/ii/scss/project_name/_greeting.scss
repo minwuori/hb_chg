@@ -1,0 +1,46 @@
+.planePath {
+  stroke: #D9DADA;
+  stroke-width: .1%;
+  stroke-width: .5%;
+  stroke-dasharray: 1% 2%;
+  stroke-linecap: round;
+  fill: none;
+}
+
+.fil1 {
+  fill: #D9DADA;
+}
+
+.fil2 {
+  fill: #C5C6C6;
+}
+
+.fil4 {
+  fill: #9D9E9E;
+}
+
+.fil3 {
+  fill: #AEAFB0;
+}
+
+.greeting {
+  background: $color_blue;
+}
+.greeting .screen__content {
+  font-size: 1.25rem;
+}
+
+.greeting .screen__title img {
+  transform: scale(0.6);
+  animation: title 1500ms linear forwards;
+  animation-delay: 1700ms;
+}
+
+.greeting .screen__description {
+  color: #0060AE;
+  color: var(--color-ny-blue, #0060AE);
+  transform: scale(0);
+  animation: title 1500ms linear forwards;
+  animation-delay: 700ms;
+  margin-top: 2em;
+}

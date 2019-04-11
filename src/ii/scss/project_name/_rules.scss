@@ -1,0 +1,56 @@
+
+/* блок правил */
+
+.official {
+  padding: 6.25rem 0;
+  z-index: 2;
+  background-color: #0060AE;
+  background-color: var(--color-ny-darkblue, #0060AE);
+}
+
+.official h2 {
+  font-size: 1.35em;
+}
+
+.official-list {
+  margin-top: 3.8125rem;
+  list-style: none;
+  font-size: 1.25rem;
+}
+
+
+
+.official-list .toggle-list:before {
+  content: 'Показать ';
+  display: inline;
+}
+
+.official-list.open .toggle-list:before {
+  content: 'Скрыть ';
+}
+
+.official-list .full {
+  display: none;
+}
+
+.official-list li {
+  margin-bottom: 1rem;
+  counter-increment: main;
+}
+
+.official-list li:before {
+  content: counter(main)'. ';
+}
+
+.official-list ol {
+  counter-reset: list;
+}
+
+.official-list ol li {
+  list-style: none;
+  counter-increment: list;
+}
+
+.official-list ol li:before {
+  content: counter(main)'.'counter(list)'. ';
+}

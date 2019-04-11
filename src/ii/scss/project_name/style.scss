@@ -1,0 +1,53 @@
+//основные
+* {
+	margin: 0;
+	padding: 0;
+}
+	
+body {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'PT Sans', sans-serif;
+	font-size: 16px;
+} 
+	
+
+.container{
+	max-width: 1260px;
+	min-width: 940px;
+	box-sizing: border-box;
+	width: 100%;
+	margin: 0 auto;
+	font-size: inherit;
+	padding: 0 20px;
+}
+
+.container__inner{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: row;
+}
+
+$color_white: #FFFFFF;
+$color_black: rgba(0, 0, 0, 0.8);
+$color_blue: #27AAE1;
+$color_green: #8DC63F;
+$color_red: #ED1846;
+$color_lightBlue: #edf4fb;
+$color_gray: rgba(38, 96, 171, 0.3);
+
+.hb-chg {
+  	color: white;
+	@import '_helpers';
+	@import '_header';
+	@import '_screen';
+	@import '_greeting';
+	@import '_map';
+	@import '_game';
+	@import '_rules';
+	@import '_footer';
+}
+	
+	

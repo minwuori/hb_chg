@@ -1,0 +1,80 @@
+
+<section class="game-day">
+  <div class="container">
+    <header>
+      <div class="game-day__date snowball" data-task-date="">
+        <div class="day" id="current_day">{{ current_day }}</div>
+        <div class="month">мая</div>
+      </div>
+      <div class="game-day__header">
+        <h2 class="game-day__title"><span data-type="question">Задание дня: Отгадайте загадку</span><span data-type="pairs">Задание дня: Найдите пары</span></h2>
+        <div class="game-day__description js__question_title"></div>
+      </div>
+    </header>
+    <div class="game-day__main js__anketa_body" data-question-pass="{{ question_pass }}">
+      <div class="game-day__prev js__previous_button if prev_day is empty inactive endif {% %} {% %}" data-content="{{ prev_day }}" data-task-prev="{{ prev_num }}">
+        <svg viewbox="0 0 25 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M23.9609 5.15966C25.0884 4.02747 25.0884 2.19678 23.9609 1.06458C22.8268 -0.0742692 20.983 -0.0742692 19.8488 1.06458L1.81089 19.1774C0.256596 20.7382 0.256596 23.2618 1.81089 24.8226L19.8488 42.9354C20.983 44.0743 22.8268 44.0743 23.9609 42.9354C25.0884 41.8032 25.0884 39.9725 23.9609 38.8403L7.19023 22L23.9609 5.15966Z" fill="white"></path>
+        </svg>
+      </div> {% for day, data in days %}
+       {% if day < today %}
+      <div class="task task_message" data-task-number="{{ data.num }}" style="display: none" data-day="{{ day|date(" data-type="{{ data.type }}"><b>Вот это да!<br/><span class="date">{{ day|date("d") }} января</span>за это задание игроки получили <span class="count">{{ data.total_result }} {{ data.points_type }}</span>.</b></div> {% elseif day == today %}
+      {% if question_pass == false %}
+      <div class="game-day__content js__question_container" data-task-announce="">
+        <div class="task" data-task-number="{{ data.num }}" data-current-task="" data-day="{{ day|date(" data-type="{{ data.type }}">
+          <div class="task__items">
+            <div class="task-item">{% if data_task_type == 'question' %}
+              <div class="task-item__icon circle">
+                <svg viewbox="0 0 105 105" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M49.3999 66.5901C48.5824 66.592 47.7738 66.42 47.0279 66.0853C46.282 65.7506 45.6159 65.261 45.0739 64.6489C44.5319 64.0369 44.1264 63.3165 43.8843 62.5357C43.6422 61.7548 43.5691 60.9314 43.6699 60.1201C43.7692 59.3846 43.9162 58.6564 44.1099 57.9401C44.6724 55.7485 45.5841 53.6618 46.8099 51.7601C47.9024 50.0832 49.2216 48.5655 50.7299 47.2501C52.2099 45.9701 53.5832 44.7434 54.8499 43.5701C56.0431 42.4588 57.1004 41.2101 57.9999 39.8501C58.8755 38.4897 59.3215 36.8973 59.2799 35.2801C59.3786 33.2717 58.6938 31.3035 57.3699 29.7901C56.0899 28.4101 53.8199 27.7301 50.5499 27.7301C49.4282 27.7357 48.3097 27.8496 47.2099 28.0701C44.85 28.7279 42.538 29.5464 40.2899 30.5201C38.6499 31.3701 36.0499 29.7201 35.1999 28.0801V28.0201C34.8139 27.2834 34.5854 26.4746 34.5286 25.6449C34.4719 24.8151 34.5883 23.9827 34.8704 23.2004C35.1525 22.418 35.5941 21.7029 36.1673 21.1003C36.7405 20.4977 37.4326 20.0209 38.1999 19.7001C39.1099 19.3101 40.0599 18.9401 41.0499 18.6001C44.8389 17.4062 48.7982 16.842 52.7699 16.9301C58.9166 16.9301 63.7266 18.4201 67.1999 21.4001C68.9136 22.8802 70.2711 24.728 71.1715 26.8057C72.0718 28.8834 72.4917 31.1375 72.3999 33.4001C72.4884 36.2229 72.037 39.0366 71.0699 41.6901C70.2844 43.7177 69.1768 45.6053 67.7899 47.2801C66.5055 48.7959 65.0566 50.1643 63.4699 51.3601C61.9583 52.5018 60.5374 53.7589 59.2199 55.1201C57.8866 56.501 56.7645 58.0713 55.8899 59.7801C55.4977 60.5203 55.1988 61.3063 54.9999 62.1201C54.6913 63.382 53.9715 64.5052 52.9539 65.3128C51.9363 66.1203 50.6789 66.5662 49.3799 66.5801L49.3999 66.5901ZM41.6599 80.5201C41.6177 79.5184 41.7884 78.5192 42.1607 77.5884C42.533 76.6576 43.0985 75.8163 43.8199 75.1201C45.383 73.7366 47.4249 73.0189 49.5099 73.1201C51.655 72.9996 53.7631 73.7166 55.3899 75.1201C56.1177 75.8219 56.687 76.6714 57.0596 77.6114C57.4321 78.5513 57.5993 79.5601 57.5499 80.5701C57.5967 81.5856 57.4285 82.5997 57.0562 83.5458C56.684 84.4918 56.1162 85.3486 55.3899 86.0601C54.5931 86.7727 53.6637 87.3214 52.6548 87.6749C51.6459 88.0284 50.5772 88.1796 49.5099 88.1201C48.4723 88.1702 47.4351 88.014 46.4584 87.6604C45.4817 87.3068 44.5849 86.7628 43.8199 86.0601C43.0871 85.3429 42.5155 84.478 42.1431 83.5228C41.7707 82.5675 41.6059 81.5439 41.6599 80.5201Z" fill="#26A9E0"></path>
+                </svg>
+              </div>
+              <div class="task-item__text">Один вопрос</div>{% else %}
+              <div class="task-item__icon circle">
+                <svg width="105" viewbox="0 0 105 105" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M84.5208 49H52.4792C49.4531 49 47 51.6799 47 54.9857V56.0143C47 59.3201 49.4531 62 52.4792 62H84.5208C87.5469 62 90 59.3201 90 56.0143V54.9857C90 51.6799 87.5469 49 84.5208 49Z" fill="#26A9E0"></path>
+                  <path d="M47 17.4986L47 55.5014C47 59.0905 49.6799 62 52.9857 62L54.0143 62C57.3201 62 60 59.0905 60 55.5014L60 17.4986C60 13.9095 57.3201 11 54.0143 11L52.9857 11C49.6799 11 47 13.9095 47 17.4986Z" fill="#26A9E0"></path>
+                </svg>
+              </div>
+              <div class="task-item__text">1 минута</div>{% endif %}
+            </div>
+            <div class="task-item">{% if data_task_type == 'question' %}
+              <div class="task-item__icon circle">
+                <svg viewbox="0 0 105 105" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M50.8861 76.3603L27.6481 49.2194C25.4534 46.6561 21.5964 46.3573 19.0331 48.5519L18.2355 49.2348C15.6722 51.4295 15.3734 55.2866 17.5681 57.8498L40.806 84.9908C43.0007 87.5541 46.8578 87.8529 49.4211 85.6582L50.2186 84.9753C52.7819 82.7806 53.0807 78.9236 50.8861 76.3603Z" fill="#26A9E0"></path>
+                  <path d="M50.4117 84.9014L87.7132 35.6158C89.673 33.0264 89.1626 29.3385 86.5732 27.3787L86.015 26.9563C83.4256 24.9965 79.7377 25.5069 77.778 28.0964L40.4765 77.382C38.5167 79.9714 39.0271 83.6593 41.6165 85.6191L42.1747 86.0415C44.7641 88.0013 48.452 87.4909 50.4117 84.9014Z" fill="#26A9E0"></path>
+                </svg>
+              </div>
+              <div class="task-item__text">Один верный ответ</div>{% else %}
+              <div class="task-item__icon">
+                <svg width="105" viewbox="0 0 105 105" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="25" cy="25" r="25" fill="white"></circle>
+                  <circle cx="80" cy="25" r="25" fill="white"></circle>
+                  <circle cx="25" cy="80" r="25" fill="#26A9E0"></circle>
+                  <circle cx="80" cy="80" r="25" fill="#26A9E0"></circle>
+                </svg>
+              </div>
+              <div class="task-item__text">5 пар</div>{% endif %}
+            </div>
+            <div class="task-item">
+              <div class="task-item__icon snowball"></div>
+              <div class="task-item__text">{{ data.bonus }}</div>
+            </div>
+          </div>
+          <div class="task__button">
+            <button class="ny-button js__btn_participate" type="button">Начать</button>
+          </div>
+        </div>
+      </div>{% else %}
+      <div class="task task_message" data-task-number="{{ data.num }}" style="display: flex" data-day="{{ day|date(" data-current-task="" data-type="{{ data.type }}"><b>Вот это да!<br/><span class="date">{{ day|date("d") }} января</span>за это задание игроки получили <span class="count">{{ data.total_result }} {{ data.points_type }}</span>.</b></div>{% endif %}
+       {% elseif day > today %}
+      <div class="task task_message" data-task-number="{{ data.num }}" style="display: none" data-day="{{ day|date(" data-type="{{ data.type }}"><b><span class="date">{{ day|date("d") }} января</span>на этой странице вас будет ждать {{ data.type_name }}.<br/> За правильный ответ вы получите {{ data.bonus }}.</b></div> {% endif %}
+       {% endfor %}
+      <div class="game-day__next js__next_button if next_day is empty inactive endif {% %} {% %}" data-content="{{ next_day }}" data-task-next="{{ next_num }}">
+        <svg viewbox="0 0 25 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1.03907 38.8403C-0.0884399 39.9725 -0.0884399 41.8032 1.03907 42.9354C2.17321 44.0743 4.01702 44.0743 5.15116 42.9354L23.1891 24.8226C24.7434 23.2618 24.7434 20.7382 23.1891 19.1774L5.15116 1.06458C4.01702 -0.0742683 2.17321 -0.0742683 1.03907 1.06458C-0.0884399 2.19678 -0.0884399 4.02747 1.03907 5.15966L17.8098 22L1.03907 38.8403Z" fill="white"></path>
+        </svg>
+      </div>
+    </div> {% include '/interactives/snowballs/templates/user_statistic.twig.html' %}
+  </div>
+</section>

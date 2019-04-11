@@ -1,0 +1,175 @@
+// игры
+.game-day {
+  position: relative;
+  z-index: 5;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 1024px;
+  transition: opacity 300ms;
+  font-size: inherit;
+}
+
+.game-day .container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-top: 2rem;
+  position: relative;
+  z-index: 5;
+  flex-grow: 1;
+}
+
+.game-day header {
+  display: flex;
+}
+
+.game-day__date {
+  width: 245px;
+  height: 245px;
+  color: #EC1846;
+  color: var(--color-red, #EC1846);
+  padding: 50px;
+  margin-left: -50px;
+  font-size: 1.35em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+}
+
+.game-day__date .day {
+  font-weight: bold;
+  font-size: 2.5em;
+}
+
+.game-day__header {
+  padding-left: 4.7rem;
+  padding-top: 4rem;
+  font-size: 1.35em;
+}
+
+.game-day__title {
+  font-size: inherit;
+  margin: 0;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.game-day__main {
+  flex-grow: 1;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.game-day__prev,
+.game-day__next {
+  width: 2.8em;
+  flex-shrink: 0;
+  position: relative;
+  cursor: pointer;
+  text-align: center;
+  font-weight: bold;
+}
+
+.game-day__prev {
+  left: -2.8em;
+}
+
+.game-day__next {
+  right: -2.8em;
+}
+
+.game-day__prev svg,
+.game-day__next svg {
+  margin-top: 0.25rem;
+  width: 25px;
+}
+
+.game-day__prev.inactive,
+.game-day__next.inactive {
+  visibility: hidden;
+}
+
+.game-day__prev:after,
+.game-day__next:after {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  content: attr(data-content);
+}
+
+.game-day__content {
+  flex-grow: 1;
+  padding: 2rem 1rem;
+  position: relative;
+}
+
+.option input {
+  display: none;
+}
+
+.game-day__content > .qw > div {
+  width: 100%;
+}
+
+.start {
+  font-size: 2.25rem;
+  padding: 0.33em 0.73em;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 1em;
+}
+
+.task {
+  text-align: center;
+  width: 100%;
+  display: flex;  
+  flex-direction: column;
+  align-items: center;
+}
+
+.task_message {
+  background: #26A9E0;
+  background: var(--color-blue);
+  border-radius: 4em;
+  font-size: 1.3em;
+  padding: 1.2em 2.2em; 
+}
+
+.task__items {
+  display: flex;
+}
+
+.task-item {
+  max-width: 6.2em;
+  flex-shrink: 1;
+  margin: 0 1.35em;
+  text-align: center;
+  font-weight: bold;
+}
+
+.task-item__icon {
+  width: 105px;
+  height: 105px;
+  margin: 0 auto 1em;
+  position: relative;
+}
+
+.task-item__icon.circle {
+  border-radius: 50%;
+  background-color: white;
+}
+
+.task-item__icon svg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+}
+
+.task__button {
+  padding-top: 2rem;
+}

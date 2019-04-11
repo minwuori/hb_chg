@@ -1,0 +1,53 @@
+// шапка
+.header-birthday {
+	background-color: $color_green;
+	height: 105px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+	.container__inner {
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+		
+}
+	
+.header__logo {
+	width: 306px;
+}
+.social-list {
+	padding: 0;
+	margin: 0;
+		a {
+			font-size: 14px;
+			width: 50px;
+			height: 50px;
+			opacity: 1;
+			transition: 0.2s;
+			&:hover {
+				opacity: 0.5;
+				transition: 0.2s;
+			}
+				
+		}
+}
+			
+.social-list__item {
+	margin: 0;
+	margin-right: 10px;
+	padding: 0;
+	display: inline-block;
+	font-size: 0; 
+	&:last-child {
+		margin-right: 0;
+		height: 100%;
+		color: $color_white;
+		font-size: 16px;
+		background: transparent;
+		cursor: pointer;
+	}
+		&:hover {
+			opacity: 0.5;
+		}
+}
