@@ -82,24 +82,69 @@ document.addEventListener('DOMContentLoaded', function(){ // Аналог $(docu
 //   screen.parentElement.addEventListener('mouseleave', reset)
 // })();
 
-//анимация балалайки
+//анимация медведя
 
-var balalaika = document.querySelector('.bear__balalaika');
-balalaika.addEventListener('mouseenter', function(){
-  TweenMax.to(balalaika, 1, {
-    y: 60,
+var bear = document.querySelector('.bear'),
+    balalaika = bear.querySelector('.bear__balalaika'),
+    hat = bear.querySelector('.bear__hat'),
+    mouth = bear.querySelector('.bear__mouth'),
+    eyebrowLeft = bear.querySelector('.bear__eyebrow1'),
+    eyebrowRight = bear.querySelector('.bear__eyebrow2'),
+    nose = bear.querySelector('.bear__nose');
+
+
+  var bezierBalalaika = new TweenMax(balalaika , 4, {
+    bezier:{
+      type:"soft", 
+      values:[{x:10, y: 0}, {x:-10, y:0}, {x: 0, y: -20}, {x: 0, y: 40}, {x: 0, y: 0}],
+      autoRotate: false,
+    },
+  //rotation: 45, 
+  ease:Linear.easeInOut, repeat: -1});
+
+
+
+bear.addEventListener('mouseenter', function(){
+  TweenMax.to(balalaika, 2, {
+    y: 50,
     rotation: 60,
     transformOrigin: 'center right',
-    x: -140
+    x: -130,
+    ease:Back.easeOut
   });
+  
+
+  TweenMax.to(mouth, 2, {
+    delay: 1,
+    y: -5,
+    x: -5,
+    rotation: 10,
+    transformOrigin: 'center center'
+  });
+
+  var bezierEyebrow = new TweenMax([eyebrowLeft, eyebrowRight] , 0.8, {
+    bezier:{
+      type:"soft", 
+      values:[{x:0, y:-20}, {x:0, y:0}],
+      autoRotate:false
+    },
+  ease:Linear.easeInOut, repeat:5});
 })
-balalaika.addEventListener('mouseleave', function(){
+bear.addEventListener('mouseleave', function(){
   TweenMax.to(balalaika, 1, {
     y: 0,
     rotation: 0,
     transformOrigin: 'center right',
     x: 0
   });
+
+  TweenMax.to(mouth, 4, {
+    dalay: 0.5,
+    y: 0,
+    x: 0,
+    rotation: 0
+  });
 })
+
 
 });
