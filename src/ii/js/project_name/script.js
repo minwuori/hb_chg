@@ -86,14 +86,20 @@ document.addEventListener('DOMContentLoaded', function(){ // Аналог $(docu
 
 var balalaika = document.querySelector('.bear__balalaika');
 balalaika.addEventListener('mouseenter', function(){
-  TweenMax.to(balalaika, 2, {
-    y: -10
-  });
-  TweenMax.to(balalaika, 2, {
-    x: -10,
-    y: 0
+  TweenMax.to(balalaika, 1, {
+    y: 60,
+    rotation: 60,
+    transformOrigin: 'center right',
+    x: -140
   });
 })
-
+balalaika.addEventListener('mouseleave', function(){
+  TweenMax.to(balalaika, 1, {
+    y: 0,
+    rotation: 0,
+    transformOrigin: 'center right',
+    x: 0
+  });
+})
 
 });
