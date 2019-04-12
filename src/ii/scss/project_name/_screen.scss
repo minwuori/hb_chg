@@ -13,44 +13,6 @@
   position: relative;
 }
 
-.screen-bg {
-  position: relative;
-  overflow-x: hidden;
-  overflow-y: visible;
-}
-
-/* фон с елочками */
-.screen-bg__inner {
-  //width: 101%;
-  //height: 100vh;
-  min-height: 800px;
-  position: relative;
-}
-/* svg с елочками */
-.screen-bg__inner .bg {
-  display: block;
-  margin: auto;
-
-  min-width: 140vh;
-
-  position: absolute;
-  height: 100%;
-  left: 50%;
-  top: -1px;
-  transform: translateX(-50%);
-  
-  overflow: visible;
-  text-align: center;
-  pointer-events: none;
-}
-
-.bg_snow {
-  z-index: 10;
-}
-
-[data-parallax] {
-  transition: all 200ms;
-}
 
 .screen__content {
   position: relative;
@@ -61,7 +23,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-bottom: 200px;
   width: 27em;
   height: 100%;
 }
@@ -73,4 +34,8 @@
 
 .screen__description {
   margin-top: 0.8em;
+}
+
+.screen_bg {
+  position: relative;
 }

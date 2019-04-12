@@ -18,68 +18,82 @@ document.addEventListener('DOMContentLoaded', function(){ // Аналог $(docu
 //   }
 // })();
 
+// var parallax = (function() {
+//   var screen = document.querySelector('.greeting');
+//   var svg = screen.querySelector('.bg');
+
+//   var $els = Array.prototype.slice.call(svg.querySelectorAll('[data-parallax]'));
+
+//   var start, position, dir, diff, 
+//   limit = 10, 
+//   speed = 0.0003,
+//   factor = 1.0001;
+
+//   var move = function(e) {
+//     if (!start && start !== 0) {
+//       // еще движений не было
+//       // старт с позиции курсора
+//       start = position = e.clientX;
+//       diff = 0; // исходный сдвиг
+//       return;
+//     }
+//     // направление движения
+//     var ratio = e.clientX - position > 0 ? 1 : -1;
+    
+//     // если еще не было движения
+//     // устанавливаем исходное направление
+//     if (!dir) dir = ratio;
+
+//     if (ratio !== dir) { // начал двигаться в другом направлении
+//       // сбрасываем стартовую позицию
+//       start = position;
+//       // меняем направление
+//       dir = ratio;
+//       // сдвигаем в другую сторону
+//     } 
+
+//     // устанавливаем новую текущую позицию
+//     position = e.clientX;
+
+//     // расстояние сдвига курсора
+//     var dist = e.clientX - start;
+//     // рассчитываем сдвиг фона
+//     // сдвиг курсора * скорость движения
+//     var newDiff = dist * speed;
+//     diff = diff + newDiff;
+//     // проверяем пределы сдвига
+//     if (Math.abs(diff) > limit) diff = diff > 0 ? limit : -1 * limit;
+
+//     // сдвигаем все слои
+//     $els.forEach(function(el) {
+//       el.style.transform = 'translateX(' + (el.dataset.parallax * factor * diff) + 'px)';
+//     })
+//   };
+
+//   var reset = function() {
+//     start = null;
+//     position = null;
+//     $els.forEach(function(el) {
+//       el.style.transform = 'translateX(0px)';
+//     })
+//   };
+
+//   screen.parentElement.addEventListener('mousemove', move)
+//   screen.parentElement.addEventListener('mouseleave', reset)
+// })();
+
 //анимация балалайки
 
-var balalaika = document.querySelector('.balalaika');
+var balalaika = document.querySelector('.bear__balalaika');
 balalaika.addEventListener('mouseenter', function(){
-  TweenMax.to(".balalaika", 2, {
-    bezier:{
-      type:"soft", 
-      values:[{setX:150, setY:300}, {setX:300, setY:-10}, {setX:500 + Math.random() *100, setY:320*Math.random() + 50}, {setX:650, setY:320*Math.random() + 50}, {setX:900, setY:-80}], 
-      //autoRotate needs to know how to adjust x/y/rotation so we pass in the names of the apporpriate KineticJS methods
-autoRotate:["setX","setY","setRotationDeg"]
-    }, 
-    ease:Linear.easeNone, autoCSS:false
+  TweenMax.to(balalaika, 2, {
+    y: -10
+  });
+  TweenMax.to(balalaika, 2, {
+    x: -10,
+    y: 0
   });
 })
 
-var appHeight = 400,
-    appWidth = 840,
-    appCenterX = appWidth/2,
-    appCenterY = appHeight/2,
-    stage = new Kinetic.Stage({
-       container: 'container',
-       width: appWidth,
-       height:appHeight
-     }),
-    layer = new Kinetic.Layer(),
-    bugFile = new Image(),
-    tl;
-
-stage.add(layer);
-bugFile.src = "https://www.greensock.com/_img/codepen/bezierCreature/creature.png";
-
-function getAnimation() {
-  var creature = new Kinetic.Image({
-    image: bugFile,
-    width:27,
-    height:29,
-    x:-50
-  });
-
-  //bezier magic provided by GSAP BezierPlugin (included with TweenMax)
-  //https://api.greensock.com/js/com/greensock/plugins/BezierPlugin.html
-  var bezTween = new TweenMax(creature, 6, {
-    bezier:{
-      type:"soft", 
-      values:[{setX:150, setY:300}, {setX:300, setY:-10}, {setX:500 + Math.random() *100, setY:320*Math.random() + 50}, {setX:650, setY:320*Math.random() + 50}, {setX:900, setY:-80}], 
-      //autoRotate needs to know how to adjust x/y/rotation so we pass in the names of the apporpriate KineticJS methods
-autoRotate:["setX","setY","setRotationDeg"]
-    }, 
-    ease:Linear.easeNone, autoCSS:false});
-  
-  layer.add(creature); 
-  
-  return bezTween;
-  
-}
-
- function buildTimeline() {
-  tl = new TimelineMax({repeat:4, onUpdate:updateSlider, delay:1});
-  for (i = 0 ; i< 30; i++){
-    //start creature animation every 0.12 seconds
-  tl.add(getAnimation(), i * 0.17);
-  }
-} 
 
 });

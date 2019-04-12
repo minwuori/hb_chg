@@ -1,39 +1,142 @@
-.planePath {
-  stroke: #D9DADA;
-  stroke-width: .1%;
-  stroke-width: .5%;
-  stroke-dasharray: 1% 2%;
-  stroke-linecap: round;
-  fill: none;
-}
-
-.fil1 {
-  fill: #D9DADA;
-}
-
-.fil2 {
-  fill: #C5C6C6;
-}
-
-.fil4 {
-  fill: #9D9E9E;
-}
-
-.fil3 {
-  fill: #AEAFB0;
-}
 
 .greeting {
   background: $color_blue;
 }
 .greeting .screen__content {
-  width: 780px;
+  min-width: 809px;
 }
 
 .greeting .screen__title {
+  margin-top: 50px;
   font-size: 91px;
 }
 
 .greeting .screen__description {
-  color: #0060AE;
+  color: $color_white;
+}
+
+.scene { 
+  
+  min-height: 365px;
+  position: relative;
+  margin-top: 40px;
+}
+.img__container {
+  position: relative;
+}
+
+.bear, .clouds, .kremlin, .glade-1, .glade-2, .tree-1, .tree-2, .tree-3, .doll, .hill, .ray, .line {
+  position: absolute;
+}
+.bear {
+  max-width: 432px; 
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+.bear__body {
+  max-width: 395px;
+}
+
+.bear__balalaika {
+  max-width: 240px; 
+  position: absolute;
+  top: 24px;
+  left: 192px;
+}
+
+.hill {
+  max-width: 212px;
+  right: 420px;
+  bottom: -5px;
+  
+}
+.doll {
+  max-width: 93px;
+  right: 420px;
+  bottom: 23px;
+  transform: rotate(15deg);
+  
+}
+.tree-1 {
+  max-width: 180px;
+  left: 100px;
+  bottom: 20px;
+}
+.tree-2 {
+  max-width: 138px;
+  left: 1150px;
+  bottom: 60px;
+}
+.tree-3 {
+  max-width: 250px;
+  right: 280px;
+  bottom: 10px;
+}
+.glade-1 {
+  left: 300px;
+  bottom: 28px;
+  max-width:: 995px;
+}
+.glade-2 {
+  right: 150px;
+  bottom: 28px;
+  max-width:: 342px;
+}
+// .glade {
+//   right: 0;
+//   margin: 0 auto;
+//   bottom: 28px;
+//   width: 1350px;
+// }
+.kremlin { 
+  max-width: 370px;
+  left: 500px;
+  top: -40px;
+  transform: rotate(-8deg);
+}
+.clouds {
+  left: 400px;
+  top: 95px;
+  margin: 0 auto;
+  max-width: 678px;
+}
+.ray {
+  max-width: 220px;
+  right: 0;
+  top: 35px;
+}
+.line {
+  bottom: 0;
+  background-color: $color_green;
+  height: 48px;
+  width: 100%;
+}
+
+
+@media screen and (max-width: 1540px) {
+  .tree-1, .glade-1{
+    left: 0;
+  }
+  .tree-2{
+    left: 850px;
+  }
+  .tree-3 {
+    right: 0;
+  }
+  .doll, .hill {
+    right: 120px;
+  }
+  .clouds {
+    left: 120px;
+  }
+  .kremlin {
+    left: 220px;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .ray {
+    display: none;
+  }
 }

@@ -1,49 +1,30 @@
 
 <section class="screen greeting">
   <div class="screen__container">
-    <div class="screen-bg">
-      <div class="screen-bg__inner">
-        <div class="screen__content">
-          <div class="screen__title"><img src="/ii/img/project_name/title.svg" alt=""/></div>
-          <div class="screen__description">В этом году интернет-магазину «Читай-город» исполняется 7 лет. В честь этого события предлагаем вам узнать 7 чудес России. Участвуйте в игре и получайте скидку 15% на всё!
-            <button class="ny-button ny-button_red" type="button" onclick="scrollToGame()">Слепить снежок</button>
+    <div class="screen__content">
+      <div class="screen__title"><img src="/ii/img/project_name/title.svg" alt=""/></div>
+      <div class="screen__description">В этом году интернет-магазину «Читай-город» исполняется 7 лет. В честь этого события предлагаем вам узнать 7 чудес России. Участвуйте в игре и получайте скидку 15% на всё!</div>
+    </div>
+    <!-- фон первого экрана-->
+    <div class="ray"><img src="/ii/img/project_name/ray.svg" alt="луч"/></div>
+    <div class="screen_bg">
+      <div class="scene">
+        <div class="clouds"><img src="/ii/img/project_name/clouds.svg" alt="облака"/></div>
+        <div class="kremlin"><img src="/ii/img/project_name/kremlin.svg" alt="кремль"/></div>
+        <div class="tree-2"><img src="/ii/img/project_name/tree.svg" alt="березки"/></div>
+        <div class="glade-1"><img src="/ii/img/project_name/glade1.svg" alt="поле"/></div>
+        <div class="glade-2"><img src="/ii/img/project_name/glade2.svg" alt="поле"/></div>
+        <div class="line"></div>
+        <div class="tree-1"><img src="/ii/img/project_name/tree.svg" alt="березки"/></div>
+        <div class="tree-3"><img src="/ii/img/project_name/tree.svg" alt="березки"/></div>
+        <div class="doll"><img src="/ii/img/project_name/doll.svg" alt="матрешка"/></div>
+        <div class="hill"><img src="/ii/img/project_name/hill.svg" alt="холмик"/></div>
+        <div class="bear">
+          <div class="img__container">
+            <div class="bear__body"><img src="/ii/img/project_name/bodyBear.svg" alt="медведь"/></div>
+            <div class="bear__balalaika"><img src="/ii/img/project_name/balalaika.svg" alt="балалайка"/></div>
           </div>
         </div>
-        <!-- фон первого экрана-->
-        <svg class="balalaika" width="199" height="361" viewbox="0 0 199 361" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <g>
-            <path d="M93.6294 360.049C94.3287 360.049 94.8956 359.482 94.8956 358.783C94.8956 358.083 94.3287 357.516 93.6294 357.516C92.9302 357.516 92.3633 358.083 92.3633 358.783C92.3633 359.482 92.9302 360.049 93.6294 360.049Z" fill="black"></path>
-            <path d="M99.7071 359.986C100.406 359.986 100.973 359.419 100.973 358.719C100.973 358.02 100.406 357.453 99.7071 357.453C99.0078 357.453 98.4409 358.02 98.4409 358.719C98.4409 359.419 99.0078 359.986 99.7071 359.986Z" fill="black"></path>
-            <path d="M105.595 359.922C106.294 359.922 106.861 359.355 106.861 358.656C106.861 357.957 106.294 357.39 105.595 357.39C104.895 357.39 104.328 357.957 104.328 358.656C104.328 359.355 104.895 359.922 105.595 359.922Z" fill="black"></path>
-            <path d="M98.251 172.34L0.123413 359.416L99.4539 358.783L198.784 358.149L98.251 172.34Z" fill="#EA7A0A"></path>
-            <path d="M109.013 251.349L89.4512 251.475L79.765 268.442L89.7044 285.345L109.267 285.218L118.953 268.189L109.013 251.349Z" fill="white"></path>
-            <path d="M99.3906 281.293C106.558 281.293 112.369 275.483 112.369 268.315C112.369 261.148 106.558 255.337 99.3906 255.337C92.223 255.337 86.4125 261.148 86.4125 268.315C86.4125 275.483 92.223 281.293 99.3906 281.293Z" fill="#61A553"></path>
-            <path d="M99.3905 279.331C105.474 279.331 110.406 274.399 110.406 268.315C110.406 262.232 105.474 257.3 99.3905 257.3C93.3067 257.3 88.3749 262.232 88.3749 268.315C88.3749 274.399 93.3067 279.331 99.3905 279.331Z" fill="black"></path>
-            <path d="M139.011 319.926L60.382 320.426L60.4197 326.377L139.048 325.877L139.011 319.926Z" fill="black"></path>
-            <path d="M108.219 39.905L87.5803 40.0361L88.8057 232.999L109.444 232.868L108.219 39.905Z" fill="black"></path>
-            <path d="M108.317 63.1967L87.6785 63.3233L69.4458 0.964764L124.524 0.58493L108.317 63.1967Z" fill="#EA7A0A"></path>
-            <path d="M91.5403 18.4379L93.6927 358.783" stroke="white" stroke-width="0.8376" stroke-miterlimit="10"></path>
-            <path d="M97.6813 37.1773L99.7705 358.783" stroke="white" stroke-width="0.8392" stroke-miterlimit="10"></path>
-            <path d="M103.442 18.3746L105.595 358.719" stroke="white" stroke-width="0.8376" stroke-miterlimit="10"></path>
-            <path d="M97.3646 44.2046C99.6722 44.2046 101.543 42.3339 101.543 40.0263C101.543 37.7186 99.6722 35.8479 97.3646 35.8479C95.057 35.8479 93.1863 37.7186 93.1863 40.0263C93.1863 42.3339 95.057 44.2046 97.3646 44.2046Z" fill="black"></path>
-            <path d="M91.3503 20.5273C93.658 20.5273 95.5287 18.6566 95.5287 16.349C95.5287 14.0413 93.658 12.1706 91.3503 12.1706C89.0427 12.1706 87.172 14.0413 87.172 16.349C87.172 18.6566 89.0427 20.5273 91.3503 20.5273Z" fill="black"></path>
-            <path d="M103.189 20.2108C105.497 20.2108 107.367 18.3401 107.367 16.0324C107.367 13.7248 105.497 11.8541 103.189 11.8541C100.881 11.8541 99.0106 13.7248 99.0106 16.0324C99.0106 18.3401 100.881 20.2108 103.189 20.2108Z" fill="black"></path>
-          </g>
-        </svg>
-        <svg class="bg" viewBox="0 0 3387 1270">
-          <path class="planePath" id="planePath" d="M-226 626c439,4 636,-213 934,-225 755,-31 602,769 1334,658 562,-86 668,-698 266,-908 -401,-210 -893,189 -632,630 260,441 747,121 1051,91 360,-36 889,179 889,179"></path>
-          <g id="plane">
-            <polygon class="fil1" points="-141,-10 199,0 -198,-72 -188,-61 -171,-57 -184,-57 "></polygon>
-            <polygon class="fil2" points="199,0 -141,-10 -163,63 -123,9 "></polygon>
-            <polygon class="fil3" points="-95,39 -113,32 -123,9 -163,63 -105,53 -108,45 -87,48 -90,45 -103,41 -94,41 "></polygon>
-            <path class="fil4" d="M-87 48l-21 -3 3 8 19 -4 -1 -1zm-26 -16l18 7 -2 -1 32 -7 -29 1 11 -4 -24 -1 -16 -18 10 23zm10 9l13 4 -4 -4 -9 0z"></path>
-            <polygon class="fil1" points="-83,28 -94,32 -65,31 -97,38 -86,49 -67,70 199,0 -123,9 -107,27 "></polygon>
-          </g>
-          <!-- Define the motion path animation-->
-          <animatemotion xlink:href="#plane" dur="5s" repeatCount="indefinite" rotate="auto">
-            <mpath xlink:href="#planePath"></mpath>
-          </animatemotion>
-        </svg>
       </div>
     </div>
   </div>
