@@ -87,40 +87,64 @@ document.addEventListener('DOMContentLoaded', function(){ // Аналог $(docu
 var bear = document.querySelector('.bear'),
     balalaika = bear.querySelector('.bear__balalaika'),
     hat = bear.querySelector('.bear__hat'),
+    hatLeft = bear.querySelector('.bear__left'),
     mouth = bear.querySelector('.bear__mouth'),
     eyebrowLeft = bear.querySelector('.bear__eyebrow1'),
     eyebrowRight = bear.querySelector('.bear__eyebrow2'),
-    nose = bear.querySelector('.bear__nose');
+    nose = bear.querySelector('.bear__nose'),
+    tlMain = new TimelineMax({});
 
 
   var bezierBalalaika = new TweenMax(balalaika , 4, {
     bezier:{
       type:"soft", 
-      values:[{x:10, y: 0}, {x:-10, y:0}, {x: 0, y: -20}, {x: 0, y: 40}, {x: 0, y: 0}],
-      autoRotate: false,
+      values:[{x:0, y: 0}, 
+              {x:-10, y:-10}, 
+              {x: 0, y: -20}, 
+              {x: 0, y: 30}, 
+              {x: 10, y: 10},
+              {x: 0, y: 0}],
     },
   //rotation: 45, 
   ease:Linear.easeInOut, repeat: -1});
 
+  // var clouds = new TweenMax('.clouds' , 10, {
+  //   bezier:{
+  //     type:"thru", 
+  //     values:[{left:110, top: 270},
+  //             {left: 0, top: 100},
+  //             {left: 100, top: 110},
+  //             {left: 270, top: 160},
+  //             {left: 0, top: 110}],
+  //   },
+  // //rotation: 45, 
+  // ease:Linear.easeNone, repeat: -1});
 
-
-bear.addEventListener('mouseenter', function(){
-  TweenMax.to(balalaika, 2, {
-    y: 50,
-    rotation: 60,
-    transformOrigin: 'center right',
-    x: -130,
-    ease:Back.easeOut
-  });
+  var clouds = new TweenMax('.clouds' , 20, {
+    bezier:{
+      type:"soft", 
+      values:[{left: 100, top: 110},
+              {left: -3800, top: 350},
+              {left: 100, top: 110},
+              {left: 600, top: 130},
+              {left: 2000, top: 300}],
+    },
+  opacity: 0.9, 
+  ease:Linear.ease, repeat: -1});
   
 
-  TweenMax.to(mouth, 2, {
-    delay: 1,
-    y: -5,
-    x: -5,
-    rotation: 10,
-    transformOrigin: 'center center'
-  });
+bear.addEventListener('click', function(){
+  var noseAnimate = tlMain.to(nose, 0.2, {x: -5}).to(nose, 0.2, {x: 5}).to(nose, 0.2, {x: -5}).to(nose, 0.2, {x: 5}).to(nose, 0.2, {x: 0});
+});
+
+bear.addEventListener('mouseenter', function(){
+  tlMain.to(balalaika, 1, { y: 30, x: 0})
+        .to(balalaika, 2, { y: -105, x: 30, rotation: -30, transformOrigin: 'center right' })
+        .to(balalaika, 1, { y: -115, x: 30, ease:Back.easeOut });
+  TweenMax.to(hat, 2, { y: -90, x: -60, delay: 1.5, rotation: -30, transformOrigin: 'center right', ease:Back.easeOut });
+  TweenMax.to(hatLeft, 2, { y: -10, x: -30, delay: 1.5, rotation: 60, transformOrigin: 'center right', ease:Bounce.easeOut });
+
+  TweenMax.to(mouth, 1, {  delay: 1.5,  y: -5, x: -5,  rotation: 10, transformOrigin: 'center center' });
 
   var bezierEyebrow = new TweenMax([eyebrowLeft, eyebrowRight] , 0.8, {
     bezier:{
@@ -128,22 +152,16 @@ bear.addEventListener('mouseenter', function(){
       values:[{x:0, y:-20}, {x:0, y:0}],
       autoRotate:false
     },
-  ease:Linear.easeInOut, repeat:5});
+  ease:Linear.easeInOut, repeat:10});
 })
-bear.addEventListener('mouseleave', function(){
-  TweenMax.to(balalaika, 1, {
-    y: 0,
-    rotation: 0,
-    transformOrigin: 'center right',
-    x: 0
-  });
 
-  TweenMax.to(mouth, 4, {
-    dalay: 0.5,
-    y: 0,
-    x: 0,
-    rotation: 0
-  });
+bear.addEventListener('mouseleave', function(){
+
+
+  TweenMax.to([balalaika, hat, hatLeft], 1, { y: 0, x: 0, rotation: 0, transformOrigin: 'center right' });
+
+  TweenMax.to(mouth, 4, { dalay: 0.5, y: 0, x: 0, rotation: 0 });
+
 })
 
 
