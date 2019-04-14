@@ -1,9 +1,10 @@
-
+// greeting
 .greeting {
   background: $color_blue;
 }
 .greeting .screen__content {
   min-width: 809px;
+  z-index: 5;
 }
 
 .greeting .screen__title {
@@ -26,6 +27,7 @@
   position: relative;
 }
 
+// greeting background 
 .bear, .bear__hat, .bear__left, .bear__right, .bear__cap,
 .bear__eyebrows, .bear__eyebrow1, .bear__eyebrow2, .bear__nose, .bear__mouth,
 .clouds, .kremlin, .glade-1, .glade-2, 
@@ -160,6 +162,8 @@
   z-index: 2;
 }
 
+// end greeting background
+
 // .bear__balalaika:hover {
 //     animation-name: balalaikaHover;
 //     animation-duration: 1s;
@@ -246,3 +250,5 @@
     left: 120px;
   }
 }
+
+// end greeting

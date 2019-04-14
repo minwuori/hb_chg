@@ -34,18 +34,26 @@ $color_white: #FFFFFF;
 $color_black: rgba(0, 0, 0, 0.8);
 $color_blue: #27AAE1;
 $color_green: #8DC63F;
-$color_red: #ED1846;
+$color_lightGreen: #9EC928;
+$color_lime: #7FAF33;
+$color_red: #B81739;
+$color_pink: #E23834;
+$color_orange: #EA7A0A;
+$color_yellow: #FFB943;
+$color_heavenly: #65A7EA;
 $color_lightBlue: #edf4fb;
+$color_darkBlue: #00307A;
 $color_gray: rgba(38, 96, 171, 0.3);
 
 .hb-chg {
-  	color: white;
 	@import '_helpers';
 	@import '_header';
 	@import '_screen';
 	@import '_greeting';
 	@import '_map';
 	@import '_game';
+	@import '_calendar';
+	@import '_button';
 	@import '_rules';
 	@import '_footer';
 }

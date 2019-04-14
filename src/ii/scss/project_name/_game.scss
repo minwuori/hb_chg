@@ -1,63 +1,60 @@
 // игры
-.game-day {
-  position: relative;
-  z-index: 5;
+.game {
+  //position: relative;
+  //z-index: 5;
   height: auto;
-  display: flex;
-  flex-direction: column;
-  min-height: 1024px;
+  // display: flex;
+  // flex-direction: column;
+  //min-height: 1024px;
   transition: opacity 300ms;
   font-size: inherit;
+  color: $color_black;
 }
 
-.game-day .container {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  padding-top: 2rem;
+.game .container {
   position: relative;
-  z-index: 5;
-  flex-grow: 1;
 }
 
-.game-day header {
-  display: flex;
+// .game-day .container {
+//   display: flex;
+//   flex-direction: column;
+//   height: 100%;
+//   padding-top: 2rem;
+//   position: relative;
+//   z-index: 5;
+//   flex-grow: 1;
+// }
+
+
+// .game-day__header {
+//   padding-left: 4.7rem;
+//   padding-top: 4rem;
+//   font-size: 1.35em;
+// }
+.game__header {
+
 }
 
-.game-day__date {
-  width: 245px;
-  height: 245px;
-  color: #EC1846;
-  color: var(--color-red, #EC1846);
-  padding: 50px;
-  margin-left: -50px;
-  font-size: 1.35em;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  line-height: 1;
-}
-
-.game-day__date .day {
-  font-weight: bold;
-  font-size: 2.5em;
-}
-
-.game-day__header {
-  padding-left: 4.7rem;
-  padding-top: 4rem;
-  font-size: 1.35em;
-}
-
-.game-day__title {
+.game__title {
+  max-width: 700px; 
   font-size: inherit;
   margin: 0;
   font-weight: bold;
   margin-bottom: 1rem;
+  text-align: left;
 }
 
-.game-day__main {
+.avatar {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  max-width: 205px;
+}
+
+figcaption {
+  font-weight: bold;
+}
+.game__main {
   flex-grow: 1;
   width: 100%;
   display: flex;

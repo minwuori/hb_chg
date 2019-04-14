@@ -1,0 +1,76 @@
+// calendar
+.calendar{
+	background: $color_green;
+	color: $color_white;
+}
+
+.calendar .title {
+	font-family: Roboto, sans-serif;
+	font-size: 72px;
+	font-weight: bold;
+	padding-top: 100px;
+}
+.calendar .subtitle {
+	font-family: Roboto, sans-serif;
+	font-size: 36px;
+	font-weight: bold;
+	margin-top: 30px;
+	margin-bottom: 100px;
+}
+
+.date {
+	width: 806px;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-direction: row;
+	-ms-flex-direction: row;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+					flex-direction: row;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+			-ms-flex-pack: justify;
+					justify-content: space-between; }
+
+.date__item {
+	-webkit-border-radius: 50%;
+					border-radius: 50%;
+	border: none;
+	background: $color_lime;
+	height: 98px;
+	width: 98px;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+					flex-direction: column;
+	-webkit-align-items: center;
+	-webkit-box-align: center;
+			-ms-flex-align: center;
+					align-items: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+			-ms-flex-pack: center;
+					justify-content: center; }
+
+.number {
+	font-size: 50px; }
+
+.month {
+	font-size: 20px; }
+
+.slider {
+	position: relative;
+	min-height: 326px;
+}
+.slider__prev, .slider__next {
+	width: 28px;
+	position: absolute;
+}
+// end calendar

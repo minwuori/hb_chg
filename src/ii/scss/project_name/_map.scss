@@ -16,34 +16,67 @@
   overflow: visible;
   width: 100%; }
 
-.map .region {
+.region {
   cursor: pointer;
   -webkit-transition: all 150ms;
   -o-transition: all 150ms;
-  transition: all 150ms; }
+  transition: all 150ms;
+  position: relative; }
   
-  .map .region.active path, 
-  .map .region.full path {
-    fill: #EB1C24; }
-  
-  .map .region.active:hover path, 
-  .map .region.full:hover path {
-    fill: #D61B23; }
+.region.active{
+  fill: #EB1C24; }
 
-.map .region:hover path {
-  fill: #CCCCCC; }
+.region.active:hover{
+  fill: #D61B23; }
 
-.map .marker {
-  cursor: pointer;
-  -webkit-transition: all 150ms;
-  -o-transition: all 150ms;
-  transition: all 150ms; }
-  
-  .map .marker.active path {
-    fill-opacity: 1; }
+.region[data-region="1"]:hover {
+  fill: $color_orange; }
+.region[data-region="2"]:hover{
+  fill: $color_pink; }
+.region[data-region='3']:hover{
+  fill: $color_yellow; }
+.region[data-region='4']:hover{
+  fill: $color_lightGreen; }
+.region[data-region='5']:hover{
+  fill: $color_red; }
+.region[data-region='6']:hover{
+  fill: $color_darkBlue; }
+.region[data-region='7']:hover{
+  fill: $color_heavenly; }
 
-.map .marker-full_30 {
-  cursor: pointer; }
 
-.map .marker-full_14 {
-  cursor: pointer; }
+.region[data-region="1"]:hover .hint{
+  display: block;
+}
+
+.hint {
+  position: absolute;
+  left: 0; 
+  top: -20px;
+  z-index: 2;
+  background: $color_blue; 
+  font-size: 18px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 10px;
+  width: 190px;
+  text-align: left;
+  padding: 15px;
+  //display: none;
+}
+.hint::after {
+  content: ''; 
+  position: absolute;
+  left: 37%;
+  border: 29px solid transparent; 
+  border-top: 29px solid $color_blue;
+  z-index: 1;
+}
+.hint__title {
+  font-weight: bold;
+}
+
+.hint__content {
+  font-size: 12px;
+  width: 100%;
+}
