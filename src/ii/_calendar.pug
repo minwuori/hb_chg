@@ -29,17 +29,9 @@ section.calendar.js__calendar
 					.month мая
 
 			.slider
-
-				button.slider__prev.js__previous_btn(class="" data-content="" data-task-prev="")
-					svg(xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 26 42" width="26" height="42")
-						path(fill="white" d="M 24.1453 40.8548 C 25.6051 39.395 25.6064 37.0287 24.1482 35.5673 L 9.6126 21 L 24.1482 6.43269 C 25.6064 4.97132 25.6051 2.60496 24.1453 1.14519 C 22.6844 -0.315708 20.3158 -0.315707 18.8549 1.14519 L 1.12141 18.8787 C -0.0501595 20.0503 -0.0501575 21.9497 1.12142 23.1213 L 18.8549 40.8548 C 20.3158 42.3157 22.6844 42.3157 24.1453 40.8548 Z")
-				
-				button.slider__next.js__next_btn(class="" data-content="" data-task-next="")
-					svg(xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 26 42" width="26" height="42")
-						path(fill="white" d="M 1.85471 40.8548 C 0.394939 39.395 0.393648 37.0287 1.85183 35.5673 L 16.3874 21 L 1.85183 6.43269 C 0.393646 4.97132 0.394938 2.60496 1.85471 1.14519 C 3.31561 -0.315708 5.6842 -0.315707 7.14509 1.14519 L 24.8786 18.8787 C 26.0502 20.0503 26.0502 21.9497 24.8786 23.1213 L 7.14509 40.8548 C 5.68419 42.3157 3.31561 42.3157 1.85471 40.8548 Z")
 				.slider__wrap
-					ul.slide
-						li.slide__item
+					.slide
+						.slide__item
 							p.slide__title Скидка 14% 
 							p.slide__subtitle на все товары из разделов 
 							.slide__content
@@ -47,7 +39,7 @@ section.calendar.js__calendar
 								a.slide__btn(href="") Романтика
 								a.slide__btn(href="") Приключения
 								a.slide__btn(href="") Современная проза
-						li.slide__item
+						.slide__item
 							p.slide__title Скидка 14% 
 							p.slide__subtitle на все товары из разделов 
 							.slide__content
@@ -55,14 +47,14 @@ section.calendar.js__calendar
 								a.slide__btn(href="") Сувениры
 								a.slide__btn(href="") Философия
 								a.slide__btn(href="") Общество
-						li.slide__item
+						.slide__item
 							p.slide__title Скидка 14% 
 							p.slide__subtitle на все товары из разделов 
 							.slide__content
 								a.slide__btn(href="") Красота. Здоровье. Спорт
 								a.slide__btn(href="") Фантастика. Фэнтези
 								a.slide__btn(href="") Поэзия
-						li.slide__item
+						.slide__item
 							p.slide__title Скидка 14% 
 							p.slide__subtitle на все товары из разделов 
 							.slide__content
@@ -70,23 +62,31 @@ section.calendar.js__calendar
 								a.slide__btn(href="") Искусство
 								a.slide__btn(href="") Книги для детей
 
-						li.slide__item
+						.slide__item
 							p.slide__title Скидка 14% 
 							p.slide__subtitle на все товары из разделов 
 							.slide__content
 								a.slide__btn(href="") Деловая литература
 								a.slide__btn(href="") Фольклор
 								a.slide__btn(href="") Психология
-						li.slide__item
+						.slide__item
 							p.slide__title Скидка 14% 
 							p.slide__subtitle на все товары из разделов 
 							.slide__content
 								a.slide__btn(href="") Исторический роман
 								a.slide__btn(href="") Образование
-						li.slide__item
+						.slide__item
 							p.slide__title Скидка 14% 
 							p.slide__subtitle на все товары из разделов 
 							.slide__content
 								a.slide__btn(href="") Детектив. Боевик. Триллер
 								a.slide__btn(href="") Биография. Мемуары
 								a.slide__btn(href="") Увлечения
+
+				button.slider__prev.slider__prev_disable.js__previous_btn(class="" data-content="" data-task-prev="")
+					svg(xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 26 42" width="26" height="42")
+						path(fill="white" d="M 24.1453 40.8548 C 25.6051 39.395 25.6064 37.0287 24.1482 35.5673 L 9.6126 21 L 24.1482 6.43269 C 25.6064 4.97132 25.6051 2.60496 24.1453 1.14519 C 22.6844 -0.315708 20.3158 -0.315707 18.8549 1.14519 L 1.12141 18.8787 C -0.0501595 20.0503 -0.0501575 21.9497 1.12142 23.1213 L 18.8549 40.8548 C 20.3158 42.3157 22.6844 42.3157 24.1453 40.8548 Z")
+				
+				button.slider__next.js__next_btn(class="" data-content="" data-task-next="")
+					svg(xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 26 42" width="26" height="42")
+						path(fill="white" d="M 1.85471 40.8548 C 0.394939 39.395 0.393648 37.0287 1.85183 35.5673 L 16.3874 21 L 1.85183 6.43269 C 0.393646 4.97132 0.394938 2.60496 1.85471 1.14519 C 3.31561 -0.315708 5.6842 -0.315707 7.14509 1.14519 L 24.8786 18.8787 C 26.0502 20.0503 26.0502 21.9497 24.8786 23.1213 L 7.14509 40.8548 C 5.68419 42.3157 3.31561 42.3157 1.85471 40.8548 Z")

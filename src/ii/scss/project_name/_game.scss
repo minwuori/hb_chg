@@ -9,6 +9,7 @@
   transition: opacity 300ms;
   font-size: inherit;
   color: $color_black;
+  padding-bottom: 100px;
 }
 
 .game .container {
@@ -46,13 +47,15 @@
 
 .avatar {
   position: absolute;
-  bottom: 100px;
+  bottom: 0;
   right: 0;
   max-width: 205px;
+  cursor: pointer;
 }
 
 figcaption {
   font-weight: bold;
+  text-align: center;
 }
 .game__main {
   flex-grow: 1;

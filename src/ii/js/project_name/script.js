@@ -102,24 +102,69 @@ var animateScreen = (function(){
 })();
 
 
-(function movingCarousel(slide) {
-    var width = 806;
-    var slider = document.querySelector('.slider');
-    var slide = slider.querySelector('.slide');
-    var slideItem = slider.querySelectorAll('.slide__item');
-    var position = 0;
 
-    slider.querySelector('.js__previous_btn').addEventListener("click", function(evt) {
-        evt.preventDefault();
-        position = Math.min(position + width, 0);
-        slider.style.marginLeft = position + 'px';
+//слайдер
+(function movingCarousel(slide) {
+    
+  var slider = document.querySelector('.slider'),//слайдер
+    sliderWrapper = slider.querySelector('.slide'),//контейнер слайдов
+    slideItems = slider.querySelectorAll('.slide__item'),//элемент слайдера
+    wrapperWidth = parseFloat(getComputedStyle(sliderWrapper).width), // ширина обёртки
+    itemWidth = parseFloat(getComputedStyle(slideItems[0]).width), // ширина одного элемента 
+    prev = slider.querySelector('.js__previous_btn'), // кнопка "назад"
+    next = slider.querySelector('.js__next_btn'), // кнопка "вперед"
+    positionLeftItem = 0, // позиция левого активного элемента
+    transform = 0, // значение транфсофрмации контейнера слайдов
+    step = itemWidth / wrapperWidth * 100; // величина шага (для трансформации)
+  
+
+  var position = {
+    getMin: 0,
+    getMax: slideItems.length - 1,
+  };
+
+  //при нажатии на кнопку назад
+    prev.addEventListener("click", function(evt) {
+      evt.preventDefault();
+      //если позиция крайнего левого элемента нулевая, то ничего не делать
+      if (positionLeftItem <= position.getMin) {
+        return;
+      }
+      //если кнопка вперед задизейблена, то активировать ее
+      if (next.classList.contains('slider__next_disable')) {
+        next.classList.remove('slider__next_disable');
+      }
+
+      //если достигли крайнего левого элемента и кнопка назад активна, то задизейблить ее
+      if (!prev.classList.contains('slider__prev_disable') && positionLeftItem - 1 <= position.getMin) {
+        prev.classList.add('slider__prev_disable');
+      }
+      positionLeftItem--;
+      transform += step;
+      //сдвигаем контейнер слайдера
+      sliderWrapper.style.transform = 'translateX(' + transform + '%)';
     });
 
-    slider.querySelector('.js__next_btn').addEventListener("click", function(evt) {
-    	console.log('click');
-        evt.preventDefault();
-        position = Math.max(position - width, -width * (slide.length - 1));
-        slider.style.marginLeft = position + 'px';
+  //при нажатии на кнопку вперед  
+    next.addEventListener("click", function(evt) {
+      evt.preventDefault();
+      //если последний элемента слайдера, то ничего не делать
+      if ((positionLeftItem + wrapperWidth / itemWidth - 1) >= position.getMax) {
+        return;
+      }
+
+      //если кнопка назад задизейблена, то активировать ее
+      if (prev.classList.contains('slider__prev_disable')) {
+        prev.classList.remove('slider__prev_disable');
+      }
+      //если достигли последнего элемента и кнопка вперед активна, то задизейблить ее
+      if (!next.classList.contains('slider__next_disable') && (positionLeftItem + wrapperWidth / itemWidth) >= position.getMax) {
+        next.classList.add('slider__next_disable');
+      }
+      positionLeftItem++;
+      transform -= step;
+      //сдвигаем контейнер слайдера
+      sliderWrapper.style.transform = 'translateX(' + transform + '%)';
     });
 })();
 
