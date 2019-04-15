@@ -15,12 +15,6 @@ a {
 img{
 	width: 100%;
 }
-.container {
-	margin: 100px auto;
-	max-width: 1260px;
-	padding: 0 20px;
-	text-align: center;
-}
 .container__inner {
 	flex-wrap: wrap;
 	justify-content: space-between;
@@ -133,13 +127,6 @@ p { margin: 1rem 0; }
   text-decoration: none;
 }
 
-.container {
-  width: 100%;
-  max-width: 1140px;
-  margin: auto;
-  padding-left: 20px; 
-  padding-right: 20px;
-}
 
 .color_white {
   color: white;

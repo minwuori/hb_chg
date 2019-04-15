@@ -1,51 +1,89 @@
 
 <!-- screen calendar-->
-<section class="screen calendar">
+<section class="calendar js__calendar">
   <div class="container">
     <div class="title">7 ЧУДЕСных лет </div>
     <div class="subtitle">#читайгород</div>
     <div class="screen__content">
       <div class="date">
-        <div class="date__item">
+        <div class="date__item date__item_active js__date_item">
           <div class="number">13 </div>
           <div class="month">мая</div>
         </div>
-        <div class="date__item">
+        <div class="date__item date__item_disable js__date_item">
           <div class="number">14 </div>
           <div class="month">мая</div>
         </div>
-        <div class="date__item">
+        <div class="date__item js__date_item">
           <div class="number">15 </div>
           <div class="month">мая</div>
         </div>
-        <div class="date__item">
+        <div class="date__item js__date_item">
           <div class="number">16 </div>
           <div class="month">мая</div>
         </div>
-        <div class="date__item">
+        <div class="date__item js__date_item">
           <div class="number">17 </div>
           <div class="month">мая</div>
         </div>
-        <div class="date__item">
+        <div class="date__item js__date_item">
           <div class="number">18 </div>
           <div class="month">мая</div>
         </div>
-        <div class="date__item">
+        <div class="date__item js__date_item">
           <div class="number">19 </div>
           <div class="month">мая</div>
         </div>
       </div>
       <div class="slider">
-        <div class="slider__prev js__previous_button" data-content="" data-task-prev="">
-          <svg viewbox="0 0 25 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M23.9609 5.15966C25.0884 4.02747 25.0884 2.19678 23.9609 1.06458C22.8268 -0.0742692 20.983 -0.0742692 19.8488 1.06458L1.81089 19.1774C0.256596 20.7382 0.256596 23.2618 1.81089 24.8226L19.8488 42.9354C20.983 44.0743 22.8268 44.0743 23.9609 42.9354C25.0884 41.8032 25.0884 39.9725 23.9609 38.8403L7.19023 22L23.9609 5.15966Z" fill="white"></path>
+        <button class="slider__prev js__previous_btn" data-content="" data-task-prev="">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 26 42" width="26" height="42">
+            <path fill="white" d="M 24.1453 40.8548 C 25.6051 39.395 25.6064 37.0287 24.1482 35.5673 L 9.6126 21 L 24.1482 6.43269 C 25.6064 4.97132 25.6051 2.60496 24.1453 1.14519 C 22.6844 -0.315708 20.3158 -0.315707 18.8549 1.14519 L 1.12141 18.8787 C -0.0501595 20.0503 -0.0501575 21.9497 1.12142 23.1213 L 18.8549 40.8548 C 20.3158 42.3157 22.6844 42.3157 24.1453 40.8548 Z"></path>
           </svg>
-        </div>
-        <div class="slide"></div>
-        <div class="slider__next js__next_button" data-content="" data-task-next="">
-          <svg viewbox="0 0 25 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M1.03907 38.8403C-0.0884399 39.9725 -0.0884399 41.8032 1.03907 42.9354C2.17321 44.0743 4.01702 44.0743 5.15116 42.9354L23.1891 24.8226C24.7434 23.2618 24.7434 20.7382 23.1891 19.1774L5.15116 1.06458C4.01702 -0.0742683 2.17321 -0.0742683 1.03907 1.06458C-0.0884399 2.19678 -0.0884399 4.02747 1.03907 5.15966L17.8098 22L1.03907 38.8403Z" fill="white"></path>
+        </button>
+        <button class="slider__next js__next_btn" data-content="" data-task-next="">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 26 42" width="26" height="42">
+            <path fill="white" d="M 1.85471 40.8548 C 0.394939 39.395 0.393648 37.0287 1.85183 35.5673 L 16.3874 21 L 1.85183 6.43269 C 0.393646 4.97132 0.394938 2.60496 1.85471 1.14519 C 3.31561 -0.315708 5.6842 -0.315707 7.14509 1.14519 L 24.8786 18.8787 C 26.0502 20.0503 26.0502 21.9497 24.8786 23.1213 L 7.14509 40.8548 C 5.68419 42.3157 3.31561 42.3157 1.85471 40.8548 Z"></path>
           </svg>
+        </button>
+        <div class="slider__wrap">
+          <ul class="slide">
+            <li class="slide__item">
+              <p class="slide__title">Скидка 14% </p>
+              <p class="slide__subtitle">на все товары из разделов </p>
+              <div class="slide__content"><a class="slide__btn" href="">Канцтовары</a><a class="slide__btn" href="">Романтика</a><a class="slide__btn" href="">Приключения</a><a class="slide__btn" href="">Современная проза</a></div>
+            </li>
+            <li class="slide__item">
+              <p class="slide__title">Скидка 14% </p>
+              <p class="slide__subtitle">на все товары из разделов </p>
+              <div class="slide__content"><a class="slide__btn" href="">Классическая проза</a><a class="slide__btn" href="">Сувениры</a><a class="slide__btn" href="">Философия</a><a class="slide__btn" href="">Общество</a></div>
+            </li>
+            <li class="slide__item">
+              <p class="slide__title">Скидка 14% </p>
+              <p class="slide__subtitle">на все товары из разделов </p>
+              <div class="slide__content"><a class="slide__btn" href="">Красота. Здоровье. Спорт</a><a class="slide__btn" href="">Фантастика. Фэнтези</a><a class="slide__btn" href="">Поэзия</a></div>
+            </li>
+            <li class="slide__item">
+              <p class="slide__title">Скидка 14% </p>
+              <p class="slide__subtitle">на все товары из разделов </p>
+              <div class="slide__content"><a class="slide__btn" href="">Подарочные издания</a><a class="slide__btn" href="">Искусство</a><a class="slide__btn" href="">Книги для детей</a></div>
+            </li>
+            <li class="slide__item">
+              <p class="slide__title">Скидка 14% </p>
+              <p class="slide__subtitle">на все товары из разделов </p>
+              <div class="slide__content"><a class="slide__btn" href="">Деловая литература</a><a class="slide__btn" href="">Фольклор</a><a class="slide__btn" href="">Психология</a></div>
+            </li>
+            <li class="slide__item">
+              <p class="slide__title">Скидка 14% </p>
+              <p class="slide__subtitle">на все товары из разделов </p>
+              <div class="slide__content"><a class="slide__btn" href="">Исторический роман</a><a class="slide__btn" href="">Образование</a></div>
+            </li>
+            <li class="slide__item">
+              <p class="slide__title">Скидка 14% </p>
+              <p class="slide__subtitle">на все товары из разделов </p>
+              <div class="slide__content"><a class="slide__btn" href="">Детектив. Боевик. Триллер</a><a class="slide__btn" href="">Биография. Мемуары</a><a class="slide__btn" href="">Увлечения</a></div>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
