@@ -56,6 +56,7 @@
   right: 0;
   max-width: 100px;
   cursor: pointer;
+  z-index: 2;
 }
 
 figcaption {
@@ -63,6 +64,87 @@ figcaption {
   text-align: center;
   color: #27AAE2;
 }
+
+
+//popup
+.pop-up {
+  width: 642px;
+  height: 919px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.9);
+  overflow: hidden;
+  }
+.pop-up__wrap {}
+
+.pop-up__content {
+  max-width: 541px;
+  margin: 0 auto;
+  font-size: 18px;
+  text-align: left;
+}
+
+.pop-up .title {
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 37px;
+  color: #27AAE2;
+  margin: 88px 0 46px
+}
+
+.pop-up .subtitle {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 25px;
+
+  color: #8DC63F;
+}
+
+.pop-up .content__list {
+  font-size: 18px;
+  line-height: 19px;
+  text-align: left;
+}
+
+.content__list_item {
+  margin: 15px 0;
+}
+
+.discount {
+  display: flex;
+  margin: 30px 0;
+}
+
+.circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 98px;
+  height: 98px;
+  border-radius: 50%;
+  background: $color_green;
+  color: $color_white;
+  margin-right: 15px;
+}
+
+.percent {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+  font-size: 36px;
+  text-align: center;
+}
+
+.score {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+
+  //popup end
+
 .game__main {
   flex-grow: 1;
   width: 100%;
