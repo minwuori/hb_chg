@@ -6,82 +6,96 @@ section.calendar.js__calendar
 		
 		.screen__content
 			.date
-				.date__item.date__item_active.js__date_item
-					.number 13 
-					.month мая
-				.date__item.date__item_disable.js__date_item
-					.number 14 
-					.month мая
-				.date__item.js__date_item
-					.number 15 
-					.month мая
-				.date__item.js__date_item
-					.number 16 
-					.month мая
-				.date__item.js__date_item
-					.number 17 
-					.month мая
-				.date__item.js__date_item
-					.number 18 
-					.month мая
-				.date__item.js__date_item
-					.number 19 
-					.month мая
+				.date__item.js__date_item(data-state="disable" data-date="13")
+					img.date__img(src="/ii/img/project_name/doll.svg" data-doll="")
+					.date__content
+						.number 13 
+						.month мая
+				.date__item.js__date_item(data-state="disable" data-date="14")
+					img.date__img(src="/ii/img/project_name/doll.svg" data-doll="")
+					.date__content
+						.number 14 
+						.month мая
+				.date__item.js__date_item(data-state="active" data-date="15")
+					img.date__img(src="/ii/img/project_name/doll.svg" data-doll="")
+					.date__content
+						.number 15 
+						.month мая
+				.date__item.js__date_item(data-state="" data-date="16")
+					img.date__img(src="/ii/img/project_name/doll.svg" data-doll="")
+					.date__content
+						.number 16 
+						.month мая
+				.date__item.js__date_item(data-state="" data-date="17")
+					img.date__img(src="/ii/img/project_name/doll.svg" data-doll="")
+					.date__content
+						.number 17 
+						.month мая
+				.date__item.js__date_item(data-state="" data-date="18")
+					img.date__img(src="/ii/img/project_name/doll.svg" data-doll="")
+					.date__content
+						.number 18 
+						.month мая
+				.date__item.js__date_item(data-state="" data-date="19")
+					img.date__img(src="/ii/img/project_name/doll.svg" data-doll="")
+					.date__content
+						.number 19 
+						.month мая
 
 			.slider
 				.slider__wrap
 					.slide
-						.slide__item
+						.slide__item(data-slide="13")
 							p.slide__title Скидка 14% 
 							p.slide__subtitle на все товары из разделов 
 							.slide__content
-								a.slide__btn(href="") Канцтовары
-								a.slide__btn(href="") Романтика
-								a.slide__btn(href="") Приключения
-								a.slide__btn(href="") Современная проза
-						.slide__item
+								a.btn(href="") Канцтовары
+								a.btn(href="") Романтика
+								a.btn(href="") Приключения
+								a.btn(href="") Современная проза
+						.slide__item(data-slide="14")
 							p.slide__title Скидка 14% 
 							p.slide__subtitle на все товары из разделов 
 							.slide__content
-								a.slide__btn(href="") Классическая проза
-								a.slide__btn(href="") Сувениры
-								a.slide__btn(href="") Философия
-								a.slide__btn(href="") Общество
-						.slide__item
+								a.btn(href="") Классическая проза
+								a.btn(href="") Сувениры
+								a.btn(href="") Философия
+								a.btn(href="") Общество
+						.slide__item(data-slide="15")
 							p.slide__title Скидка 14% 
 							p.slide__subtitle на все товары из разделов 
 							.slide__content
-								a.slide__btn(href="") Красота. Здоровье. Спорт
-								a.slide__btn(href="") Фантастика. Фэнтези
-								a.slide__btn(href="") Поэзия
-						.slide__item
+								a.btn(href="") Красота. Здоровье. Спорт
+								a.btn(href="") Фантастика. Фэнтези
+								a.btn(href="") Поэзия
+						.slide__item(data-slide="16")
 							p.slide__title Скидка 14% 
 							p.slide__subtitle на все товары из разделов 
 							.slide__content
-								a.slide__btn(href="") Подарочные издания
-								a.slide__btn(href="") Искусство
-								a.slide__btn(href="") Книги для детей
+								a.btn(href="") Подарочные издания
+								a.btn(href="") Искусство
+								a.btn(href="") Книги для детей
 
-						.slide__item
+						.slide__item(data-slide="17")
 							p.slide__title Скидка 14% 
 							p.slide__subtitle на все товары из разделов 
 							.slide__content
-								a.slide__btn(href="") Деловая литература
-								a.slide__btn(href="") Фольклор
-								a.slide__btn(href="") Психология
-						.slide__item
+								a.btn(href="") Деловая литература
+								a.btn(href="") Фольклор
+								a.btn(href="") Психология
+						.slide__item(data-slide="18")
 							p.slide__title Скидка 14% 
 							p.slide__subtitle на все товары из разделов 
 							.slide__content
-								a.slide__btn(href="") Исторический роман
-								a.slide__btn(href="") Образование
-						.slide__item
+								a.btn(href="") Исторический роман
+								a.btn(href="") Образование
+						.slide__item(data-slide="19")
 							p.slide__title Скидка 14% 
 							p.slide__subtitle на все товары из разделов 
 							.slide__content
-								a.slide__btn(href="") Детектив. Боевик. Триллер
-								a.slide__btn(href="") Биография. Мемуары
-								a.slide__btn(href="") Увлечения
+								a.btn(href="") Детектив. Боевик. Триллер
+								a.btn(href="") Биография. Мемуары
+								a.btn(href="") Увлечения
 
 				button.slider__prev.slider__prev_disable.js__previous_btn(class="" data-content="" data-task-prev="")
 					svg(xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 26 42" width="26" height="42")

@@ -1,4 +1,4 @@
-// calendar
+// screen calendar
 .calendar{
 	background: $color_green;
 	color: $color_white;
@@ -6,16 +6,16 @@
 }
 
 .calendar .title {
-	font-family: Roboto, sans-serif;
+	font-family: 'Roboto', sans-serif;
 	font-size: 72px;
-	font-weight: bold;
+	font-weight: 900;
 	text-align: center;
 }
 .calendar .subtitle {
-	font-family: Roboto, sans-serif;
+	font-family: 'Roboto', sans-serif;
 	font-size: 36px;
-	font-weight: bold;
-	margin: 30px auto 100px;
+	line-height: normal;
+	margin: 0 auto 80px;
 	text-align: center;
 }
 
@@ -36,12 +36,19 @@
 					justify-content: space-between; }
 
 .date__item {
-	-webkit-border-radius: 50%;
-					border-radius: 50%;
 	border: none;
-	background: $color_lime;
 	height: 98px;
 	width: 98px;
+	position: relative;
+	}
+
+
+.date__content {
+	height: 98px;
+	width: 98px;
+	-webkit-border-radius: 50%;
+					border-radius: 50%;
+	background: $color_lime;
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -59,22 +66,49 @@
 	-webkit-justify-content: center;
 			-ms-flex-pack: center;
 					justify-content: center; 
-	cursor: pointer;}
+	cursor: pointer;
+	position: relative;
+	z-index: 1;
+}
 
-.date__item:hover {
+.date__content:hover {
 	box-shadow: 0px 6px 50px 0px rgba(0, 0, 0, 0.1);
 	transition: 0.2s ease-in-out;
 }
-.date__item_active {
+
+.date__img {
+	position: absolute;
+  	top: -57px;
+  	left: 0;
+  	width: 57px;
+  	transform: rotate(340deg);
+  	display: none;
+}
+[data-state="active"] .date__content {
 	background: $color_white;
 	color: $color_lime;
 }
 
-.date__item_disaible {
-	color: rgba(255, 255, 255, 0.5);
+[data-state="active"] .date__img, .date__img[data-doll="visible"] {
+	display: block;
+	
 }
+.date__img[data-doll="unvisible"] {
+	display: none;
+	
+}
+[data-state="disable"] .month, [data-state="disable"] .number{
+	opacity: 0.5;
+}
+
+[data-state="disable"] .date__content:hover {
+	box-shadow: none;
+	cursor: default;
+}
+
 .number {
-	font-family: Roboto, sans-serif;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 700;
 	font-size: 36px; }
 
 .month {
@@ -82,7 +116,7 @@
 	font-weight: bold; }
 
 
-// слайдер
+// slider
 .slider {
 	position: relative;
 	margin-top: 32px;
@@ -142,7 +176,7 @@
 	margin: 0 auto;
 }
 
-.slide__btn {
+.btn {
 	width: 335px;
 	height: 60px;
 	background: $color_orange;
@@ -156,8 +190,11 @@
 	color: $color_white;
 }
 
-.slide__btn:hover {
+.btn:hover {
 	box-shadow: 0 5px 5px rgba(234, 122, 10, 0.5);
 	transition: 0.2s ease-in-out
 }
-// end calendar
+//end slider
+
+
+// end screen calendar

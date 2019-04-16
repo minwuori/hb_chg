@@ -1,4 +1,6 @@
 //основные
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700,900&amp;subset=cyrillic");
+
 * {
 	margin: 0;
 	padding: 0;
@@ -46,7 +48,6 @@ $color_darkBlue: #00307A;
 $color_gray: rgba(38, 96, 171, 0.3);
 
 .hb-chg {
-	@import '_helpers';
 	@import '_header';
 	@import '_screen';
 	@import '_greeting';
@@ -56,6 +57,7 @@ $color_gray: rgba(38, 96, 171, 0.3);
 	@import '_button';
 	@import '_rules';
 	@import '_footer';
+	@import '_helpers';
 }
 	
 	
