@@ -31,7 +31,7 @@
 .region.active:hover{
   fill: #D61B23; }
 
-.region[data-region="1"]:hover {
+.region[data-region="1"]:hover path{
   fill: $color_orange; }
 .region[data-region="2"]:hover{
   fill: $color_pink; }

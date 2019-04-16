@@ -288,7 +288,7 @@ body {
     fill: #EB1C24; }
   .hb-chg .region.active:hover {
     fill: #D61B23; }
-  .hb-chg .region[data-region="1"]:hover {
+  .hb-chg .region[data-region="1"]:hover path {
     fill: #EA7A0A; }
   .hb-chg .region[data-region="2"]:hover {
     fill: #E23834; }
@@ -717,33 +717,6 @@ body {
         -ms-flex-align: center;
             align-items: center;
     margin: 0 auto; }
-  .hb-chg .btn {
-    width: 335px;
-    height: 60px;
-    background: #EA7A0A;
-    -webkit-border-radius: 30px;
-    border-radius: 30px;
-    margin-bottom: 20px;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    font-size: 24px;
-    color: #FFFFFF; }
-  .hb-chg .btn:hover {
-    -webkit-box-shadow: 0 5px 5px rgba(234, 122, 10, 0.5);
-            box-shadow: 0 5px 5px rgba(234, 122, 10, 0.5);
-    -webkit-transition: 0.2s ease-in-out;
-    -o-transition: 0.2s ease-in-out;
-    transition: 0.2s ease-in-out; }
   .hb-chg .btn {
     width: 335px;
     height: 60px;
