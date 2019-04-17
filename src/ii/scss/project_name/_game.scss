@@ -40,14 +40,12 @@
 }
 
 .game__title {
-  max-width: 884px; 
-  font-size: inherit;
-  margin: 0;
-  font-weight: bold;
-  margin-bottom: 1rem;
+  max-width: 884px;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 25px;
   text-align: center;
-  font-size: 25px;
-  
+  font-weight: normal;
 }
 
 .avatar {
@@ -62,26 +60,31 @@
 figcaption {
   font-weight: bold;
   text-align: center;
-  color: #27AAE2;
+  color: $color_blue;
 }
 
 
 //popup
 .pop-up {
   width: 642px;
-  height: 919px;
+  height: 100vh;
   position: absolute;
   bottom: 0;
   right: 0;
   z-index: 1;
   background: rgba(255, 255, 255, 0.9);
-  overflow: hidden;
+  overflow-x: hidden;
+  visibility: hidden;
+  opacity: 0;
+  transition :opacity .5s;
   }
-.pop-up__wrap {}
+.pop-up__wrap {
+  position: relative;
+}
 
 .pop-up__content {
-  max-width: 541px;
-  margin: 0 auto;
+  max-width: 590px;
+  padding-left: 50px;
   font-size: 18px;
   text-align: left;
 }
@@ -90,7 +93,7 @@ figcaption {
   font-weight: bold;
   font-size: 36px;
   line-height: 37px;
-  color: #27AAE2;
+  color: $color_blue;
   margin: 88px 0 46px
 }
 
@@ -142,6 +145,23 @@ figcaption {
   font-size: 16px;
 }
 
+.wish {
+  color: $color_green;
+  font-weight: bold;
+}
+
+.close {
+  position: absolute;
+  top: -24px;
+  right: 0;
+  cursor: pointer;
+}
+
+[data-reference="visible"] {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity .5s;
+}
 
   //popup end
 

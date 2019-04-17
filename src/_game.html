@@ -2,24 +2,26 @@
 <section class="game">
   <div class="container">
     <div class="game__header">
-      <h2 class="game__title" data-task-date="">
-        <p data-type="pairs">Сегодня вопрос  о республике Коми, беги-торопись, участвуй, ну у тебя 1 минута, чтобы угадать все пары</p>
+      <h2 class="game__title"><span class="accent">
+           С 13 мая </span>на этой странице будут появляться вопросы и задания. Получайте баллы за правильные ответы и обменивайте их на <span class="accent">
+           скидку до 15%.</span>
+        <!--p(data-type="pairs") Сегодня вопрос  о республике Коми, беги-торопись, участвуй, ну у тебя 1 минута, чтобы угадать все пары-->
         <!--p(data-type="question") Сегодня вопрос  о республике Коми, беги-торопись, участвуй, ну Ответь правильно на один вопрос-->
       </h2>
-      <button class="btn js__btn_participate" type="button" value="Начать игру">Начать игру</button>
+      <button class="btn btn-participate js__btn_participate" type="button" value="Начать игру">Начать игру</button>
     </div>
     <div class="game__description js__question_title"></div>
-    <figure class="avatar"><img src="/ii/img/project_name/avatar.svg" alt="аватар медведя"/>
+    <figure class="avatar js__avatar"><img src="/ii/img/project_name/avatar.svg" alt="аватар медведя"/>
       <figcaption>Как играть? </figcaption>
     </figure>
-    <div class="pop-up">
+    <div class="pop-up" data-reference="">
       <div class="pop-up__wrap">
         <div class="pop-up__content">
           <div class="title">Как играть?</div>
           <ol class="content__list">
-            <li class="content__list_item">С 13 по 19 мая на странице игры каждый день будут появляться задания. 1 день – 1 задание. Новое задание появляется в 00:00 по московскому времени, его можно выполнить до 23:59.</li>
-            <li class="content__list_item">Участие могут принять только те пользователи, которые авторизовались на сайте chitai-gorod.ru. Если вы ещё не зарегистрированы, начните игру и пройдите регистрацию.</li>
-            <li class="content__list_item">За каждый правильный ответ вы получаете 1 балл. Накопленные баллы превращаются в скидку.</li>
+            <li class="content__list_item"> <span class="accent">С 13 по 19 мая </span>на странице игры каждый день будут появляться задания. 1 день – 1 задание. Новое задание появляется в 00:00 по московскому времени, его можно выполнить до 23:59.</li>
+            <li class="content__list_item">Участие могут принять только те пользователи, которые авторизовались на сайте <a class="link" href="/">chitai-gorod.ru. </a>Если вы ещё не зарегистрированы, начните игру и пройдите <a class="link" href="/">регистрацию.</a></li>
+            <li class="content__list_item">За каждый правильный ответ вы получаете <span class="accent">1 балл. </span>Накопленные баллы превращаются в скидку.</li>
           </ol>
           <div class="subtitle">Больше баллов - больше скидка</div>
           <div class="discount">
@@ -36,13 +38,13 @@
               <div class="score">6-7 балла</div>
             </div>
           </div>
-          <p>19 мая, в последний день игры, вы получите купон на скидку. Он появится на странице игры, дополнительно мы отправим его в письме на вашу электронную почту.</p>
-          <p>Приятной игры!</p><a class="link" href="">Полные правила акции</a>
+          <p><span class="accent">19 мая</span>, в последний день игры, вы получите купон на скидку. Он появится на странице игры, дополнительно мы отправим его в письме на вашу электронную почту.</p>
+          <p class="wish">Приятной игры!</p><a class="link" href="">Полные правила акции</a>
         </div>
+        <svg class="close js__close" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 48 48" width="48" height="48">
+          <path fill="#e0e0e0" d="M 38.0005 12.82 L 35.1805 10 L 24.0005 21.18 L 12.8205 10 L 10.0005 12.82 L 21.1805 24 L 10.0005 35.18 L 12.8205 38 L 24.0005 26.82 L 35.1805 38 L 38.0005 35.18 L 26.8205 24 L 38.0005 12.82 Z"></path>
+        </svg>
       </div>
-      <svg class="close" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 48 48" width="48" height="48">
-        <path fill="#e0e0e0" d="M 38.0005 12.82 L 35.1805 10 L 24.0005 21.18 L 12.8205 10 L 10.0005 12.82 L 21.1805 24 L 10.0005 35.18 L 12.8205 38 L 24.0005 26.82 L 35.1805 38 L 38.0005 35.18 L 26.8205 24 L 38.0005 12.82 Z"></path>
-      </svg>
     </div>
   </div>
 </section>

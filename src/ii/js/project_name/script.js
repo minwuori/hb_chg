@@ -1,21 +1,21 @@
 document.addEventListener('DOMContentLoaded', function(){ // Аналог $(document).ready(function(){
 	// открытие/закрытие правил акции
 // var toggleRules = (function() {
-//	 var list = document.querySelector('.official-list'),
-//	 full = list.querySelector('.full');
+// 	 var list = document.querySelector('.rules-list'),
+// 	 full = list.querySelector('.full');
 	
-//	 return function() {
-//	 if (list.classList.contains('open')) {
-//		 full.slideUp(400, function() {
-//		 list.classList.toggle('open');
-//		 });
-//	 } else {
-//		 full.slideDown(400, function() {
-//		 list.classList.toggle('open');
-//		 });
-//	 }
+// 	 return function() {
+// 	 if (list.classList.contains('open')) {
+// 		 full.slideUp(400, function() {
+// 		 list.classList.toggle('open');
+// 		 });
+// 	 } else {
+// 		 full.slideDown(400, function() {
+// 		 list.classList.toggle('open');
+// 		 });
+// 	 }
 	
-//	 }
+// 	 }
 // })();
 
 
@@ -107,7 +107,7 @@ var animateScreen = (function(){
 
 
 //слайдер
-(function movingCarousel(slide) {
+var slider = (function movingCarousel(slide) {
 	
 	var slider = document.querySelector('.slider'),//слайдер
 	sliderWrapper = slider.querySelector('.slide'),//контейнер слайдов
@@ -121,7 +121,7 @@ var animateScreen = (function(){
 	step = itemWidth / wrapperWidth * 100; // величина шага (для трансформации)
 	var dateItems = document.querySelectorAll('.date__item')
 	var dolls = document.querySelectorAll('.date__img')
-	var viewportStart = parseFloat(sliderWrapper.getBoundingClientRect().left);
+	var viewportStart = parseInt(sliderWrapper.getBoundingClientRect().left);
 	var viewportFinish = viewportStart + wrapperWidth;
 	var visible = [];
 
@@ -152,13 +152,14 @@ var animateScreen = (function(){
     	}
 
     	if (now.getDate() > 13) {
-			prev.classList.remove('slider__prev_disable');	
+			prev.dataset.sliderPrev = "";	
     	}
     	if (now.getDate() == 19) {
-			next.classList.add('slider__prev_disable');	
+			next.dataset.sliderNext = "disable";	
     	}		
 				
 	}
+
 
 	//показываем активную дату на календаре
 	for (var i = 0; i < dateItems.length; i++) {
@@ -175,6 +176,20 @@ var animateScreen = (function(){
 		}
 	}
 
+	for (var i = 0; i < dolls.length; i++) {
+		
+		if(now.getDate() == +dolls[i].dataset.doll){
+			
+			dolls[i].dataset.dollState = "visible"
+		}
+
+		//если есть совпадение дата-атрибутов, то показываем матрешку
+		if (now.getDate() > +dolls[i].dataset.doll) {
+			
+			dolls[i].dataset.dollState = "unvisible"
+		}
+	}
+
 	//при нажатии на кнопку назад
 	prev.addEventListener("click", function(evt) {
 		evt.preventDefault();
@@ -183,13 +198,13 @@ var animateScreen = (function(){
 		return;
 		}
 		//если кнопка вперед задизейблена, то активировать ее
-		if (next.classList.contains('slider__next_disable')) {
-		next.classList.remove('slider__next_disable');
+		if (next.dataset.sliderNext == "disable") {
+		next.dataset.sliderNext = "";
 		}
 
 		//если достигли крайнего левого элемента и кнопка назад активна, то задизейблить ее
-		if (!prev.classList.contains('slider__prev_disable') && positionLeftItem - 1 <= position.getMin) {
-		prev.classList.add('slider__prev_disable');
+		if (prev.dataset.sliderPrev == "" && positionLeftItem - 1 <= position.getMin) {
+		prev.dataset.sliderPrev = "disable";
 		}
 		positionLeftItem--;
 		transform += step;
@@ -198,13 +213,15 @@ var animateScreen = (function(){
 		
 		//вносим все эл-ты до видимого слайда в массив
 		for (var i = 0; i < slideItems.length; i++) {			
-			var itemStart = parseFloat(slideItems[i].getBoundingClientRect().left);
+			var itemStart = parseInt(slideItems[i].getBoundingClientRect().left);
 
 			if (itemStart < viewportFinish) {
 				visible.push(slideItems[i - 1]);
 			}
+
 			
 		}
+		
 
 		//скрываем/показываем матрешку
 		isVisibleDoll()	
@@ -220,13 +237,13 @@ var animateScreen = (function(){
 		}
 
 		//если кнопка назад задизейблена, то активировать ее
-		if (prev.classList.contains('slider__prev_disable')) {
-		prev.classList.remove('slider__prev_disable');
+		if (prev.dataset.sliderPrev == "disable") {
+		prev.dataset.sliderPrev = "";
 		}
 
 		//если достигли последнего элемента и кнопка вперед активна, то задизейблить ее
-		if (!next.classList.contains('slider__next_disable') && (positionLeftItem + wrapperWidth / itemWidth) >= position.getMax) {
-		next.classList.add('slider__next_disable');
+		if (next.dataset.sliderNext == "" && (positionLeftItem + wrapperWidth / itemWidth) >= position.getMax) {
+		next.dataset.sliderNext = "disable";
 		}
 		positionLeftItem++;
 		transform -= step;
@@ -235,7 +252,7 @@ var animateScreen = (function(){
 
 		//вносим все эл-ты до видимого слайда в массив
 		for (var i = 0; i < slideItems.length; i++) {			
-			var itemStart = parseFloat(slideItems[i].getBoundingClientRect().left);
+			var itemStart = parseInt(slideItems[i].getBoundingClientRect().left);
 
 			if (itemStart < viewportFinish) {
 				visible.push(slideItems[i + 1]);
@@ -243,6 +260,7 @@ var animateScreen = (function(){
 			
 		}
 
+		
 		//скрываем/показываем матрешку
 		isVisibleDoll();	
 		
@@ -255,98 +273,31 @@ var animateScreen = (function(){
 
 		for (var i = 0; i < dateItems.length; i++) {
 			//если матрешка видна, то скрываем ее
-			if(dateItems[i].dataset.state == "active" || dolls[i].dataset.doll == "visible"){
+			if(dateItems[i].dataset.state == "active" || dolls[i].dataset.dollState == "visible"){
 				
-				dolls[i].dataset.doll = "unvisible"
+				dolls[i].dataset.dollState = "unvisible"
 			}
 
 			//если есть совпадение дата-атрибутов, то показываем матрешку
-			if (visibleSlide === dateItems[i].dataset.date) {
+			if (visibleSlide === dolls[i].dataset.doll) {
 				
-				dolls[i].dataset.doll = "visible"
+				dolls[i].dataset.dollState = "visible"
 			}
 		}
 	}
 
 })();
 
-
-// //клик на карту
-// 	$('.region').click(function() {
-
-// 		var region = $(this).data('region');
-// 		console.log(region);
-//	 //выборка по соответствию data-region в map с data-date в slider
-// 		$('.lucky-friday__slider:not([data-date~=' + region + '])').removeClass('active');
-// 		$('.lucky-friday__slider[data-date~=' + region + ']').addClass('active');
-//	 	//выборка по соответствию data-region в map с data-date в slider
-// 		$('.date:not([data-date~=' + region + '])').removeClass('active');
-// 		$('.date[data-date~=' + region + ']').addClass('active');
-
-// 		$('.marker:not([data-marker~=' + region + '])').removeClass('active');
-// 		$('.marker[data-marker~=' + region + ']').addClass('active');
-
-// 		$('.marker-full_30').css('display', 'none');
-// 		$('.marker-full_14').css('display', 'none');
-// 		$('.region').removeClass('full');
-// 		$('.marker').css('display', 'block');
-
-// 		$('.region').removeClass('active');
-// 		$('.marker[data-marker~=' + region + ']').css('fill-opacity', '1');
-// 		$(this).addClass('active');
-// 	});
-
-// 	//клик на календарь
-// 	$('.date').click(function(){
-// 		$('.lucky-friday__slider').removeClass('active');
-// 		$(this).addClass('active');
-// 		var date = $(this).data('date');
-
-// 		if (date == 14){
-// 			$('.region').addClass('full');
-// 			$('.marker').css('display', 'none');
-// 			$('.marker-full_30').css('display', 'none');
-// 			$('.marker-full_14').css('display', 'block');
-// 			$('.date').removeClass('active');
-// 			$(this).addClass('active');
-// 		} else if (date == 30){
-// 			$('.region').addClass('full');
-// 			$('.marker').css('display', 'none');
-// 			$('.marker-full_14').css('display', 'none');
-// 			$('.marker-full_30').css('display', 'block');
-// 			$('.date').removeClass('active');
-// 			$(this).addClass('active');
-// 		} else {
-// 			$('.region').removeClass('full');
-// 			$('.region:not([data-region~=' + date + '])').removeClass('active');
-// 			$('.region[data-region~=' + date + ']').addClass('active');
-
-// 			$('.marker').css('display', 'block');
-// 			$('.marker:not([data-marker~=' + date + '])').removeClass('active');
-// 			$('.marker[data-marker~=' + date + ']').addClass('active');
-// 			$('.marker-full_30').css('display', 'none');
-// 			$('.marker-full_14').css('display', 'none');
-
-// 			$('.marker').css('display', 'block');
-// 			$('.date').removeClass('active');
-// 			$(this).addClass('active');
-// 		}
-
-// 	});
-
-// 	//клик на маркер
-// 	$('.marker').click(function(){
-// 		console.log($(this).data('marker'));
-// 		var marker = $(this).data('marker');
-//	 	//выборка по соответствию data-marker в map с data-date в slider
-// 		$('.date:not([data-date~=' + marker + '])').removeClass('active');
-// 		$('.date[data-date~=' + marker + ']').addClass('active');
-
-// 		$('.region:not([data-region~=' + marker + '])').removeClass('active');
-// 		$('.region[data-region~=' + marker + ']').addClass('active');
-
-// 		$('.marker').removeClass('active');
-// 		$(this).addClass('active');
-// 	});
+// клик на аватарку медведя
+var avatar = document.querySelector('.js__avatar');
+var close = document.querySelector('.js__close');
+avatar.addEventListener('click', function(){
+	var popup = document.querySelector('.pop-up');
+	popup.dataset.reference == "" ? popup.dataset.reference = "visible" : popup.dataset.reference = "" 
+})
+close.addEventListener('click', function(){
+	var popup = document.querySelector('.pop-up');
+	popup.dataset.reference == "" ? popup.dataset.reference = "visible" : popup.dataset.reference = "" 
+})
 
 });

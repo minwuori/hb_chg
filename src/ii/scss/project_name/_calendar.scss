@@ -78,23 +78,29 @@
 
 .date__img {
 	position: absolute;
-  	top: -57px;
-  	left: 0;
-  	width: 57px;
-  	transform: rotate(340deg);
-  	display: none;
+	top: -57px;
+	left: 0;
+	width: 57px;
+	transform: rotate(340deg);
+	visibility: hidden;
+	opacity: 0;
+	transition :opacity .5s;
 }
 [data-state="active"] .date__content {
 	background: $color_white;
 	color: $color_lime;
 }
 
-[data-state="active"] .date__img, .date__img[data-doll="visible"] {
-	display: block;
+[data-state="active"] .date__img, .date__img[data-doll-state="visible"] {
+	visibility: visible;
+	opacity: 1;
+	transition: opacity .5s;
 	
 }
-.date__img[data-doll="unvisible"] {
-	display: none;
+.date__img[data-doll-state="unvisible"] {
+	visibility: hidden;
+	opacity: 0;
+	transition :opacity .5s;
 	
 }
 [data-state="disable"] .month, [data-state="disable"] .number{
@@ -141,7 +147,7 @@
 	cursor: pointer;
 }
 
-.slider__prev_disable svg path, .slider__next_disable svg path {
+[data-slider-prev="disable"] svg path, [data-slider-next="disable"] svg path {
 	fill: $color_gray;
 }
 .slider__wrap {

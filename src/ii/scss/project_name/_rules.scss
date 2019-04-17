@@ -1,18 +1,21 @@
 
 /* блок правил */
 
-.official {
-  padding: 6.25rem 0;
-  z-index: 2;
-  background-color: #0060AE;
-  background-color: var(--color-ny-darkblue, #0060AE);
+.rules {
+  padding: 100px 0;
 }
 
-.official h2 {
-  font-size: 1.35em;
+.rules h2 {
+  font-family: Roboto;
+  font-weight: 900;
+  font-size: 36px;
+  line-height: 40px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: $color_blue;
 }
 
-.official-list {
+.rules-list {
   margin-top: 3.8125rem;
   list-style: none;
   font-size: 1.25rem;
@@ -20,37 +23,37 @@
 
 
 
-.official-list .toggle-list:before {
+.rules-list .toggle-list:before {
   content: 'Показать ';
   display: inline;
 }
 
-.official-list.open .toggle-list:before {
+.rules-list.open .toggle-list:before {
   content: 'Скрыть ';
 }
 
-.official-list .full {
+.rules-list .full {
   display: none;
 }
 
-.official-list li {
+.rules-list li {
   margin-bottom: 1rem;
   counter-increment: main;
 }
 
-.official-list li:before {
+.rules-list li:before {
   content: counter(main)'. ';
 }
 
-.official-list ol {
+.rules-list ol {
   counter-reset: list;
 }
 
-.official-list ol li {
+.rules-list ol li {
   list-style: none;
   counter-increment: list;
 }
 
-.official-list ol li:before {
+.rules-list ol li:before {
   content: counter(main)'.'counter(list)'. ';
 }

@@ -1,4 +1,4 @@
-// screen calendar
+
 section.calendar.js__calendar
 	.container
 		.title 7 ЧУДЕСных лет 
@@ -6,38 +6,38 @@ section.calendar.js__calendar
 		
 		.screen__content
 			.date
-				.date__item.js__date_item(data-state="disable" data-date="13")
-					img.date__img(src="/ii/img/project_name/doll.svg" data-doll="")
+				.date__item.js__date_item(data-state="" data-date="13")
+					img.date__img(src="/ii/img/project_name/doll.svg" data-doll="13" data-doll-state="visible")
 					.date__content
 						.number 13 
 						.month мая
-				.date__item.js__date_item(data-state="disable" data-date="14")
-					img.date__img(src="/ii/img/project_name/doll.svg" data-doll="")
+				.date__item.js__date_item(data-state="" data-date="14")
+					img.date__img(src="/ii/img/project_name/doll.svg" data-doll="14" data-doll-state="")
 					.date__content
 						.number 14 
 						.month мая
-				.date__item.js__date_item(data-state="active" data-date="15")
-					img.date__img(src="/ii/img/project_name/doll.svg" data-doll="")
+				.date__item.js__date_item(data-state="" data-date="15")
+					img.date__img(src="/ii/img/project_name/doll.svg" data-doll="15" data-doll-state="")
 					.date__content
 						.number 15 
 						.month мая
 				.date__item.js__date_item(data-state="" data-date="16")
-					img.date__img(src="/ii/img/project_name/doll.svg" data-doll="")
+					img.date__img(src="/ii/img/project_name/doll.svg" data-doll="16" data-doll-state="")
 					.date__content
 						.number 16 
 						.month мая
 				.date__item.js__date_item(data-state="" data-date="17")
-					img.date__img(src="/ii/img/project_name/doll.svg" data-doll="")
+					img.date__img(src="/ii/img/project_name/doll.svg" data-doll="17" data-doll-state="")
 					.date__content
 						.number 17 
 						.month мая
 				.date__item.js__date_item(data-state="" data-date="18")
-					img.date__img(src="/ii/img/project_name/doll.svg" data-doll="")
+					img.date__img(src="/ii/img/project_name/doll.svg" data-doll="18" data-doll-state="")
 					.date__content
 						.number 18 
 						.month мая
 				.date__item.js__date_item(data-state="" data-date="19")
-					img.date__img(src="/ii/img/project_name/doll.svg" data-doll="")
+					img.date__img(src="/ii/img/project_name/doll.svg" data-doll="19" data-doll-state="")
 					.date__content
 						.number 19 
 						.month мая
@@ -97,10 +97,10 @@ section.calendar.js__calendar
 								a.btn(href="") Биография. Мемуары
 								a.btn(href="") Увлечения
 
-				button.slider__prev.slider__prev_disable.js__previous_btn(class="" data-content="" data-task-prev="")
+				button.slider__prev.js__previous_btn(data-slider-prev="disable")
 					svg(xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 26 42" width="26" height="42")
 						path(fill="white" d="M 24.1453 40.8548 C 25.6051 39.395 25.6064 37.0287 24.1482 35.5673 L 9.6126 21 L 24.1482 6.43269 C 25.6064 4.97132 25.6051 2.60496 24.1453 1.14519 C 22.6844 -0.315708 20.3158 -0.315707 18.8549 1.14519 L 1.12141 18.8787 C -0.0501595 20.0503 -0.0501575 21.9497 1.12142 23.1213 L 18.8549 40.8548 C 20.3158 42.3157 22.6844 42.3157 24.1453 40.8548 Z")
 				
-				button.slider__next.js__next_btn(class="" data-content="" data-task-next="")
+				button.slider__next.js__next_btn(data-slider-next="")
 					svg(xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 26 42" width="26" height="42")
 						path(fill="white" d="M 1.85471 40.8548 C 0.394939 39.395 0.393648 37.0287 1.85183 35.5673 L 16.3874 21 L 1.85183 6.43269 C 0.393646 4.97132 0.394938 2.60496 1.85471 1.14519 C 3.31561 -0.315708 5.6842 -0.315707 7.14509 1.14519 L 24.8786 18.8787 C 26.0502 20.0503 26.0502 21.9497 24.8786 23.1213 L 7.14509 40.8548 C 5.68419 42.3157 3.31561 42.3157 1.85471 40.8548 Z")

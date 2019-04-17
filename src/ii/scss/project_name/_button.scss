@@ -19,4 +19,17 @@
 	transition: 0.2s ease-in-out
 }
 
+.btn-participate {
+	display: none;
+}
+
+[data-view="after"] .btn-participate {
+	display: none;
+}
+
+[data-view="pairs"] .btn-participate,
+[data-view="question"] .btn-participate,
+[data-view="image"] .btn-participate {
+	display: flex;
+}
 // end button
