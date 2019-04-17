@@ -28,8 +28,9 @@ body {
 .container__inner{
 	display: flex;
 	align-items: center;
-	justify-content: center;
 	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
 }
 
 $color_white: #FFFFFF;
@@ -49,6 +50,7 @@ $color_gray: rgba(38, 96, 171, 0.3);
 
 .hb-chg {
 	@import '_header';
+	@import '_popup';
 	@import '_screen';
 	@import '_greeting';
 	@import '_map';

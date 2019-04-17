@@ -12,7 +12,7 @@
       -ms-flex-pack: center;
           justify-content: center;
   margin-bottom: 100px; }
-  
+ 
 .map svg {
   margin: 0 auto;
   overflow: visible;
@@ -64,6 +64,7 @@
   width: 190px;
   text-align: left;
   padding: 15px;
+  color: $color_white;
   //display: none;
 }
 .hint::after {
