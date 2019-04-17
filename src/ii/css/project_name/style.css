@@ -359,6 +359,7 @@ body {
     color: #FFFFFF;
     opacity: 0.5; }
   .hb-chg .game {
+    position: relative;
     height: auto;
     -webkit-transition: opacity 300ms;
     -o-transition: opacity 300ms;
@@ -366,6 +367,19 @@ body {
     font-size: inherit;
     color: rgba(0, 0, 0, 0.8);
     padding-bottom: 100px; }
+  .hb-chg .mask {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+    display: none; }
+  .hb-chg [data-mask="visible"] {
+    display: block; }
   .hb-chg .game .container {
     position: relative; }
   .hb-chg .game__header {
@@ -399,7 +413,7 @@ body {
     right: 0;
     max-width: 100px;
     cursor: pointer;
-    z-index: 2; }
+    z-index: 4; }
   .hb-chg figcaption {
     font-weight: bold;
     text-align: center;
@@ -407,10 +421,11 @@ body {
   .hb-chg .pop-up {
     width: 642px;
     height: 100vh;
-    position: absolute;
+    position: fixed;
+    top: 0;
     bottom: 0;
     right: 0;
-    z-index: 1;
+    z-index: 3;
     background: rgba(255, 255, 255, 0.9);
     overflow-x: hidden;
     visibility: hidden;

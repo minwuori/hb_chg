@@ -291,13 +291,53 @@ var slider = (function movingCarousel(slide) {
 // клик на аватарку медведя
 var avatar = document.querySelector('.js__avatar');
 var close = document.querySelector('.js__close');
+var mask = document.querySelector('.mask');
 avatar.addEventListener('click', function(){
 	var popup = document.querySelector('.pop-up');
-	popup.dataset.reference == "" ? popup.dataset.reference = "visible" : popup.dataset.reference = "" 
+	popup.dataset.reference == "" ? popup.dataset.reference = "visible" : popup.dataset.reference = ""; 
+  mask.dataset.mask == "" ? mask.dataset.mask = "visible" : mask.dataset.mask = "";
+  avatar.dataset.avatarFixed == "1";
 })
 close.addEventListener('click', function(){
 	var popup = document.querySelector('.pop-up');
-	popup.dataset.reference == "" ? popup.dataset.reference = "visible" : popup.dataset.reference = "" 
+	popup.dataset.reference == "visible" ? popup.dataset.reference = "" : popup.dataset.reference = "";
+  mask.dataset.mask == "visible" ? mask.dataset.mask = "" : mask.dataset.mask = "";
+
 })
+
+// $(window).scroll(function () {
+//     var Y = $(this).scrollTop();
+//     $('.game').each(function () {
+//       var $this = $(this),
+//           posY = $this.offset().top,
+//           posX = $this.offset().left,
+//           width = $this.width(),
+//           height = $this.height(),
+//           headerHeight = $this.find('.js__avatar').height(),
+//           stop = (posY + height) - headerHeight;
+//       // Fixed on position top / or else
+//       if (Y > posY) {
+//         $this.find('.js__avatar').css({
+//           position: 'fixed',
+//           top: 0, left: posX,
+//           width: width
+//         });
+//       } else {
+//         $this.find('.js__avatar').css({
+//           position: 'absolute',
+//           top: 0, left: 0,
+//           width: width
+//         });
+//       }
+//       // Absolute to bottom of post
+//       if (Y >= stop) {
+//         $this.find('.js__avatar').css({
+//           position: 'absolute',
+//           top: 'auto', left: 0, bottom: 0,
+//           width: width
+//         });
+//       }
+//     });
+//   });
 
 });
