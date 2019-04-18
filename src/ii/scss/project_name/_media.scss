@@ -1,0 +1,56 @@
+@media screen and (max-width: 1268px) {
+  .ray {
+    display: none;
+  }
+  .tree-1, .glade-1{
+    left: -100px;
+  }
+  .tree-2{
+    left: 850px;
+  }
+  .tree-3 {
+    display: none;
+  }
+  .doll, .hill {
+    right: 120px;
+  }
+  .clouds {
+    left: 20px;
+  }
+  .kremlin {
+    left: 120px;
+  }
+  .game__title {
+    width: 900px;
+  }
+}
+
+
+@media screen and (max-width: 1024px) {
+   .hint-komi {
+      right: 370px;
+      top: 60px;
+    }
+    .hint-irkutsk {
+      right: 100px;
+    }
+    .hint-kamchatka {
+      right: 75px;
+    }
+    .hint-peter {
+      right: 130px;
+    }
+    .hint-caucasus {
+      right: 240px;
+      left: auto;
+    }
+    .hint-volgograd {
+      left: 140px;
+    }
+    .hint-moscow {
+      left: 153px;
+    }
+    .game__header {
+    width: 80%;
+  }
+}

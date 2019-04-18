@@ -12,11 +12,16 @@
       -ms-flex-pack: center;
           justify-content: center;
   margin-bottom: 100px; }
- 
+  
+.map-svg {
+  position: relative;
+  display: flex;
+}
 .map svg {
   margin: 0 auto;
   overflow: visible;
-  width: 100%; }
+  width: 1002px; 
+}
 
 .region {
   cursor: pointer;
@@ -24,29 +29,32 @@
   -o-transition: all 150ms;
   transition: all 150ms;
   position: relative; }
-  
-[data-region-state="active"], [data-region-state="active"]:hover,
-[data-region-state="active"] path, [data-region-state="active"]:hover path{
+
+[data-region="komi"] .region-komi path,
+[data-region="irkutsk"] .region-irkutsk path,
+[data-region="kamchatka"] .region-kamchatka path,
+[data-region="peter"] .region-peter path,
+[data-region="caucasus"] .region-caucasus path,
+[data-region="volgograd"] .region-volgograd path,
+[data-region="moscow"] .region-moscow path {
   fill: $color_yellow;
 }
 
-[data-region-state="disable"], [data-region-state="disable"]:hover,
-[data-region-state="disable"] path, [data-region-state="disable"]:hover path{
+
+[data-region-state="after"] .region path, [data-region-state="after"] .region :hover path{
   fill: #7FAF33;
 }
 
 
-.region:hover path, .region:hover{
+.region:hover path{
   fill: $color_yellow; }
 
 
 
 .hint {
   position: absolute;
-  left: 0; 
-  top: -20px;
   z-index: 2;
-  background: $color_hint; 
+  background: $color_white; 
   font-size: 18px;
   padding: 24px;
   border: none;
@@ -56,23 +64,30 @@
   padding: 15px;
   color: $color_white;
   box-shadow: -5px 7px 25px rgba(0, 0, 0, 0.1);
+  display: none
+  // visibility: hidden;
+  // opacity: 0;
+  // transition :opacity .5s;
   
   //display: none;
 }
 .hint::after {
   content: ''; 
   position: absolute;
+  top: 99%;
   left: 48%;
-  border: 29px solid transparent; 
-  border-top: 29px solid $color_hint;
+  border: 20px solid transparent; 
+  border-top: 20px solid $color_white;
   z-index: 1;
-  
+  // visibility: hidden;
+  // opacity: 0;
+  // transition :opacity .5s;
 }
 
 .hint__date {
   font-size: 14px;
   text-align: center;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(0, 0, 0, 0.3);
   margin-top: 15px;
   font-weight: bold;
 }
@@ -83,6 +98,7 @@
   font-size: 24px;
   line-height: 23px;
   text-align: center;
+  color: $color_green;
 }
 .hint__subtitle {
   font-weight: bold;
@@ -91,41 +107,101 @@
   font-size: 18px;
   text-align: center;
   margin: 0;
-}
-
-[data-hint="active"]{
-  background: $color_white;
-}
-
-[data-hint="active"]::after {
-  border-top: 29px solid $color_white;
-}
-
-[data-hint="active"] .hint__date {
-  color: rgba(0, 0, 0, 0.3);
-}
-[data-hint="active"] .hint__title {
-  color: $color_green;
-}
-[data-hint="active"] .hint__content, [data-hint="active"] .hint__subtitle {
   color: rgba(0, 0, 0, 0.7);
 }
 
-[data-hint="disable"]{
-  background: $color_hint;
+// [data-region-state="active"] .hint{
+//   background: $color_white;
+// }
+
+// [data-region-state="active"] .hint::after {
+//   border-top: 29px solid $color_white;
+// }
+
+// [data-region-state="active"] .hint__date {
+//   color: rgba(0, 0, 0, 0.3);
+// }
+// [data-region-state="active"] .hint__title {
+//   color: $color_green;
+// }
+// [data-region-state="active"] .hint__content, [data-hint-state="active"] .hint__subtitle {
+//   color: rgba(0, 0, 0, 0.7);
+// }
+
+// [data-region-state="disable"] .hint{
+//   background: $color_hint;
+// }
+
+// [data-region-state="disable"] .hint::after {
+//   border-top: 29px solid $color_hint;
+// }
+// [data-region-state="disable"] .hint__date {
+//   color: rgba(255, 255, 255, 0.5);
+// }
+// [data-region-state="disable"] .hint__title {
+//   opacity: 0.5;
+// }
+// [data-region-state="disable"] .hint__content {
+//   color: $color_white;
+//   opacity: 0.5;
+// }
+.hint.hint-kamchatka::after {
+  left: 99%;
+  top: 33%;
+  border: 20px solid transparent; 
+  border-left: 20px solid $color_white;
 }
 
-[data-hint="disable"]::after {
-  border-top: 29px solid $color_hint;
+.hint.hint-peter::after, .hint.hint-caucasus::after,
+.hint.hint-volgograd::after, .hint.hint-moscow::after {
+  left: -6%;
+  top: 33%;
+  border: 20px solid transparent; 
+  border-right: 20px solid $color_white;
 }
-[data-hint="disable"] .hint__date {
-  color: rgba(255, 255, 255, 0.5);
+
+.hint-komi {
+  right: 500px;
+  top: 55px;
 }
-[data-hint="disable"] .hint__title {
-  opacity: 0.5;
+
+.hint-irkutsk {
+  right: 220px;
+  top: 265px;
 }
-[data-hint="disable"] .hint__content {
-  color: $color_white;
-  opacity: 0.5;
+
+.hint-kamchatka {
+  right: 181px;
+  top: 225px;
 }
+
+.hint-peter {
+  right: 240px;
+  top: 75px;
+}
+
+.hint-caucasus {
+  left: 200px;
+  top: 330px;
+}
+
+.hint-volgograd {
+  left: 255px;
+  top: 281px;
+}
+
+.hint-moscow {
+  left: 262px;
+  top: 185px;
+}
+
 //end screen map
+[data-region="komi"] .hint-komi,
+[data-region="irkutsk"] .hint-irkutsk,
+[data-region="kamchatka"] .hint-kamchatka,
+[data-region="peter"] .hint-peter,
+[data-region="caucasus"] .hint-caucasus,
+[data-region="volgograd"] .hint-volgograd,
+[data-region="moscow"] .hint-moscow {
+  display: block;
+}

@@ -3,13 +3,14 @@
   background: $color_blue;
 }
 .greeting .screen__content {
-  min-width: 809px;
+  min-width: 829px;
   z-index: 5;
 }
 
 .greeting .screen__title {
-  margin-top: 50px;
+  margin: 50px auto 0;
   font-size: 91px;
+  width:  700px;
 }
 
 .greeting .screen__description {
@@ -227,28 +228,6 @@
 //     100% { }
 
 
-@media screen and (max-width: 1268px) {
-  .ray {
-    display: none;
-  }
-  .tree-1, .glade-1{
-    left: -100px;
-  }
-  .tree-2{
-    left: 850px;
-  }
-  .tree-3 {
-    display: none;
-  }
-  .doll, .hill {
-    right: 120px;
-  }
-  .clouds {
-    left: 20px;
-  }
-  .kremlin {
-    left: 120px;
-  }
-}
+
 
 // end greeting

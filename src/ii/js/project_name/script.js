@@ -288,48 +288,60 @@ var slider = (function movingCarousel(slide) {
 
 })();
 
-// клик на аватарку медведя
-var avatar = document.querySelector('.js__avatar');
-var close = document.querySelector('.js__close');
-var mask = document.querySelector('.mask');
-var popup = document.querySelector('.pop-up');
+// попап правил игр
+var popUp = (function(){
+	var avatar = document.querySelector('.js__avatar');
+	var close = document.querySelector('.js__close');
+	var mask = document.querySelector('.mask');
+	var popup = document.querySelector('.pop-up');
 
-avatar.addEventListener('click', function(){
-	popup.dataset.reference == "" ? popup.dataset.reference = "visible" : popup.dataset.reference = ""; 
-	mask.dataset.mask == "" ? mask.dataset.mask = "visible" : mask.dataset.mask = "";
-	document.body.dataset.scroll == "" ? document.body.dataset.scroll = "unvisible" : document.body.dataset.scroll = "";
-})
-close.addEventListener('click', function(){
-	popup.dataset.reference == "visible" ? popup.dataset.reference = "" : popup.dataset.reference = "";
-  	mask.dataset.mask == "visible" ? mask.dataset.mask = "" : mask.dataset.mask = "";
-	document.body.dataset.scroll == "" ? document.body.dataset.scroll = "unvisible" : document.body.dataset.scroll = "";
-})
+	avatar.addEventListener('click', function(){
+		avatar.dataset.avatar = "unvisible";
+		popup.dataset.reference == "" ? popup.dataset.reference = "visible" : popup.dataset.reference = ""; 
+		mask.dataset.mask == "" ? mask.dataset.mask = "visible" : mask.dataset.mask = "";
+		document.body.dataset.scroll == "" ? document.body.dataset.scroll = "unvisible" : document.body.dataset.scroll = "";
+	})
+	close.addEventListener('click', function(){
+		avatar.dataset.avatar = "";
+		popup.dataset.reference == "visible" ? popup.dataset.reference = "" : popup.dataset.reference = "";
+	  	mask.dataset.mask == "visible" ? mask.dataset.mask = "" : mask.dataset.mask = "";
+		document.body.dataset.scroll == "" ? document.body.dataset.scroll = "unvisible" : document.body.dataset.scroll = "";
+	})
+	mask.addEventListener('click', function(){
+		avatar.dataset.avatar = "";
+		popup.dataset.reference == "visible" ? popup.dataset.reference = "" : popup.dataset.reference = "";
+	  	mask.dataset.mask == "visible" ? mask.dataset.mask = "" : mask.dataset.mask = "";
+		document.body.dataset.scroll == "" ? document.body.dataset.scroll = "unvisible" : document.body.dataset.scroll = "";
+	})
 
+})();
 
-//фиксация аватарки медведя
-window.onscroll = function() {
-	var scroll = window.pageYOffset || document.documentElement.scrollTop,
-		screen = document.querySelector('.game'),
-		avatar = document.querySelector('.js__avatar'),
-		posY = screen.getBoundingClientRect().top + scroll,
-		posX = screen.getBoundingClientRect().right,
-		screenHeight = screen.offsetHeight - 100,
-		avatarHeight = avatar.offsetHeight,
-		stop = screenHeight + avatarHeight * 5.5;
+var avatar = (function() {
+	//фиксация аватарки медведя
+	window.onscroll = function() {
+		var scroll = window.pageYOffset || document.documentElement.scrollTop,
+			screen = document.querySelector('.game'),
+			avatar = document.querySelector('.js__avatar'),
+			posY = screen.getBoundingClientRect().top + scroll,
+			posX = screen.getBoundingClientRect().right,
+			screenHeight = screen.offsetHeight - 100,
+			avatarHeight = avatar.offsetHeight,
+			stop = screenHeight + avatarHeight * 5.5;
 
-	//если позиция скролла достигла экрана с игрой, то фиксируем аватарку
-	if( scroll > (posY - scroll - avatarHeight)) {
-		avatar.dataset.avatarPosition = "fixed";
-	//если позиция скролла 	меньше, то возвращаем к исходному(абсолют кверху)
-	} else {
-		avatar.dataset.avatarPosition = "";
+		//если позиция скролла достигла экрана с игрой, то фиксируем аватарку
+		if( scroll > (posY - scroll - avatarHeight)) {
+			avatar.dataset.avatarPosition = "fixed";
+		//если позиция скролла 	меньше, то возвращаем к исходному(абсолют кверху)
+		} else {
+			avatar.dataset.avatarPosition = "";
+		}
+		//если позиция скролла достигла низа экрана, то позиционируем аватарку абсолютом книзу
+		if (scroll >= stop) {
+			avatar.dataset.avatarPosition = "absolute";
+		
+		} 
 	}
-	//если позиция скролла достигла низа экрана, то позиционируем аватарку абсолютом книзу
-	if (scroll >= stop) {
-		avatar.dataset.avatarPosition = "absolute";
+})();
 	
-	} 
-}
-
 
 });

@@ -69,10 +69,15 @@
   position: absolute;
   top: 0px;
   bottom: auto;
-  right: 50px;
+  right: 75px;
   max-width: 100px;
   cursor: pointer;
   z-index: 4;
+  display: block;
+}
+
+[data-avatar="unvisible"] {
+  display: none;
 }
 
 [data-avatar-position="fixed"] {
@@ -111,6 +116,7 @@ figcaption {
   }
 .pop-up__wrap {
   position: relative;
+  height: 100%;
 }
 
 .pop-up__content {
@@ -125,7 +131,7 @@ figcaption {
   font-size: 36px;
   line-height: 37px;
   color: $color_blue;
-  margin: 88px 0 46px
+  padding: 88px 0 46px
 }
 
 .pop-up .subtitle {
@@ -183,9 +189,19 @@ figcaption {
 
 .close {
   position: absolute;
-  top: -80px;
+  top: 10px;
   right: 10px;
   cursor: pointer;
+}
+.avatar-clone {
+  position: absolute;
+  top: auto;
+  bottom: 50px;
+  right: 50px;
+  max-width: 100px;
+  cursor: pointer;
+  z-index: 4;
+  cursor: default;
 }
 
 [data-reference="visible"] {
