@@ -12,6 +12,9 @@ body {
   font-family: 'PT Sans', sans-serif;
   font-size: 18px; }
 
+[data-scroll="unvisible"] {
+  overflow: hidden; }
+
 .container {
   max-width: 1260px;
   min-width: 940px;
@@ -374,8 +377,8 @@ body {
     left: 0;
     bottom: 0;
     background: rgba(0, 0, 0, 0.5);
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     z-index: 2;
     display: none; }
   .hb-chg [data-mask="visible"] {
@@ -409,18 +412,27 @@ body {
     font-weight: normal; }
   .hb-chg .avatar {
     position: absolute;
-    bottom: 0;
-    right: 0;
+    top: 0px;
+    bottom: auto;
+    right: 50px;
     max-width: 100px;
     cursor: pointer;
     z-index: 4; }
+  .hb-chg [data-avatar-position="fixed"] {
+    position: fixed;
+    bottom: 50px;
+    top: auto; }
+  .hb-chg [data-avatar-position="absolute"] {
+    position: absolute;
+    bottom: 50px;
+    top: auto; }
   .hb-chg figcaption {
     font-weight: bold;
     text-align: center;
     color: #27AAE1; }
   .hb-chg .pop-up {
     width: 642px;
-    height: 100vh;
+    height: 100%;
     position: fixed;
     top: 0;
     bottom: 0;
@@ -437,7 +449,7 @@ body {
     position: relative; }
   .hb-chg .pop-up__content {
     max-width: 590px;
-    padding-left: 50px;
+    padding: 0 50px;
     font-size: 18px;
     text-align: left; }
   .hb-chg .pop-up .title {
@@ -501,8 +513,8 @@ body {
     font-weight: bold; }
   .hb-chg .close {
     position: absolute;
-    top: -24px;
-    right: 0;
+    top: -80px;
+    right: 10px;
     cursor: pointer; }
   .hb-chg [data-reference="visible"] {
     visibility: visible;
