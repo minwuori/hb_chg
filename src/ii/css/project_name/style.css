@@ -1040,6 +1040,12 @@ body {
       left: 153px; }
     .hb-chg .game__header {
       width: 80%; } }
+  @media screen and (max-height: 800px) {
+    .hb-chg .pop-up .title {
+      padding: 20px 0 25px; }
+    .hb-chg .avatar-clone {
+      bottom: 20px;
+      right: 50px; } }
   @media screen and (max-width: 1268px) {
     .hb-chg .ray {
       display: none; }
@@ -1076,3 +1082,9 @@ body {
       left: 153px; }
     .hb-chg .game__header {
       width: 80%; } }
+  @media screen and (max-height: 800px) {
+    .hb-chg .pop-up .title {
+      padding: 20px 0 25px; }
+    .hb-chg .avatar-clone {
+      bottom: 20px;
+      right: 50px; } }

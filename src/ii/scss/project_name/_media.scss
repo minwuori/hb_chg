@@ -54,3 +54,13 @@
     width: 80%;
   }
 }
+
+@media screen and (max-height: 800px) {
+  .pop-up .title {
+    padding: 20px 0 25px
+  }
+  .avatar-clone {
+    bottom: 20px;
+    right: 50px;
+    }
+}
