@@ -481,7 +481,21 @@ body {
     font-size: 24px;
     line-height: 25px;
     text-align: center;
-    font-weight: normal; }
+    font-weight: normal;
+    margin-bottom: 65px; }
+  .hb-chg .game__title_pairs, .hb-chg .game__title_questions, .hb-chg .game__title_images {
+    display: none; }
+  .hb-chg .game__content {
+    padding-top: 100px; }
+  .hb-chg .message {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    font-size: 36px;
+    text-align: center; }
+  .hb-chg .message__wrong {
+    color: #E23834; }
+  .hb-chg .message__right {
+    color: #8DC63F; }
   .hb-chg .avatar {
     position: absolute;
     top: 0px;
@@ -916,16 +930,6 @@ body {
     transition: 0.2s ease-in-out; }
   .hb-chg .btn-participate {
     display: none; }
-  .hb-chg [data-view="after"] .btn-participate {
-    display: none; }
-  .hb-chg [data-view="pairs"] .btn-participate,
-  .hb-chg [data-view="question"] .btn-participate,
-  .hb-chg [data-view="image"] .btn-participate {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    margin-top: 65px; }
   .hb-chg .rules {
     padding: 100px 0; }
   .hb-chg .rules h2 {
@@ -1000,6 +1004,42 @@ body {
   .hb-chg .footer__item:hover {
     text-decoration: underline;
     color: #FFFFFF; }
+  @media screen and (max-width: 1268px) {
+    .hb-chg .ray {
+      display: none; }
+    .hb-chg .tree-1, .hb-chg .glade-1 {
+      left: -100px; }
+    .hb-chg .tree-2 {
+      left: 850px; }
+    .hb-chg .tree-3 {
+      display: none; }
+    .hb-chg .doll, .hb-chg .hill {
+      right: 120px; }
+    .hb-chg .clouds {
+      left: 20px; }
+    .hb-chg .kremlin {
+      left: 120px; }
+    .hb-chg .game__title {
+      width: 900px; } }
+  @media screen and (max-width: 1024px) {
+    .hb-chg .hint-komi {
+      right: 370px;
+      top: 60px; }
+    .hb-chg .hint-irkutsk {
+      right: 100px; }
+    .hb-chg .hint-kamchatka {
+      right: 75px; }
+    .hb-chg .hint-peter {
+      right: 130px; }
+    .hb-chg .hint-caucasus {
+      right: 240px;
+      left: auto; }
+    .hb-chg .hint-volgograd {
+      left: 140px; }
+    .hb-chg .hint-moscow {
+      left: 153px; }
+    .hb-chg .game__header {
+      width: 80%; } }
   @media screen and (max-width: 1268px) {
     .hb-chg .ray {
       display: none; }

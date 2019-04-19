@@ -59,8 +59,36 @@
   line-height: 25px;
   text-align: center;
   font-weight: normal;
+  margin-bottom: 65px;
 }
 
+.game__title_pairs, .game__title_questions,.game__title_images,
+// .game-pairs, .game-questions, .game-images, 
+// .message 
+{
+  display: none;
+}
+
+.game__content {
+  padding-top: 100px;
+}
+
+.message {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+  font-size: 36px;
+  text-align: center;
+}
+
+.message__wrong {
+  color: $color_pink;
+  //display: none;
+}
+
+.message__right {
+  color: $color_green;
+  //display: none;
+}
 .avatar {
   position: absolute;
   top: 0px;
@@ -207,7 +235,6 @@ figcaption {
 }
 
   //popup end
-
 
 
 

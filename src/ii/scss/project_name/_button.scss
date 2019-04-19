@@ -23,14 +23,5 @@
 	display: none;
 }
 
-[data-view="after"] .btn-participate {
-	display: none;
-}
 
-[data-view="pairs"] .btn-participate,
-[data-view="question"] .btn-participate,
-[data-view="image"] .btn-participate {
-	display: flex;
-	margin-top: 65px;
-}
 // end button

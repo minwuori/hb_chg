@@ -1,0 +1,30 @@
+
+// data-view
+[data-view="after"] .btn-participate {
+	display: none;
+}
+
+[data-view="pairs"] .btn-participate,
+[data-view="questions"] .btn-participate,
+[data-view="images"] .btn-participate {
+	display: flex;
+}
+
+[data-view="pairs"] .game__title_pairs,
+[data-view="questions"] .game__title_questions,
+[data-view="images"] .game__title_images {
+	display: block;
+}
+
+[data-view="pairs"] .game__title_before,
+[data-view="questions"] .game__title_before,
+[data-view="images"] .game__title_before,
+[data-view="after"] .game__title_before {
+	display: none;
+}
+
+[data-view="pairs"] .game-pairs,
+[data-view="questions"] .game-questions,
+[data-view="images"] .game-images {
+	display: block;
+}

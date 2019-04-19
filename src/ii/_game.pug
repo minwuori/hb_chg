@@ -1,4 +1,91 @@
-section.game(data-popup-rules="")
+section.game(data-popup-rules="" )
+	.container
+		.game__header
+			.game__title
+				.game__title_before
+					span.accent 
+						| С 13 мая 
+					| на этой странице будут появляться вопросы и задания. 
+					br 
+					| Получайте баллы за правильные ответы и обменивайте их на 
+					span.accent 
+						| скидку до 15%.
+
+				.game__title_pairs
+					span.accent
+						| Сегодня 
+					| вас ждёт вопрос о Республике Коми. 
+					br
+					| За правильный ответ вы получите 
+					span.accent
+						| 1 балл. 
+					| Успейте отгадать все пары за одну минуту.
+
+				.game__title_questions
+					span.accent
+						| Сегодня 
+					| вас ждёт вопрос о Республике Коми. 
+					br
+					| За правильный ответ вы получите 
+					span.accent
+						| 1 балл. 
+					| Успейте отгадать все пары за одну минуту.
+
+				.game__title_images
+					span.accent
+						| Сегодня 
+					| вас ждёт вопрос о Республике Коми. 
+					br
+					| За правильный ответ вы получите 
+					span.accent
+						| 1 балл. 
+					| Соберите картинки в правильном порядке.
+		
+			button.btn.btn-participate.js__btn_participate(type="button" value="Начать игру") Начать игру
+
+		.game__content
+			.message 
+				.message__wrong
+					| Увы... Это неправильный ответ
+				.message__right
+					| Всё верно!
+			section.game-pairs
+
+				.task
+					.task-question
+						| Кто из литературных героев воскликнул: «Карету мне, карету!..»?
+
+					.task-description
+							| – Ну что же это такое? Зачем ты позолотил усы? И на какой чёрт тебе нужен галстук, если на тебе нет штанов?
+					
+					.task-timer
+						| 00:15
+
+				.answers
+					.answer-left
+						label
+							input.question__options_input(type="radio" value="Менее 15 минут" name="question-1" data-name="question-1" data-answer-number="1")
+							span(data-label="")
+								span(data-value="")
+								span(data-text="") Менее 15 минут
+					.answer-right
+						label
+							input.question__options_input(type="radio" value="Менее 15 минут" name="question-1" data-name="question-1" data-answer-number="1")
+							span(data-label="")
+								span(data-value="")
+								span(data-text="") Менее 15 минут
+
+				.answer-counter
+					| Правильных ответов: 0 из 7. 
+
+				.discount
+					| Ваша скидка: 0%
+
+
+					
+
+
+
 	.mask.js__mask
 	.pop-up
 		.pop-up__wrap
@@ -43,22 +130,7 @@ section.game(data-popup-rules="")
 		figcaption Как играть? 
 		
 
-	.container
-		.game__header
-			h2.game__title
-				
-				span.accent 
-					|С 13 мая 
-				| на этой странице будут появляться вопросы и задания. 
-				br 
-				| Получайте баллы за правильные ответы и обменивайте их на 
-				span.accent 
-					|скидку до 15%.
-
-				//p(data-type="pairs") Сегодня вопрос  о республике Коми, беги-торопись, участвуй, ну у тебя 1 минута, чтобы угадать все пары
-				//p(data-type="question") Сегодня вопрос  о республике Коми, беги-торопись, участвуй, ну Ответь правильно на один вопрос
-		
-			button.btn.btn-participate.js__btn_participate(type="button" value="Начать игру") Начать игру
+	
 
 		
 

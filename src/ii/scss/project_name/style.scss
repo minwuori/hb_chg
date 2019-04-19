@@ -14,9 +14,6 @@ body {
 	font-size: 18px;
 } 
 
-
-	
-
 .container{
 	max-width: 1260px;
 	min-width: 940px;
@@ -64,6 +61,6 @@ $color_hint: #7AAF25;
 	@import '_rules';
 	@import '_footer';
 	@import '_media';
-	
+	@import '_media';
 }
 	
