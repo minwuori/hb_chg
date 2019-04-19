@@ -12,9 +12,6 @@ body {
   font-family: 'PT Sans', sans-serif;
   font-size: 18px; }
 
-[data-scroll="unvisible"] {
-  overflow: hidden; }
-
 .container {
   max-width: 1260px;
   min-width: 940px;
@@ -458,8 +455,6 @@ body {
     height: 100%;
     z-index: 2;
     display: none; }
-  .hb-chg [data-mask="visible"] {
-    display: block; }
   .hb-chg .game .container {
     position: relative; }
   .hb-chg .game__header {
@@ -496,8 +491,6 @@ body {
     cursor: pointer;
     z-index: 4;
     display: block; }
-  .hb-chg [data-avatar="unvisible"] {
-    display: none; }
   .hb-chg [data-avatar-position="fixed"] {
     position: fixed;
     bottom: 50px;
@@ -520,11 +513,7 @@ body {
     z-index: 3;
     background: rgba(255, 255, 255, 0.9);
     overflow-x: hidden;
-    visibility: hidden;
-    opacity: 0;
-    -webkit-transition: opacity .5s;
-    -o-transition: opacity .5s;
-    transition: opacity .5s; }
+    display: none; }
   .hb-chg .pop-up__wrap {
     position: relative;
     height: 100%; }
@@ -604,14 +593,13 @@ body {
     right: 50px;
     max-width: 100px;
     cursor: pointer;
-    z-index: 4;
-    cursor: default; }
-  .hb-chg [data-reference="visible"] {
-    visibility: visible;
-    opacity: 1;
-    -webkit-transition: opacity .5s;
-    -o-transition: opacity .5s;
-    transition: opacity .5s; }
+    z-index: 4; }
+  .hb-chg [data-popup-rules="visible"] .pop-up {
+    display: block; }
+  .hb-chg [data-popup-rules="visible"] .mask {
+    display: block; }
+  .hb-chg [data-popup-rules="visible"] .avatar {
+    display: none; }
   .hb-chg .game__main {
     -webkit-box-flex: 1;
     -webkit-flex-grow: 1;

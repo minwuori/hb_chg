@@ -68,8 +68,6 @@
   // visibility: hidden;
   // opacity: 0;
   // transition :opacity .5s;
-  
-  //display: none;
 }
 .hint::after {
   content: ''; 
@@ -195,7 +193,7 @@
   top: 185px;
 }
 
-//end screen map
+
 [data-region="komi"] .hint-komi,
 [data-region="irkutsk"] .hint-irkutsk,
 [data-region="kamchatka"] .hint-kamchatka,
@@ -205,3 +203,5 @@
 [data-region="moscow"] .hint-moscow {
   display: block;
 }
+
+//end screen map

@@ -25,10 +25,6 @@
   display: none;
 }
 
-[data-mask="visible"] {
-  display: block;
-}
-
 .game .container {
   position: relative;
 }
@@ -76,9 +72,6 @@
   display: block;
 }
 
-[data-avatar="unvisible"] {
-  display: none;
-}
 
 [data-avatar-position="fixed"] {
     position: fixed;
@@ -110,9 +103,7 @@ figcaption {
   z-index: 3;
   background: rgba(255, 255, 255, 0.9);
   overflow-x: hidden;
-  visibility: hidden;
-  opacity: 0;
-  transition :opacity .5s;
+  display: none;
   }
 .pop-up__wrap {
   position: relative;
@@ -201,13 +192,18 @@ figcaption {
   max-width: 100px;
   cursor: pointer;
   z-index: 4;
-  cursor: default;
 }
 
-[data-reference="visible"] {
-  visibility: visible;
-  opacity: 1;
-  transition: opacity .5s;
+[data-popup-rules="visible"] .pop-up{
+  display: block;
+}
+
+[data-popup-rules="visible"] .mask {
+  display: block;
+}
+
+[data-popup-rules="visible"] .avatar {
+  display: none;
 }
 
   //popup end

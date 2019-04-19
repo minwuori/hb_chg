@@ -107,23 +107,23 @@ var animateScreen = (function(){
 
 
 //слайдер
-var slider = (function movingCarousel(slide) {
+var sliderCalendar = (function movingCarousel(slide) {
 	
-	var slider = document.querySelector('.slider'),//слайдер
-	sliderWrapper = slider.querySelector('.slide'),//контейнер слайдов
-	slideItems = slider.querySelectorAll('.slide__item'),//элемент слайдера
+	var slider = document.querySelector('.slider'), // слайдер
+	sliderWrapper = slider.querySelector('.slide'), // контейнер слайдов
+	slideItems = slider.querySelectorAll('.slide__item'),  // элемент слайдера
 	wrapperWidth = parseFloat(getComputedStyle(sliderWrapper).width), // ширина обёртки
 	itemWidth = parseFloat(getComputedStyle(slideItems[0]).width), // ширина одного элемента 
 	prev = slider.querySelector('.js__previous_btn'), // кнопка "назад"
 	next = slider.querySelector('.js__next_btn'), // кнопка "вперед"
 	positionLeftItem = 0, // позиция левого активного элемента
 	transform = 0, // значение транфсофрмации контейнера слайдов
-	step = itemWidth / wrapperWidth * 100; // величина шага (для трансформации)
-	var dateItems = document.querySelectorAll('.date__item')
-	var dolls = document.querySelectorAll('.date__img')
-	var viewportStart = parseInt(sliderWrapper.getBoundingClientRect().left);
-	var viewportFinish = viewportStart + wrapperWidth;
-	var visible = [];
+	step = itemWidth / wrapperWidth * 100, // величина шага (для трансформации)
+	dateItems = document.querySelectorAll('.date__item'), // эл-ты с датами
+	dolls = document.querySelectorAll('.date__img'), // матрешки
+	viewportStart = parseInt(sliderWrapper.getBoundingClientRect().left), //координата X начала вьюпорта 
+	viewportFinish = viewportStart + wrapperWidth, //конецц вьюпорта
+	visible = []; // массив со слайдами до видимого слайда включительно
 
 	
 
@@ -131,32 +131,33 @@ var slider = (function movingCarousel(slide) {
 	getMin: 0,
 	getMax: slideItems.length - 1,
 	};
+
 	// текущая дата локально
-    var now = new Date();
+	var now = new Date();
 
-    // сдвиг на московское время
-    var moscowOffset = 180 / 60;
-    var offset = now.getTimezoneOffset() / 60 + moscowOffset;
+	// сдвиг на московское время
+	var moscowOffset = 180 / 60;
+	var offset = now.getTimezoneOffset() / 60 + moscowOffset;
 
-    // текущее время по москве
-    now.setHours(now.getHours() + offset);
+	// текущее время по москве
+	now.setHours(now.getHours() + offset);
 
-    // выставляем соответствующее дате положение слайдера
-    for (var i = 0; i < slideItems.length; i++) {	
+	// выставляем соответствующее дате положение слайдера
+	for (var i = 0; i < slideItems.length; i++) {	
 
-    	if (now.getDate() == +slideItems[i].dataset.slide) {
-    		positionLeftItem = +slideItems[i].dataset.slide - 13;
-    		transform = (13 - +slideItems[i].dataset.slide) * step;
-    		
-    		sliderWrapper.style.transform = 'translateX(' + transform + '%)';
-    	}
+		if (now.getDate() == +slideItems[i].dataset.slide) {
+			positionLeftItem = +slideItems[i].dataset.slide - 13;
+			transform = (13 - +slideItems[i].dataset.slide) * step;
+			
+			sliderWrapper.style.transform = 'translateX(' + transform + '%)';
+		}
 
-    	if (now.getDate() > 13) {
-			prev.dataset.sliderPrev = "";	
-    	}
-    	if (now.getDate() == 19) {
-			next.dataset.sliderNext = "disable";	
-    	}		
+		if (now.getDate() > 13) {
+		prev.dataset.sliderPrev = "";	
+		}
+		if (now.getDate() == 19) {
+		next.dataset.sliderNext = "disable";	
+		}		
 				
 	}
 
@@ -218,13 +219,10 @@ var slider = (function movingCarousel(slide) {
 			if (itemStart < viewportFinish) {
 				visible.push(slideItems[i - 1]);
 			}
-
-			
 		}
-		
 
 		//скрываем/показываем матрешку
-		isVisibleDoll()	
+		isVisibleDoll();
 	});
 
 	//при нажатии на кнопку вперед	
@@ -259,8 +257,6 @@ var slider = (function movingCarousel(slide) {
 			}
 			
 		}
-
-		
 		//скрываем/показываем матрешку
 		isVisibleDoll();	
 		
@@ -288,59 +284,170 @@ var slider = (function movingCarousel(slide) {
 
 })();
 
-// попап правил игр
-var popUp = (function(){
-	var avatar = document.querySelector('.js__avatar');
-	var close = document.querySelector('.js__close');
-	var mask = document.querySelector('.mask');
-	var popup = document.querySelector('.pop-up');
-
-	avatar.addEventListener('click', function(){
-		avatar.dataset.avatar = "unvisible";
-		popup.dataset.reference == "" ? popup.dataset.reference = "visible" : popup.dataset.reference = ""; 
-		mask.dataset.mask == "" ? mask.dataset.mask = "visible" : mask.dataset.mask = "";
-		document.body.dataset.scroll == "" ? document.body.dataset.scroll = "unvisible" : document.body.dataset.scroll = "";
-	})
-	close.addEventListener('click', function(){
-		avatar.dataset.avatar = "";
-		popup.dataset.reference == "visible" ? popup.dataset.reference = "" : popup.dataset.reference = "";
-	  	mask.dataset.mask == "visible" ? mask.dataset.mask = "" : mask.dataset.mask = "";
-		document.body.dataset.scroll == "" ? document.body.dataset.scroll = "unvisible" : document.body.dataset.scroll = "";
-	})
-	mask.addEventListener('click', function(){
-		avatar.dataset.avatar = "";
-		popup.dataset.reference == "visible" ? popup.dataset.reference = "" : popup.dataset.reference = "";
-	  	mask.dataset.mask == "visible" ? mask.dataset.mask = "" : mask.dataset.mask = "";
-		document.body.dataset.scroll == "" ? document.body.dataset.scroll = "unvisible" : document.body.dataset.scroll = "";
-	})
-
-})();
-
-var avatar = (function() {
-	//фиксация аватарки медведя
+// фиксация аватарки медведя
+var avatarFix = (function() {
 	window.onscroll = function() {
-		var scroll = window.pageYOffset || document.documentElement.scrollTop,
-			screen = document.querySelector('.game'),
-			avatar = document.querySelector('.js__avatar'),
-			posY = screen.getBoundingClientRect().top + scroll,
-			posX = screen.getBoundingClientRect().right,
-			screenHeight = screen.offsetHeight - 100,
-			avatarHeight = avatar.offsetHeight,
-			stop = screenHeight + avatarHeight * 5.5;
+		var scroll = window.pageYOffset || document.documentElement.scrollTop, // определяем положение ползунка
+			screen = document.querySelector('.game'), // поле для фиксируемого элемента
+			avatar = document.querySelector('.js__avatar'), //фиксируемый элемент
+			posY = screen.getBoundingClientRect().top + scroll, // получаем координату верхней границы фиксируемого элемента
+			posX = screen.getBoundingClientRect().right, // получаем координату правой границы фиксируемого элемента
+			screenHeight = screen.offsetHeight - 100, // высота экрана
+			avatarHeight = avatar.offsetHeight, // высота фиксируемого элемента
+			stop = screenHeight + avatarHeight * 5.5; // нижняя граница для фиксируемого элемента
 
 		//если позиция скролла достигла экрана с игрой, то фиксируем аватарку
 		if( scroll > (posY - scroll - avatarHeight)) {
 			avatar.dataset.avatarPosition = "fixed";
+		
 		//если позиция скролла 	меньше, то возвращаем к исходному(абсолют кверху)
 		} else {
 			avatar.dataset.avatarPosition = "";
 		}
+		
 		//если позиция скролла достигла низа экрана, то позиционируем аватарку абсолютом книзу
 		if (scroll >= stop) {
 			avatar.dataset.avatarPosition = "absolute";
 		
 		} 
 	}
+})();
+
+// попап с правилами игр
+var popUp = (function(){
+	var	screen = document.querySelector('.game'),
+		avatar = screen.querySelector('.js__avatar'),
+		avatarClone = screen.querySelector('.js__avatar_clone'),
+		close = screen.querySelector('.js__close'),
+		mask = screen.querySelector('.js__mask'),
+		popup = screen.querySelector('.pop-up'), 
+		ancor = screen.querySelector('.js__ancor'),
+		rules = document.querySelector('#rules'),
+		events = [avatar, close, mask, avatarClone];
+
+	function checkPopup(){
+				
+		// скрыть/показать полосу прокрутки
+		document.body.style.overflow == "hidden" ? document.body.style.overflow = "visible" : document.body.style.overflow = "hidden";
+		
+		//если попапа нет, то показываем его
+		if (screen.dataset.popupRules == "") {
+			screen.dataset.popupRules = "visible"
+			//анимация появления попапа
+			var maskWidth = mask.offsetWidth;
+			TweenMax.fromTo(mask, .5, {x: -maskWidth}, {x: 0, ease: Cubic.easeOut});
+
+			//анимация появления попапа
+			var popupWidth = popup.offsetWidth;
+			TweenMax.fromTo(popup, .5, {x: popupWidth}, {x: 0, ease: Cubic.easeOut}, "-1");
+
+		// иначе скрываем	
+		} else {
+			//анимация скрытия попапа
+			var maskWidth = mask.offsetWidth;
+			TweenMax.fromTo(mask, .5, {x: 0}, {x: -maskWidth, ease: Cubic.easeOut});
+
+			//анимация скрытия попапа
+			var popupWidth = popup.offsetWidth;
+			TweenMax.fromTo(popup, .5, {x: 0}, {x: popupWidth, ease: Cubic.easeOut}, "-1");
+
+			// задерживаем скрытие попапа на время анимации
+			setTimeout( function(){
+				
+				screen.dataset.popupRules = "";
+
+			}, 300)
+		}
+	};
+
+	//навешиваем события на все эл-ты
+	events.forEach(function(item) {
+		item.addEventListener('click', function(){
+			checkPopup();
+		})
+	})
+
+
+	// для плавного перехода к полным правилам с попапа якорю присваиваем обработчик события
+	ancor.addEventListener('click', function(e) {
+
+		// устанавливаем время анимации и количество кадров
+		var animationTime = 500,
+			framesCount = 20;
+
+		// скрываем попап и маску
+		checkPopup();
+
+		// убираем стандартное поведение
+		e.preventDefault();
+
+		//определяем положение скролла
+		var scroll = window.pageYOffset || document.documentElement.scrollTop
+		
+		// определяем координату Y до элемента соответствующему якорю
+		var coordY = rules.getBoundingClientRect().top + scroll;
+		
+		// запускаем интервал, в котором
+		var scroller = setInterval(function() {
+			// считаем на сколько скроллить за 1 такт
+			var scrollBy = coordY / framesCount;
+			
+			// если к-во пикселей для скролла за 1 такт больше расстояния до элемента
+			// и дно страницы не достигнуто
+			if(scrollBy > window.pageYOffset - coordY && window.innerHeight + window.pageYOffset < document.body.offsetHeight) {
+				// то скроллим на к-во пикселей, которое соответствует одному такту
+				window.scrollBy(0, scrollBy);
+			} else {
+				// иначе добираемся до элемента и выходим из интервала
+				window.scrollTo(0, coordY);
+				clearInterval(scroller);
+			}
+		// время интервала равняется частному от времени анимации и к-ва кадров
+		}, animationTime / framesCount);
+	});
+		
+})();
+
+
+// взаимодействие с картой
+var mapSvg = (function(){
+
+	var regions = document.querySelectorAll('.js__region'), // получаем массив регионов
+		hints = document.querySelectorAll('.hint'); // получаем массив подсказок
+
+	// перебираем все регионы
+	regions.forEach(function(region) {
+
+		// навешиваем событие
+		region.addEventListener('click', function(){
+
+			// перебираем все подсказки
+			hints.forEach(function(hint) {
+
+				// если соответствует данному региону
+				if (hint.dataset.hint == region.dataset.regionEvent) {
+
+					// и подсказка скрыта то показываем ее
+					if (getComputedStyle(hint).display == "none") {
+						hint.style.display = "block";
+
+						//добавляем анимацию появления кодсказки
+						TweenMax.fromTo(hint, 1, {y: 20}, {y: 0, ease:Bounce.easeOut})
+					// иначе скрываем (при повторном клике)
+					} else {
+						hint.style.display = "none";
+
+					}
+				// если не соответствует, то скрываем все подсказки 
+				} else {
+					hint.style.display = "none";
+				}
+			});
+
+		})
+	});
+
+
 })();
 	
 
