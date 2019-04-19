@@ -290,14 +290,13 @@ var avatarFix = (function() {
 		var scroll = window.pageYOffset || document.documentElement.scrollTop, // определяем положение ползунка
 			screen = document.querySelector('.game'), // поле для фиксируемого элемента
 			avatar = document.querySelector('.js__avatar'), //фиксируемый элемент
-			posY = screen.getBoundingClientRect().top + scroll, // получаем координату верхней границы фиксируемого элемента
-			posX = screen.getBoundingClientRect().right, // получаем координату правой границы фиксируемого элемента
+			posY = screen.getBoundingClientRect().top + scroll, // получаем координату верхней границы окна для фиксируемого элемента
 			screenHeight = screen.offsetHeight - 100, // высота экрана
 			avatarHeight = avatar.offsetHeight, // высота фиксируемого элемента
-			stop = screenHeight + avatarHeight * 5.5; // нижняя граница для фиксируемого элемента
+			stop = screenHeight + document.querySelector('.calendar').getBoundingClientRect().top ; // нижняя граница для фиксируемого элемента
 
 		//если позиция скролла достигла экрана с игрой, то фиксируем аватарку
-		if( scroll > (posY - scroll - avatarHeight)) {
+		if( scroll > (screen.getBoundingClientRect().top + avatarHeight)) {
 			avatar.dataset.avatarPosition = "fixed";
 		
 		//если позиция скролла 	меньше, то возвращаем к исходному(абсолют кверху)
@@ -353,7 +352,7 @@ var popUp = (function(){
 
 			// задерживаем скрытие попапа на время анимации
 			setTimeout( function(){
-				
+
 				screen.dataset.popupRules = "";
 
 			}, 300)
