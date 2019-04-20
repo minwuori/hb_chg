@@ -46,6 +46,11 @@ body {
 
 .hb-chg {
   /* полный экран */
+  /* Styles for hiding the native checkbox */
+  /* Styles for the basic appearance of the custom checkbox */
+  /* Styles for the hover state appearance of the custom checkbox */
+  /* Styles for the focus state appearance of the custom checkbox */
+  /* Styles for the checked state appearance of the custom checkbox */
   /* блок правил */ }
   .hb-chg .page-wrap {
     display: -webkit-inline-box;
@@ -614,6 +619,23 @@ body {
     display: block; }
   .hb-chg [data-popup-rules="visible"] .avatar {
     display: none; }
+  .hb-chg .answers-pairs {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -webkit-box-pack: space-evenly;
+    -webkit-justify-content: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: 0 auto; }
   .hb-chg .game__main {
     -webkit-box-flex: 1;
     -webkit-flex-grow: 1;
@@ -930,6 +952,44 @@ body {
     transition: 0.2s ease-in-out; }
   .hb-chg .btn-participate {
     display: none; }
+  .hb-chg .check-toggle {
+    width: 572px;
+    height: 80px;
+    color: #FFFFFF;
+    font-size: 24px;
+    line-height: 25px;
+    text-align: center; }
+  .hb-chg input[type='checkbox'].question__options_input {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden; }
+  .hb-chg input[type='checkbox'].question__options_input ~ .check-toggle {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    background: #EA7A0A;
+    border: 1px solid #EA7A0A;
+    -webkit-border-radius: 40px;
+            border-radius: 40px;
+    cursor: pointer; }
+  .hb-chg input[type='checkbox'].question__options_input:hover ~ .check-toggle {
+    -webkit-box-shadow: 0 5px 5px rgba(234, 122, 10, 0.5);
+            box-shadow: 0 5px 5px rgba(234, 122, 10, 0.5);
+    -webkit-transition: 0.2s ease-in-out;
+    -o-transition: 0.2s ease-in-out;
+    transition: 0.2s ease-in-out; }
+  .hb-chg input[type='checkbox'].question__options_input:focus ~ .check-toggle {
+    border-color: #EA7A0A;
+    -webkit-box-shadow: 0 0 0 2px rgba(234, 122, 10, 0.5);
+            box-shadow: 0 0 0 2px rgba(234, 122, 10, 0.5); }
+  .hb-chg input[type='checkbox'].question__options_input:checked ~ .check-toggle {
+    border-color: #FFB943;
+    background: #FFB943;
+    -webkit-background-size: 75% 75%;
+            background-size: 75%; }
   .hb-chg .rules {
     padding: 100px 0; }
   .hb-chg .rules h2 {
@@ -1039,7 +1099,9 @@ body {
     .hb-chg .hint-moscow {
       left: 153px; }
     .hb-chg .game__header {
-      width: 80%; } }
+      width: 80%; }
+    .hb-chg .check-toggle {
+      width: 450px; } }
   @media screen and (max-height: 800px) {
     .hb-chg .pop-up .title {
       padding: 20px 0 25px; }
@@ -1081,7 +1143,9 @@ body {
     .hb-chg .hint-moscow {
       left: 153px; }
     .hb-chg .game__header {
-      width: 80%; } }
+      width: 80%; }
+    .hb-chg .check-toggle {
+      width: 450px; } }
   @media screen and (max-height: 800px) {
     .hb-chg .pop-up .title {
       padding: 20px 0 25px; }

@@ -236,7 +236,14 @@ figcaption {
 
   //popup end
 
+.answers-pairs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 0 auto;
 
+}
 
 
 .game__main {

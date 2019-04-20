@@ -51,8 +51,12 @@
       left: 153px;
     }
     .game__header {
-    width: 80%;
-  }
+      width: 80%;
+    }
+
+    .check-toggle {
+      width: 450px;
+    }
 }
 
 @media screen and (max-height: 800px) {

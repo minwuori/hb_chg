@@ -152,7 +152,7 @@ var sliderCalendar = (function movingCarousel(slide) {
 			sliderWrapper.style.transform = 'translateX(' + transform + '%)';
 		}
 
-		if (now.getDate() > 13) {
+		if (now.getDate() > 13 && now.getDate() < 19) {
 		prev.dataset.sliderPrev = "";	
 		}
 		if (now.getDate() == 19) {
@@ -164,13 +164,13 @@ var sliderCalendar = (function movingCarousel(slide) {
 
 	//показываем активную дату на календаре
 	for (var i = 0; i < dateItems.length; i++) {
-		
+
+    //если есть совпадение дата-атрибутов, то показываем дату
 		if(now.getDate() == +dateItems[i].dataset.date){
 			
 			dateItems[i].dataset.state = "active"
 		}
 
-		//если есть совпадение дата-атрибутов, то показываем матрешку
 		if (now.getDate() > +dateItems[i].dataset.date) {
 			
 			dateItems[i].dataset.state = "disable"
@@ -185,7 +185,7 @@ var sliderCalendar = (function movingCarousel(slide) {
 		}
 
 		//если есть совпадение дата-атрибутов, то показываем матрешку
-		if (now.getDate() > +dolls[i].dataset.doll) {
+		if (now.getDate() > +dolls[i].dataset.doll && now.getDate() <= 19) {
 			
 			dolls[i].dataset.dollState = "unvisible"
 		}
@@ -367,11 +367,11 @@ var popUp = (function(){
 	})
 
 
-	// для плавного перехода к полным правилам с попапа якорю присваиваем обработчик события
+	// для плавного перехода к полным правилам с попапа, якорю присваиваем обработчик события
 	ancor.addEventListener('click', function(e) {
 
 		// устанавливаем время анимации и количество кадров
-		var animationTime = 500,
+		var animationTime = 1000,
 			framesCount = 20;
 
 		// скрываем попап и маску

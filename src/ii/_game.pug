@@ -49,6 +49,7 @@ section.game(data-popup-rules="" )
 					| Увы... Это неправильный ответ
 				.message__right
 					| Всё верно!
+
 			section.game-pairs
 
 				.task
@@ -61,19 +62,19 @@ section.game(data-popup-rules="" )
 					.task-timer
 						| 00:15
 
-				.answers
+				.answers-pairs
 					.answer-left
 						label
-							input.question__options_input(type="radio" value="Менее 15 минут" name="question-1" data-name="question-1" data-answer-number="1")
-							span(data-label="")
+							input.question__options_input(type="checkbox" value="Менее 15 минут" name="question-1" data-name="question-1" data-answer-number="1" hidden)
+							span.check-toggle(data-label="")
 								span(data-value="")
-								span(data-text="") Менее 15 минут
+								span(data-text="") Длинный текст варианта ответа, который не поместится в одну строк
 					.answer-right
 						label
-							input.question__options_input(type="radio" value="Менее 15 минут" name="question-1" data-name="question-1" data-answer-number="1")
-							span(data-label="")
+							input.question__options_input(type="checkbox" value="Более 15 минут" name="question-1" data-name="question-1" data-answer-number="2" )
+							span.check-toggle(data-label="")
 								span(data-value="")
-								span(data-text="") Менее 15 минут
+								span(data-text="") Короткий ответ в одну строку
 
 				.answer-counter
 					| Правильных ответов: 0 из 7. 

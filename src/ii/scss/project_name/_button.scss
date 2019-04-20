@@ -23,5 +23,54 @@
 	display: none;
 }
 
+.check-toggle {
+	width: 572px;
+  	height: 80px;
+  	color: $color_white;
+	font-size: 24px;
+	line-height: 25px;
+	text-align: center;
+}
+
+/* Styles for hiding the native checkbox */
+input[type='checkbox'].question__options_input {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* Styles for the basic appearance of the custom checkbox */
+input[type='checkbox'].question__options_input ~ .check-toggle {
+  
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  background: $color_orange;
+  border: 1px solid $color_orange;
+  border-radius: 40px;
+  cursor: pointer;
+}
+
+/* Styles for the hover state appearance of the custom checkbox */
+input[type='checkbox'].question__options_input:hover ~ .check-toggle {
+ 	box-shadow: 0 5px 5px rgba(234, 122, 10, 0.5);
+	transition: 0.2s ease-in-out
+}
+
+/* Styles for the focus state appearance of the custom checkbox */
+input[type='checkbox'].question__options_input:focus ~ .check-toggle {
+	border-color: $color_orange;
+	box-shadow: 0 0 0 2px rgba(234, 122, 10, 0.5);
+}
+
+/* Styles for the checked state appearance of the custom checkbox */
+input[type='checkbox'].question__options_input:checked ~ .check-toggle {
+  border-color: $color_yellow;
+  background: $color_yellow;
+  background-size: 75%;
+}
 
 // end button
