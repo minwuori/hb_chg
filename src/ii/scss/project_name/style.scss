@@ -51,16 +51,16 @@ $color_hint: #7AAF25;
 
 .hb-chg {
 	@import '_helpers';
-	@import '_header';
+	@import '_button';
 	@import '_screen';
+	@import '_header';
 	@import '_greeting';
 	@import '_map';
 	@import '_game';
 	@import '_calendar';
-	@import '_button';
 	@import '_rules';
 	@import '_footer';
 	@import '_media';
-	@import '_media';
+	@import '_view'
 }
 	

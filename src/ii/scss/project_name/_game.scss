@@ -62,15 +62,13 @@
   margin-bottom: 65px;
 }
 
-.game__title_pairs, .game__title_questions,.game__title_images,
-// .game-pairs, .game-questions, .game-images, 
-// .message 
-{
+.game__title_pairs, .game__title_questions,.game__title_images {
   display: none;
 }
 
 .game__content {
-  padding-top: 100px;
+  padding: 100px 0;
+  text-align: center;
 }
 
 .message {
@@ -245,120 +243,18 @@ figcaption {
 
 }
 
-
-.game__main {
-  flex-grow: 1;
-  width: 100%;
+.answers-questions {
   display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
+  margin: 0 auto;
+
 }
 
-.game-day__prev,
-.game-day__next {
-  width: 2.8em;
-  flex-shrink: 0;
-  position: relative;
-  cursor: pointer;
-  text-align: center;
-  font-weight: bold;
-}
-
-.game-day__prev {
-  left: -2.8em;
-}
-
-.game-day__next {
-  right: -2.8em;
-}
-
-.game-day__prev svg,
-.game-day__next svg {
-  margin-top: 0.25rem;
-  width: 25px;
-}
-
-.game-day__prev.inactive,
-.game-day__next.inactive {
-  visibility: hidden;
-}
-
-.game-day__prev:after,
-.game-day__next:after {
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  content: attr(data-content);
-}
-
-.game-day__content {
-  flex-grow: 1;
-  padding: 2rem 1rem;
-  position: relative;
-}
-
-.option input {
+.answers-pairs, .answers-questions, .answers-images, 
+.message, .task-timer {
   display: none;
 }
 
-.game-day__content > .qw > div {
-  width: 100%;
-}
-
-.start {
-  font-size: 2.25rem;
-  padding: 0.33em 0.73em;
-  font-weight: bold;
-  display: inline-block;
-  margin-top: 1em;
-}
-
-.task {
-  text-align: center;
-  width: 100%;
-  display: flex;  
-  flex-direction: column;
-  align-items: center;
-}
-
-.task_message {
-  background: #26A9E0;
-  background: var(--color-blue);
-  border-radius: 4em;
-  font-size: 1.3em;
-  padding: 1.2em 2.2em; 
-}
-
-.task__items {
-  display: flex;
-}
-
-.task-item {
-  max-width: 6.2em;
-  flex-shrink: 1;
-  margin: 0 1.35em;
-  text-align: center;
-  font-weight: bold;
-}
-
-.task-item__icon {
-  width: 105px;
-  height: 105px;
-  margin: 0 auto 1em;
-  position: relative;
-}
-
-.task-item__icon.circle {
-  border-radius: 50%;
-  background-color: white;
-}
-
-.task-item__icon svg {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-}
-
-.task__button {
-  padding-top: 2rem;
-}
