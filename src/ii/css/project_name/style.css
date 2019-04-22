@@ -191,6 +191,32 @@ body {
     background: #FFB943;
     -webkit-background-size: 75% 75%;
             background-size: 75%; }
+  .hb-chg input[type='checkbox'].question__options_input ~ img,
+  .hb-chg input[type='radio'].question__options_input ~ img {
+    position: relative;
+    width: 450px;
+    height: 450px;
+    border: 1px solid #EA7A0A;
+    -webkit-border-radius: 40px;
+            border-radius: 40px;
+    cursor: pointer; }
+  .hb-chg input[type='checkbox'].question__options_input:hover ~ img,
+  .hb-chg input[type='radio'].question__options_input:hover ~ img {
+    -webkit-box-shadow: 0 5px 5px rgba(234, 122, 10, 0.5);
+            box-shadow: 0 5px 5px rgba(234, 122, 10, 0.5);
+    -webkit-transition: 0.2s ease-in-out;
+    -o-transition: 0.2s ease-in-out;
+    transition: 0.2s ease-in-out; }
+  .hb-chg input[type='checkbox'].question__options_input:focus ~ img,
+  .hb-chg input[type='radio'].question__options_input:focus ~ img {
+    border-color: #EA7A0A;
+    -webkit-box-shadow: 0 0 0 2px rgba(234, 122, 10, 0.5);
+            box-shadow: 0 0 0 2px rgba(234, 122, 10, 0.5); }
+  .hb-chg input[type='checkbox'].question__options_input:checked ~ img,
+  .hb-chg input[type='radio'].question__options_input:checked ~ img {
+    border: 3px solid #FFB943;
+    -webkit-background-size: 75% 75%;
+            background-size: 75%; }
   .hb-chg .screen {
     position: relative;
     z-index: 1; }
@@ -567,7 +593,7 @@ body {
     text-align: center;
     font-weight: normal;
     margin-bottom: 65px; }
-  .hb-chg .game__title_pairs, .hb-chg .game__title_questions, .hb-chg .game__title_images {
+  .hb-chg .game__title_pairs, .hb-chg .game__title_questions, .hb-chg .game__title_picture {
     display: none; }
   .hb-chg .game__content {
     padding: 100px 0;
@@ -704,9 +730,9 @@ body {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    -webkit-flex-wrap: wrap;
-        -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
+    -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
     -webkit-box-pack: space-evenly;
     -webkit-justify-content: space-evenly;
         -ms-flex-pack: space-evenly;
@@ -738,7 +764,24 @@ body {
         -ms-flex-align: center;
             align-items: center;
     margin: 0 auto; }
-  .hb-chg .answers-pairs, .hb-chg .answers-questions, .hb-chg .answers-images,
+  .hb-chg .answers-picture {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: 0 auto; }
+  .hb-chg .answers-pairs, .hb-chg .answers-questions, .hb-chg .answers-picture,
   .hb-chg .message, .hb-chg .task-timer {
     display: none; }
   .hb-chg .calendar {
@@ -1022,8 +1065,10 @@ body {
       left: 140px; }
     .hb-chg .hint-moscow {
       left: 153px; }
-    .hb-chg .game__header {
-      width: 80%; }
+    .hb-chg .avatar {
+      right: 0; }
+    .hb-chg .game__header, .hb-chg .game__content {
+      width: 90%; }
     .hb-chg .btn-answer {
       width: 450px; } }
   @media screen and (max-height: 800px) {
@@ -1036,23 +1081,23 @@ body {
     display: none; }
   .hb-chg [data-view="pairs"] .btn-participate,
   .hb-chg [data-view="questions"] .btn-participate,
-  .hb-chg [data-view="images"] .btn-participate {
+  .hb-chg [data-view="picture"] .btn-participate {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex; }
   .hb-chg [data-view="pairs"] .game__title_pairs,
   .hb-chg [data-view="questions"] .game__title_questions,
-  .hb-chg [data-view="images"] .game__title_images {
+  .hb-chg [data-view="picture"] .game__title_picture {
     display: block; }
   .hb-chg [data-view="pairs"] .game__title_before,
   .hb-chg [data-view="questions"] .game__title_before,
-  .hb-chg [data-view="images"] .game__title_before,
+  .hb-chg [data-view="picture"] .game__title_before,
   .hb-chg [data-view="after"] .game__title_before {
     display: none; }
   .hb-chg [data-view="pairs"] .answers-pairs,
   .hb-chg [data-view="questions"] .answers-questions,
-  .hb-chg [data-view="images"] .answers-images {
+  .hb-chg [data-view="picture"] .answers-picture {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;

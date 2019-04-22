@@ -74,4 +74,32 @@ input[type='radio'].question__options_input:checked ~ .btn-answer {
   background-size: 75%;
 }
 
+input[type='checkbox'].question__options_input ~ img,
+input[type='radio'].question__options_input ~ img {
+  position: relative;
+  width: 450px;
+  height: 450px;
+  border: 1px solid $color_orange;
+  border-radius: 40px;
+  cursor: pointer;
+}
+
+input[type='checkbox'].question__options_input:hover ~ img,
+input[type='radio'].question__options_input:hover ~ img {
+ 	box-shadow: 0 5px 5px rgba(234, 122, 10, 0.5);
+	transition: 0.2s ease-in-out
+}
+
+input[type='checkbox'].question__options_input:focus ~ img,
+input[type='radio'].question__options_input:focus ~ img {
+	border-color: $color_orange;
+	box-shadow: 0 0 0 2px rgba(234, 122, 10, 0.5);
+}
+
+input[type='checkbox'].question__options_input:checked ~ img,
+input[type='radio'].question__options_input:checked ~ img {
+  border: 3px solid $color_yellow;
+  background-size: 75%;
+}
+
 // end button

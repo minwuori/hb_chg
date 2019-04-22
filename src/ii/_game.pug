@@ -31,7 +31,7 @@ section.game(data-popup-rules="" )
 						| 1 балл. 
 					| Успейте отгадать все пары за одну минуту.
 
-				.game__title_images
+				.game__title_picture
 					span.accent
 						| Сегодня 
 					| вас ждёт вопрос о Республике Коми. 
@@ -55,7 +55,9 @@ section.game(data-popup-rules="" )
 							| – Ну что же это такое? Зачем ты позолотил усы? И на какой чёрт тебе нужен галстук, если на тебе нет штанов?
 					
 					.task-timer
-						| 00:15
+						| 01:00
+
+					button.btn.btn-start.js__btn_start(type="button" value="Я готов!") Я готов!
 
 				section.answers-pairs
 					.answer-left
@@ -67,19 +69,19 @@ section.game(data-popup-rules="" )
 
 
 						label
-							input.question__options_input(type="checkbox" value="Менее 15 минут" name="question-1" data-name="question-1" data-answer-number="1" hidden)
+							input.question__options_input(type="checkbox" value="Менее 15 минут" name="question-1" data-name="question-1" data-answer-number="2" hidden)
 							span.btn-answer(data-label="")
 								span(data-value="")
 								span(data-text="") Длинный текст варианта ответа, который не поместится в одну строку
 					.answer-right
 						label
-							input.question__options_input(type="checkbox" value="Более 15 минут" name="question-1" data-name="question-1" data-answer-number="2" )
+							input.question__options_input(type="checkbox" value="Более 15 минут" name="question-1" data-name="question-1" data-answer-number="3" )
 							span.btn-answer(data-label="")
 								span(data-value="")
 								span(data-text="") Короткий ответ в одну строку
 
 						label
-							input.question__options_input(type="checkbox" value="Менее 15 минут" name="question-1" data-name="question-1" data-answer-number="1" hidden)
+							input.question__options_input(type="checkbox" value="Менее 15 минут" name="question-1" data-name="question-1" data-answer-number="4" hidden)
 							span.btn-answer(data-label="")
 								span(data-value="")
 								span(data-text="") Длинный текст варианта ответа, который не поместится в одну строку
@@ -92,22 +94,42 @@ section.game(data-popup-rules="" )
 							span(data-text="") Длинный текст варианта ответа, который не поместится в одну строку
 
 					label
-						input.question__options_input(type="radio" value="Менее 15 минут" name="question-1" data-name="question-1" data-answer-number="1" hidden)
+						input.question__options_input(type="radio" value="Менее 15 минут" name="question-1" data-name="question-1" data-answer-number="2" hidden)
 						span.btn-answer(data-label="")
 							span(data-value="")
 							span(data-text="") Короткий ответ в одну строку
 
 					label
-						input.question__options_input(type="radio" value="Менее 15 минут" name="question-1" data-name="question-1" data-answer-number="1" hidden)
+						input.question__options_input(type="radio" value="Менее 15 минут" name="question-1" data-name="question-1" data-answer-number="3" hidden)
 						span.btn-answer(data-label="")
 							span(data-value="")
 							span(data-text="") Короткий ответ в одну строку
 
 					label
-						input.question__options_input(type="radio" value="Менее 15 минут" name="question-1" data-name="question-1" data-answer-number="1" hidden)
+						input.question__options_input(type="radio" value="Менее 15 минут" name="question-1" data-name="question-1" data-answer-number="4" hidden)
 						span.btn-answer(data-label="")
 							span(data-value="")
 							span(data-text="") Длинный текст варианта ответа, который не поместится в одну строку
+
+
+				section.answers-picture
+					label
+						input.question__options_input(type="radio" value="картинка" name="question-1" data-name="question-1" data-answer-number="1" hidden)
+						img(src="/ii/img/project_name/temp.png" alt="")
+
+					label
+						input.question__options_input(type="radio" value="картинка" name="question-1" data-name="question-1" data-answer-number="1" hidden)
+						img(src="/ii/img/project_name/temp.png" alt="")
+
+					label
+						input.question__options_input(type="radio" value="картинка" name="question-1" data-name="question-1" data-answer-number="1" hidden)
+						img(src="/ii/img/project_name/temp.png" alt="")
+
+					label
+						input.question__options_input(type="radio" value="картинка" name="question-1" data-name="question-1" data-answer-number="1" hidden)
+						img(src="/ii/img/project_name/temp.png" alt="")
+
+
 			.message 
 				.message__wrong
 					| Увы... Это неправильный ответ
@@ -119,6 +141,8 @@ section.game(data-popup-rules="" )
 
 				.message__discount
 					| Ваша скидка: 0%
+
+				
 
 
 					

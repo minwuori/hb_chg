@@ -62,7 +62,7 @@
   margin-bottom: 65px;
 }
 
-.game__title_pairs, .game__title_questions,.game__title_images {
+.game__title_pairs, .game__title_questions,.game__title_picture {
   display: none;
 }
 
@@ -236,7 +236,7 @@ figcaption {
 
 .answers-pairs {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: space-evenly;
   align-items: center;
   margin: 0 auto;
@@ -253,7 +253,15 @@ figcaption {
 
 }
 
-.answers-pairs, .answers-questions, .answers-images, 
+.answers-picture {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+
+}
+.answers-pairs, .answers-questions, .answers-picture, 
 .message, .task-timer {
   display: none;
 }

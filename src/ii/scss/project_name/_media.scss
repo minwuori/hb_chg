@@ -50,8 +50,12 @@
     .hint-moscow {
       left: 153px;
     }
-    .game__header {
-      width: 80%;
+
+    .avatar {
+      right: 0;
+    }
+    .game__header, .game__content {
+      width: 90%;
     }
 
     .btn-answer {
