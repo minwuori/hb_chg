@@ -53,13 +53,12 @@
 }
 
 .game__title {
-  max-width: 884px;
+  max-width: 90%;
   font-style: normal;
   font-size: 24px;
   line-height: 25px;
   text-align: center;
   font-weight: normal;
-  margin-bottom: 65px;
 }
 
 .game__title_pairs, .game__title_questions,.game__title_picture {
@@ -67,8 +66,9 @@
 }
 
 .game__content {
-  padding: 100px 0;
+  margin-top: 100px;
   text-align: center;
+  max-width: 90%;
 }
 
 .message {
@@ -87,6 +87,70 @@
   color: $color_green;
   //display: none;
 }
+
+.task__title {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+  font-size: 36px;
+  line-height: 34px;
+  color: #27AAE2;
+  text-align: left;
+}
+
+.task__description {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 24px;
+  text-align: left;
+  margin-top: 25px;
+}
+
+.task__quote {
+  font-family: 'PT Sans', sans-serif;
+  font-style: italic;
+  font-size: 24px;
+  text-align: left;
+  margin-top: 25px;
+}
+
+.task__timer {
+  font-style: 24px;
+  color: $color_pink;
+  margin-top: 15px;
+}
+
+
+.answers-pairs {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 45px auto 0;
+
+}
+
+.answers-questions {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 45px auto 0;
+
+}
+
+.answers-picture {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 45px auto 0;
+
+}
+.answers-pairs, .answers-questions, .answers-picture, 
+.message, .task__timer, .task {
+  display: none;
+}
+
 .avatar {
   position: absolute;
   top: 0px;
@@ -116,6 +180,8 @@ figcaption {
   text-align: center;
   color: $color_blue;
 }
+
+
 
 
 //popup
@@ -234,35 +300,6 @@ figcaption {
 
   //popup end
 
-.answers-pairs {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-evenly;
-  align-items: center;
-  margin: 0 auto;
 
-}
 
-.answers-questions {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-
-}
-
-.answers-picture {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-
-}
-.answers-pairs, .answers-questions, .answers-picture, 
-.message, .task-timer {
-  display: none;
-}
 

@@ -4,9 +4,7 @@
 	display: none;
 }
 
-[data-view="pairs"] .btn-participate,
-[data-view="questions"] .btn-participate,
-[data-view="picture"] .btn-participate {
+[data-view="game"] .btn-participate {
 	display: flex;
 }
 
@@ -23,6 +21,12 @@
 	display: none;
 }
 
+[data-view="pairs"] .task,
+[data-view="questions"] .task,
+[data-view="picture"] .task {
+	display: block;
+}
+
 [data-view="pairs"] .answers-pairs,
 [data-view="questions"] .answers-questions,
 [data-view="picture"] .answers-picture {
@@ -30,6 +34,10 @@
 }
 
 
-[data-view="pairs"] .task-timer {
+[data-view="pairs"] .task__timer {
 	display: block;
+}
+
+[data-view="pairs"] .btn-start {
+	display: flex;
 }

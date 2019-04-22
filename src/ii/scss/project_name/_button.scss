@@ -20,7 +20,13 @@
 }
 
 .btn-participate {
+  margin-top: 65px;
 	display: none;
+}
+
+.btn-start {
+  margin: 25px auto 0;
+  display: none;
 }
 
 .btn-answer {
@@ -49,29 +55,28 @@ input[type='radio'].question__options_input ~ .btn-answer {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: $color_orange;
-  border: 1px solid $color_orange;
+  background: #27AAE2;
+  border: none;
   border-radius: 40px;
   cursor: pointer;
 }
 
 input[type='checkbox'].question__options_input:hover ~ .btn-answer,
 input[type='radio'].question__options_input:hover ~ .btn-answer {
- 	box-shadow: 0 5px 5px rgba(234, 122, 10, 0.5);
-	transition: 0.2s ease-in-out
+ 	box-shadow: 0px 5px 15px rgba(39, 170, 226, 0.5);
+	transition: 0.2s ease-in-out;
 }
 
 input[type='checkbox'].question__options_input:focus ~ .btn-answer,
 input[type='radio'].question__options_input:focus ~ .btn-answer {
-	border-color: $color_orange;
-	box-shadow: 0 0 0 2px rgba(234, 122, 10, 0.5);
+	box-shadow: 0px 5px 15px rgba(39, 170, 226, 0.5);
 }
 
 input[type='checkbox'].question__options_input:checked ~ .btn-answer,
 input[type='radio'].question__options_input:checked ~ .btn-answer {
-  border-color: $color_yellow;
-  background: $color_yellow;
-  background-size: 75%;
+  background: $color_white;
+  color: #27AAE2;
+  box-shadow: 0px 5px 15px rgba(39, 170, 226, 0.5);
 }
 
 input[type='checkbox'].question__options_input ~ img,
@@ -79,21 +84,21 @@ input[type='radio'].question__options_input ~ img {
   position: relative;
   width: 450px;
   height: 450px;
-  border: 1px solid $color_orange;
+  border: 1px solid #27AAE2;
   border-radius: 40px;
   cursor: pointer;
 }
 
 input[type='checkbox'].question__options_input:hover ~ img,
 input[type='radio'].question__options_input:hover ~ img {
- 	box-shadow: 0 5px 5px rgba(234, 122, 10, 0.5);
-	transition: 0.2s ease-in-out
+ 	box-shadow: 0px 5px 15px rgba(39, 170, 226, 0.5);
+	transition: 0.2s ease-in-out;
 }
 
 input[type='checkbox'].question__options_input:focus ~ img,
 input[type='radio'].question__options_input:focus ~ img {
-	border-color: $color_orange;
-	box-shadow: 0 0 0 2px rgba(234, 122, 10, 0.5);
+	border-color: #27AAE2;
+	box-shadow: 0px 5px 15px rgba(39, 170, 226, 0.5);
 }
 
 input[type='checkbox'].question__options_input:checked ~ img,

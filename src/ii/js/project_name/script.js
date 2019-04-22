@@ -284,7 +284,7 @@ var sliderCalendar = (function movingCarousel(slide) {
 
 })();
 
-// фиксация аватарки медведя
+// фиксация аватарки медведя внутри экрана с игрой
 var avatarFix = (function() {
 	window.onscroll = function() {
 		var scroll = window.pageYOffset || document.documentElement.scrollTop, // определяем положение ползунка
@@ -449,6 +449,22 @@ var mapSvg = (function(){
 
 })();
 
+var btn = (function(){
+	var btnParticipate = document.querySelector('.js__btn_participate'),
+		btnStart = document.querySelector('.js__btn_start'),
+		screenGame = document.querySelector('main'),
+		gameContent = screenGame.querySelector('.game__content');
+
+	btnParticipate.addEventListener('click', function(){
+		screenGame.dataset.view = 'questions';
+		
+		var gameContentWidth = gameContent.offsetWidth;
+		TweenMax.fromTo(gameContent, 1, {x: -gameContentWidth}, {x: 0, ease: Back.easeOut})
+
+	})
+
+})();
+
 var timer = (function() {
 	function startTimer(duration, display) {
 	    var timer = duration, minutes, seconds;
@@ -472,11 +488,12 @@ var timer = (function() {
 
 	start.addEventListener('click', function(){
 		var oneMinutes = 60,
-        	display = document.querySelector('.task-timer');
+        	display = document.querySelector('.task__timer');
     	startTimer(oneMinutes, display);
 	})
     
 })();
+
 	
 
 });
