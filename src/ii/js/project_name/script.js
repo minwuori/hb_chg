@@ -1,26 +1,6 @@
-document.addEventListener('DOMContentLoaded', function(){ // Аналог $(document).ready(function(){
-	// открытие/закрытие правил акции
-// var toggleRules = (function() {
-// 	 var list = document.querySelector('.rules-list'),
-// 	 full = list.querySelector('.full');
-	
-// 	 return function() {
-// 	 if (list.classList.contains('open')) {
-// 		 full.slideUp(400, function() {
-// 		 list.classList.toggle('open');
-// 		 });
-// 	 } else {
-// 		 full.slideDown(400, function() {
-// 		 list.classList.toggle('open');
-// 		 });
-// 	 }
-	
-// 	 }
-// })();
-
+document.addEventListener('DOMContentLoaded', function(){ 
 
 //анимация первого экрана
-
 var animateScreen = (function(){
 
 	var bear = document.querySelector('.bear'),
@@ -142,6 +122,14 @@ var sliderCalendar = (function movingCarousel(slide) {
 	// текущее время по москве
 	now.setHours(now.getHours() + offset);
 
+	// старт акции по москве
+    var start = new Date(2019, 4, 13, 0, 0, 0);
+    start.setHours(start.getHours() - offset);
+
+    // конец акции по москве
+    var finish = new Date(2019, 4, 19, 23, 59, 59);
+    finish.setHours(finish.getHours() - offset);
+
 	// выставляем соответствующее дате положение слайдера
 	for (var i = 0; i < slideItems.length; i++) {	
 
@@ -152,10 +140,10 @@ var sliderCalendar = (function movingCarousel(slide) {
 			sliderWrapper.style.transform = 'translateX(' + transform + '%)';
 		}
 
-		if (now.getDate() > 13 && now.getDate() < 19) {
+		if (now > start && now < finish) {
 		prev.dataset.sliderPrev = "";	
 		}
-		if (now.getDate() == 19) {
+		if (now == finish) {
 		next.dataset.sliderNext = "disable";	
 		}		
 				
@@ -171,21 +159,20 @@ var sliderCalendar = (function movingCarousel(slide) {
 			dateItems[i].dataset.state = "active"
 		}
 
-		if (now.getDate() > +dateItems[i].dataset.date) {
+		if (now > start) {
 			
 			dateItems[i].dataset.state = "disable"
 		}
 	}
-
 	for (var i = 0; i < dolls.length; i++) {
 		
+		//если есть совпадение дата-атрибутов, то показываем матрешку
 		if(now.getDate() == +dolls[i].dataset.doll){
 			
 			dolls[i].dataset.dollState = "visible"
 		}
 
-		//если есть совпадение дата-атрибутов, то показываем матрешку
-		if (now.getDate() > +dolls[i].dataset.doll && now.getDate() <= 19) {
+		if (now > start && now <= finish) {
 			
 			dolls[i].dataset.dollState = "unvisible"
 		}
@@ -293,10 +280,10 @@ var avatarFix = (function() {
 			posY = screen.getBoundingClientRect().top + scroll, // получаем координату верхней границы окна для фиксируемого элемента
 			screenHeight = screen.offsetHeight - 100, // высота экрана
 			avatarHeight = avatar.offsetHeight, // высота фиксируемого элемента
-			stop = screenHeight + document.querySelector('.calendar').getBoundingClientRect().top ; // нижняя граница для фиксируемого элемента
+			stop = screenHeight + document.querySelector('.calendar').getBoundingClientRect().top - avatarHeight*2; // нижняя граница для фиксируемого элемента
 
 		//если позиция скролла достигла экрана с игрой, то фиксируем аватарку
-		if( scroll > (screen.getBoundingClientRect().top + avatarHeight)) {
+		if( scroll > (screen.getBoundingClientRect().top - avatarHeight)) {
 			avatar.dataset.avatarPosition = "fixed";
 		
 		//если позиция скролла 	меньше, то возвращаем к исходному(абсолют кверху)
@@ -452,20 +439,33 @@ var mapSvg = (function(){
 var btn = (function(){
 	var btnParticipate = document.querySelector('.js__btn_participate'),
 		btnStart = document.querySelector('.js__btn_start'),
-		screenGame = document.querySelector('main'),
-		gameContent = screenGame.querySelector('.game__content');
+		screen = document.querySelector('main'),
+		screenGame = document.querySelector('.game'),
+		gameContent = screenGame.querySelector('.game__content'),
+		answersPairs = gameContent.querySelector('.answers-pairs'),
+		gameContentWidth = gameContent.offsetWidth,
+		gameContentHeight = gameContent.offsetHeigth,
+		statistic = gameContent.querySelector('.message');
 
+	// при клике на кнопку "Начать игру"
 	btnParticipate.addEventListener('click', function(){
-		screenGame.dataset.view = 'questions';
-		
-		var gameContentWidth = gameContent.offsetWidth;
+		// если сегодня игра с вопросами, то показывать экран с вопросами
+		if (screen.dataset.view == 'questions') {
+
+			screenGame.dataset.gameType = 'questions';
+		// если сегдня игра с парами, то показывать экран с парами
+		} else if (screen.dataset.view == 'pairs'){
+
+			screenGame.dataset.gameType = 'pairs';
+	        
+		}
+
+		// анимация появления игр
 		TweenMax.fromTo(gameContent, 1, {x: -gameContentWidth}, {x: 0, ease: Back.easeOut})
 
-	})
+	});
 
-})();
-
-var timer = (function() {
+	// ф-я  запуска таймера
 	function startTimer(duration, display) {
 	    var timer = duration, minutes, seconds;
 	    setInterval(function () {
@@ -476,24 +476,44 @@ var timer = (function() {
 	        seconds = seconds < 10 ? "0" + seconds : seconds;
 
 	        display.textContent = minutes + ":" + seconds;
+	        // если таймер достиг значения меньше 10сек, то подсветить красным
+	        if (--timer < 10) {
 
-	        if (--timer < 0) {
-	            timer = 0;
-	            return
+	        	display.classList.add('task__timer_warning');
+
+	        	// если таймер достиг нуля, то 
+	        	if (timer < 0) {
+		            //остановить таймер
+		            timer = 0;
+
+		            // показать экран со статистикой
+		            screenGame.dataset.gameType = 'statistics';
+
+		            TweenMax.fromTo(statistic, 1, {y: -gameContentHeight}, {y: 0, ease: Linear.easeInOut});
+
+		            return
+		        }
 	        }
+	        
 	    }, 1000);
+
 	}
 
-	var start = document.querySelector('.js__btn_start');
-
-	start.addEventListener('click', function(){
+	// навешиваем событие на кнопку "я готов!"
+	btnStart.addEventListener('click', function(){
 		var oneMinutes = 60,
         	display = document.querySelector('.task__timer');
+
+        //запускаем таймер	
     	startTimer(oneMinutes, display);
+    	
+    	answersPairs.classList.add('answers-pairs_active');
+    	btnStart.style.display = 'none';
+		TweenMax.fromTo(answersPairs, 1, {x: -gameContentWidth}, {x: 0, ease: Back.easeOut})
 	})
-    
+
 })();
 
-	
+
 
 });

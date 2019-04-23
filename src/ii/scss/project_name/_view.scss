@@ -4,40 +4,61 @@
 	display: none;
 }
 
-[data-view="game"] .btn-participate {
+[data-view="pairs"] .btn-participate,
+[data-view="questions"] .btn-participate{
 	display: flex;
 }
 
 [data-view="pairs"] .game__title_pairs,
-[data-view="questions"] .game__title_questions,
-[data-view="picture"] .game__title_picture {
+[data-view="questions"] .game__title_questions{
 	display: block;
 }
 
 [data-view="pairs"] .game__title_before,
 [data-view="questions"] .game__title_before,
-[data-view="picture"] .game__title_before,
 [data-view="after"] .game__title_before {
 	display: none;
 }
 
-[data-view="pairs"] .task,
-[data-view="questions"] .task,
-[data-view="picture"] .task {
+[data-view="pairs"] .message-btn,
+[data-view="pairs"] .message-description {
+	display: none;
+}
+
+[data-game-type="pairs"] .task,
+[data-game-type="questions"] .task {
 	display: block;
 }
 
-[data-view="pairs"] .answers-pairs,
-[data-view="questions"] .answers-questions,
-[data-view="picture"] .answers-picture {
+[data-game-type="questions"] .answers-questions {
 	display: flex;
 }
 
 
-[data-view="pairs"] .task__timer {
+[data-game-type="pairs"] .task__timer {
 	display: block;
 }
 
-[data-view="pairs"] .btn-start {
+[data-game-type="pairs"] .btn-start {
 	display: flex;
+}
+
+[data-game-type="pairs"] .task,
+[data-game-type="questions"] .task {
+	display: block;
+}
+
+[data-game-type="pairs"] .btn-participate,
+[data-game-type="questions"] .btn-participate,
+[data-game-type="statistics"] .btn-participate {
+	display: none;
+}
+
+[data-game-type="statistics"] .task,
+[data-game-type="statistics"] .answers-pairs {
+	display: none;
+}
+
+[data-game-type="statistics"] .message {
+	display: block;
 }
