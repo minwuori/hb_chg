@@ -122,29 +122,24 @@ var sliderCalendar = (function movingCarousel(slide) {
 	// текущее время по москве
 	now.setHours(now.getHours() + offset);
 
-	// старт акции по москве
-    var start = new Date(2019, 4, 13, 0, 0, 0);
-    start.setHours(start.getHours() - offset);
-
-    // конец акции по москве
-    var finish = new Date(2019, 4, 19, 23, 59, 59);
-    finish.setHours(finish.getHours() - offset);
-
 	// выставляем соответствующее дате положение слайдера
 	for (var i = 0; i < slideItems.length; i++) {	
+		if (now.getMonth() == 4) {
+			if (now.getDate() == +slideItems[i].dataset.slide) {
+				positionLeftItem = +slideItems[i].dataset.slide - 13;
+				transform = (13 - +slideItems[i].dataset.slide) * step;
+				
+				sliderWrapper.style.transform = 'translateX(' + transform + '%)';
+			}
 
-		if (now.getDate() == +slideItems[i].dataset.slide) {
-			positionLeftItem = +slideItems[i].dataset.slide - 13;
-			transform = (13 - +slideItems[i].dataset.slide) * step;
-			
-			sliderWrapper.style.transform = 'translateX(' + transform + '%)';
-		}
+			if (now.getDate() > 13 && now.getDate() < 19) {
+			prev.dataset.sliderPrev = "";	
+			}
+			if (now.getDate() == 19) {
+			next.dataset.sliderNext = "disable";
+			prev.dataset.sliderPrev = "";	
 
-		if (now > start && now < finish) {
-		prev.dataset.sliderPrev = "";	
-		}
-		if (now == finish) {
-		next.dataset.sliderNext = "disable";	
+			}
 		}		
 				
 	}
@@ -152,31 +147,36 @@ var sliderCalendar = (function movingCarousel(slide) {
 
 	//показываем активную дату на календаре
 	for (var i = 0; i < dateItems.length; i++) {
+		if (now.getMonth() == 4) {
+	    //если есть совпадение дата-атрибутов, то показываем дату
+			if(now.getDate() == +dateItems[i].dataset.date){
+				
+				dateItems[i].dataset.state = "active"
+			}
 
-    //если есть совпадение дата-атрибутов, то показываем дату
-		if(now.getDate() == +dateItems[i].dataset.date){
-			
-			dateItems[i].dataset.state = "active"
-		}
-
-		if (now > start) {
-			
-			dateItems[i].dataset.state = "disable"
+			if (now.getDate() > +dateItems[i].dataset.date) {
+				
+				dateItems[i].dataset.state = "disable"
+			}
 		}
 	}
+
 	for (var i = 0; i < dolls.length; i++) {
+		if (now.getMonth() == 4) {
 		
-		//если есть совпадение дата-атрибутов, то показываем матрешку
-		if(now.getDate() == +dolls[i].dataset.doll){
-			
-			dolls[i].dataset.dollState = "visible"
-		}
+			if(now.getDate() == +dolls[i].dataset.doll){
+				
+				dolls[i].dataset.dollState = "visible"
+			}
 
-		if (now > start && now <= finish) {
-			
-			dolls[i].dataset.dollState = "unvisible"
+			//если есть совпадение дата-атрибутов, то показываем матрешку
+			if (now.getDate() > +dolls[i].dataset.doll && now.getDate() <= 19) {
+				
+				dolls[i].dataset.dollState = "unvisible"
+			}
 		}
 	}
+
 
 	//при нажатии на кнопку назад
 	prev.addEventListener("click", function(evt) {
@@ -514,6 +514,37 @@ var btn = (function(){
 
 })();
 
+var rules = (function(){
+	// скрыть/показать правила
+
+    var btns = Array.prototype.slice.call(document.querySelectorAll('.js__rules_content'));
+
+    btns.forEach(function(btn){
+
+        btn.addEventListener('click', function(){
+
+            var rules = btn.querySelector('.js__rules_list');
+
+            if (btn.querySelector('.rules__show')) {
+
+                // Скрываем блок правил
+                $(rules).slideUp(400, function () {
+                    rules.classList.remove('rules__show');
+                });
+
+            } else{
+
+                // Отображем блок правил
+                $(rules).slideDown(400, function () {
+                    rules.classList.add('rules__show')
+                });
+
+            }
+
+        });
+    });
+    
+})();
 
 
 });

@@ -47,35 +47,15 @@ img{
 }
 
 
-
-button {
-	font-family: inherit;
-	font-size: inherit;
-	border: none;
-	outline: none;
-	box-shadow: none;
-}
-
-button:active, button:focus, button:hover {
-	outline: none;
-	box-shadow: none;
-}
-
 .link {
 	color: $color_blue;
 	text-decoration: underline;	
 }
 
-ol {
-	list-style: none;
-	counter-reset: li;
-	-webkit-padding-start: 0;
-	padding-inline-start: 0; }
-
-li:before {
-	counter-increment: li;
-	content: counters(li, ".") ". "; }
-
 .accent {
 	font-weight: bold;
+}
+
+.mb_65 {
+	margin-bottom: 65px;
 }

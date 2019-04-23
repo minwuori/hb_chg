@@ -5,7 +5,7 @@
   padding: 100px 0;
 }
 
-.rules h2 {
+.rules__title {
   font-family: Roboto;
   font-weight: 900;
   font-size: 36px;
@@ -15,45 +15,50 @@
   color: $color_blue;
 }
 
-.rules-list {
+.rules__subtitle {
+  font-family: Roboto;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 25px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: $color_blue;
+}
+
+.rules__list {
   margin-top: 3.8125rem;
   list-style: none;
-  font-size: 1.25rem;
-}
-
-
-
-.rules-list .toggle-list:before {
-  content: 'Показать ';
-  display: inline;
-}
-
-.rules-list.open .toggle-list:before {
-  content: 'Скрыть ';
-}
-
-.rules-list .full {
+  font-size: 18px;
+  line-height: 19px;
+  font-weight: normal;
+  text-align: left;
+  color: $color_black;
   display: none;
 }
 
-.rules-list li {
-  margin-bottom: 1rem;
-  counter-increment: main;
-}
-
-.rules-list li:before {
-  content: counter(main)'. ';
-}
-
-.rules-list ol {
-  counter-reset: list;
-}
-
-.rules-list ol li {
+ol {
   list-style: none;
-  counter-increment: list;
+  counter-reset: li;
+  -webkit-padding-start: 0;
+  padding-inline-start: 0; }
+
+li:before {
+  counter-increment: li;
+  content: counters(li, ".") ". "; }
+
+table {
+  margin: 45px 0;
+}
+table, tr, td, th {
+  border: 1px solid $color_black;
+  border-collapse: collapse;
+  padding: 10px;
 }
 
-.rules-list ol li:before {
-  content: counter(main)'.'counter(list)'. ';
+td:nth-child(1){
+  width: 40%;
+}
+.rules__show {
+  display: block;
+  max-height: 2000px;
 }
