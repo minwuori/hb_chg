@@ -531,8 +531,20 @@ var btn = (function(){
 
 })();
 
-var rules = (function(){
-	// скрыть/показать правила
+// перезагрузить страницу
+var reloadPage = (function(){
+
+	var btnReload = document.querySelector('.js__btn_reload');
+
+	btnReload.addEventListener('click', function(){
+
+		location.reload();
+
+	})
+})();
+
+// скрыть/показать правила
+var showRules = (function(){
 
     var btns = Array.prototype.slice.call(document.querySelectorAll('.js__rules_content'));
 

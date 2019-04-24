@@ -1,4 +1,37 @@
-// вспомогательные
+// basic
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700,900&amp;subset=cyrillic");
+
+* {
+	margin: 0;
+	padding: 0;
+}
+	
+body {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'PT Sans', sans-serif;
+	font-size: 18px;
+} 
+
+.container{
+	max-width: 1260px;
+	min-width: 940px;
+	box-sizing: border-box;
+	width: 100%;
+	font-size: inherit;
+	padding: 0 20px;
+	margin: auto;
+}
+
+.container__inner{
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
 .page-wrap {
 	display: inline-flex;
 	flex-direction: column;
@@ -59,3 +92,5 @@ img{
 .mb_65 {
 	margin-bottom: 65px;
 }
+
+// end basic

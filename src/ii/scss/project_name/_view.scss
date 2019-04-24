@@ -1,5 +1,6 @@
 
 // data-view
+
 [data-view="after"] .btn-participate {
 	display: none;
 }
@@ -25,6 +26,36 @@
 	display: none;
 }
 
+// end data-view
+
+// data-region
+[data-region="komi"] .region-komi path,
+[data-region="irkutsk"] .region-irkutsk path,
+[data-region="kamchatka"] .region-kamchatka path,
+[data-region="peter"] .region-peter path,
+[data-region="caucasus"] .region-caucasus path,
+[data-region="volgograd"] .region-volgograd path,
+[data-region="moscow"] .region-moscow path {
+  fill: $color_yellow;
+}
+
+[data-region-state="after"] .region path, [data-region-state="after"] .region :hover path{
+  fill: #7FAF33;
+}
+
+[data-region="komi"] .hint-komi,
+[data-region="irkutsk"] .hint-irkutsk,
+[data-region="kamchatka"] .hint-kamchatka,
+[data-region="peter"] .hint-peter,
+[data-region="caucasus"] .hint-caucasus,
+[data-region="volgograd"] .hint-volgograd,
+[data-region="moscow"] .hint-moscow {
+  display: block;
+}
+
+// end data-region
+
+// data-game-type
 [data-game-type="pairs"] .task,
 [data-game-type="questions"] .task {
 	display: block;
@@ -84,3 +115,5 @@
 [data-game-type="end"] .avatar {
 	display: none;
 }
+
+// data-game-type

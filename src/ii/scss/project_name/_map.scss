@@ -30,25 +30,8 @@
   transition: all 150ms;
   position: relative; }
 
-[data-region="komi"] .region-komi path,
-[data-region="irkutsk"] .region-irkutsk path,
-[data-region="kamchatka"] .region-kamchatka path,
-[data-region="peter"] .region-peter path,
-[data-region="caucasus"] .region-caucasus path,
-[data-region="volgograd"] .region-volgograd path,
-[data-region="moscow"] .region-moscow path {
-  fill: $color_yellow;
-}
-
-
-[data-region-state="after"] .region path, [data-region-state="after"] .region :hover path{
-  fill: #7FAF33;
-}
-
-
 .region:hover path{
   fill: $color_yellow; }
-
 
 
 .hint {
@@ -65,9 +48,6 @@
   color: $color_white;
   box-shadow: -5px 7px 25px rgba(0, 0, 0, 0.1);
   display: none
-  // visibility: hidden;
-  // opacity: 0;
-  // transition :opacity .5s;
 }
 .hint::after {
   content: ''; 
@@ -77,9 +57,6 @@
   border: 20px solid transparent; 
   border-top: 20px solid $color_white;
   z-index: 1;
-  // visibility: hidden;
-  // opacity: 0;
-  // transition :opacity .5s;
 }
 
 .hint__date {
@@ -108,41 +85,6 @@
   color: rgba(0, 0, 0, 0.7);
 }
 
-// [data-region-state="active"] .hint{
-//   background: $color_white;
-// }
-
-// [data-region-state="active"] .hint::after {
-//   border-top: 29px solid $color_white;
-// }
-
-// [data-region-state="active"] .hint__date {
-//   color: rgba(0, 0, 0, 0.3);
-// }
-// [data-region-state="active"] .hint__title {
-//   color: $color_green;
-// }
-// [data-region-state="active"] .hint__content, [data-hint-state="active"] .hint__subtitle {
-//   color: rgba(0, 0, 0, 0.7);
-// }
-
-// [data-region-state="disable"] .hint{
-//   background: $color_hint;
-// }
-
-// [data-region-state="disable"] .hint::after {
-//   border-top: 29px solid $color_hint;
-// }
-// [data-region-state="disable"] .hint__date {
-//   color: rgba(255, 255, 255, 0.5);
-// }
-// [data-region-state="disable"] .hint__title {
-//   opacity: 0.5;
-// }
-// [data-region-state="disable"] .hint__content {
-//   color: $color_white;
-//   opacity: 0.5;
-// }
 .hint.hint-kamchatka::after {
   left: 99%;
   top: 33%;
@@ -193,15 +135,5 @@
   top: 185px;
 }
 
-
-[data-region="komi"] .hint-komi,
-[data-region="irkutsk"] .hint-irkutsk,
-[data-region="kamchatka"] .hint-kamchatka,
-[data-region="peter"] .hint-peter,
-[data-region="caucasus"] .hint-caucasus,
-[data-region="volgograd"] .hint-volgograd,
-[data-region="moscow"] .hint-moscow {
-  display: block;
-}
 
 //end screen map

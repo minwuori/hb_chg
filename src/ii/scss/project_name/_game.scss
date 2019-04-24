@@ -1,11 +1,7 @@
-// игры
+// game
 .game {
   position: relative;
-  //z-index: 5;
   height: auto;
-  // display: flex;
-  // flex-direction: column;
-  //min-height: 1024px;
   transition: opacity 300ms;
   font-size: inherit;
   color: $color_black;
@@ -15,22 +11,6 @@
   position: relative;
 }
 
-// .game-day .container {
-//   display: flex;
-//   flex-direction: column;
-//   height: 100%;
-//   padding-top: 2rem;
-//   position: relative;
-//   z-index: 5;
-//   flex-grow: 1;
-// }
-
-
-// .game-day__header {
-//   padding-left: 4.7rem;
-//   padding-top: 4rem;
-//   font-size: 1.35em;
-// }
 .game__header {
   display: flex;
   align-items: center;
@@ -62,14 +42,13 @@
           align-items: center;
   margin-top: 100px;
   text-align: center;
-  //max-width: 90%;
 }
 
 .game-description, .message {
   max-width: 90%;
 }
 
-
+// task
 .task__title {
   font-family: 'Roboto', sans-serif;
   font-weight: 900;
@@ -108,6 +87,9 @@
   color: $color_pink;
 }
 
+//task end
+
+//answers
 .answers-pairs {
   display: flex;
   flex-wrap: nowrap;
@@ -136,6 +118,9 @@
   display: flex;  
 }
 
+// answers end
+
+//avatar
 .avatar {
   position: absolute;
   top: 0px;
@@ -166,8 +151,9 @@ figcaption {
   color: $color_blue;
 }
 
+// avatar end
 
-// statistics
+// message statistics
 .message-statistic {
   font-family: 'Roboto', sans-serif;
   font-weight: 900;
@@ -255,6 +241,8 @@ figcaption {
 }
 
 
+// statistics daily
+
 .daily-statistics {
   width: 806px; 
   margin:0 auto;
@@ -297,7 +285,7 @@ figcaption {
   color: rgba(255, 255, 255, 0.5);
   box-shadow: none;
 }
-
+// end statistics daily
 
 .message-wish {
   color: $color_green;
@@ -306,6 +294,8 @@ figcaption {
 }
 // end statistics
 
+
+// message-coupon
 .message-coupon .daily-statistics,
 .message-coupon-used .daily-statistics{
   margin-top: 20px;
@@ -365,6 +355,8 @@ figcaption {
 .coupon-code__used {
   color: rgba(39, 170, 226, 0.3);
 }
+
+// end message coupon
 
 .message-coupon,.message-coupon-used,
 .message-noparticipate,
@@ -497,9 +489,8 @@ figcaption {
 [data-popup-rules="visible"] .avatar {
   display: none;
 }
+// end popup
 
-  //popup end
-
-
+// end game
 
 

@@ -518,6 +518,7 @@ var btn = (function(){
 
 	// навешиваем событие на кнопку "я готов!"
 	btnStart.addEventListener('click', function(){
+		
 		var oneMinutes = 60,
         	display = document.querySelector('.task__timer');
 
@@ -531,9 +532,21 @@ var btn = (function(){
 
 })();
 
-var rules = (function(){
-	// скрыть/показать правила
+// перезагрузить страницу
+var reloadPage = function(){
 
+	var btnReload = document.querySelector('.js__btn_reload');
+
+	btnReload.addEventListener('click', function(){
+
+		window.location.reload();
+
+	})
+}
+
+// скрыть/показать правила
+var showRules = (function(){
+	
     var btns = Array.prototype.slice.call(document.querySelectorAll('.js__rules_content'));
 
     btns.forEach(function(btn){
