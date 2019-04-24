@@ -1,5 +1,47 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700,900&amp;subset=cyrillic");
-.hb-chg { }
+.hb-chg {
+  /* basic */
+  /* end basic */
+  /* button */
+  /* end button */
+  /* header */
+  /* end header */
+  /* greeting */
+  /* greeting background */
+  /* end greeting background */
+  /* end greeting */
+  /* map */
+  /* end map */
+  /* game */
+  /* task */
+  /* end yask */
+  /* answers */
+  /* answers end */
+  /* avatar */
+  /* avatar end */
+  /* message statistic */
+  /* statistic daily */
+  /* end statistic daily */
+  /* end message statistic */
+  /* message coupon */
+  /* end message coupon */
+  /* popup */
+  /* end popup */
+  /* end game */
+  /* calendar */
+  /* slider */
+  /* end slider */
+  /* end calendar */
+  /* rules */
+  /* end rules */
+  /* footer */
+  /* end footer */
+  /* data-view */
+  /* end data-view */
+  /* data-regiion */
+  /* end data-region */
+  /* data-game-type */
+  /* end data-game-type */ }
   .hb-chg * {
     margin: 0;
     padding: 0; }
@@ -701,8 +743,7 @@
     font-weight: 900;
     font-size: 36px;
     text-align: center;
-    margin-bottom: 100px;
-    display: none; }
+    margin-bottom: 100px; }
   .hb-chg .message-title {
     font-family: 'Roboto', sans-serif;
     font-weight: 900;

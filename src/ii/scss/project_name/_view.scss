@@ -1,5 +1,5 @@
 
-// data-view
+/* data-view */
 
 [data-view="after"] .btn-participate {
 	display: none;
@@ -26,9 +26,9 @@
 	display: none;
 }
 
-// end data-view
+/* end data-view */
 
-// data-region
+/* data-regiion */
 [data-region="komi"] .region-komi path,
 [data-region="irkutsk"] .region-irkutsk path,
 [data-region="kamchatka"] .region-kamchatka path,
@@ -53,9 +53,9 @@
   display: block;
 }
 
-// end data-region
+/* end data-region */
 
-// data-game-type
+/* data-game-type */
 [data-game-type="pairs"] .task,
 [data-game-type="questions"] .task {
 	display: block;
@@ -116,4 +116,4 @@
 	display: none;
 }
 
-// data-game-type
+/* end data-game-type */

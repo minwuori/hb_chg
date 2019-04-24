@@ -1,4 +1,4 @@
-// game
+/* game */
 .game {
   position: relative;
   height: auto;
@@ -48,7 +48,7 @@
   max-width: 90%;
 }
 
-// task
+/* task */
 .task__title {
   font-family: 'Roboto', sans-serif;
   font-weight: 900;
@@ -87,9 +87,9 @@
   color: $color_pink;
 }
 
-//task end
+/* end yask */
 
-//answers
+/* answers */
 .answers-pairs {
   display: flex;
   flex-wrap: nowrap;
@@ -118,9 +118,9 @@
   display: flex;  
 }
 
-// answers end
+/* answers end */
 
-//avatar
+/* avatar */
 .avatar {
   position: absolute;
   top: 0px;
@@ -151,9 +151,9 @@ figcaption {
   color: $color_blue;
 }
 
-// avatar end
+/* avatar end */
 
-// message statistics
+/* message statistic */
 .message-statistic {
   font-family: 'Roboto', sans-serif;
   font-weight: 900;
@@ -241,7 +241,7 @@ figcaption {
 }
 
 
-// statistics daily
+/* statistic daily */
 
 .daily-statistics {
   width: 806px; 
@@ -285,17 +285,17 @@ figcaption {
   color: rgba(255, 255, 255, 0.5);
   box-shadow: none;
 }
-// end statistics daily
+/* end statistic daily */
 
 .message-wish {
   color: $color_green;
   font-size: 24px;
   margin-top: 45px;
 }
-// end statistics
+/* end message statistic */
 
 
-// message-coupon
+/* message coupon */
 .message-coupon .daily-statistics,
 .message-coupon-used .daily-statistics{
   margin-top: 20px;
@@ -356,7 +356,7 @@ figcaption {
   color: rgba(39, 170, 226, 0.3);
 }
 
-// end message coupon
+/* end message coupon */
 
 .message-coupon,.message-coupon-used,
 .message-noparticipate,
@@ -364,7 +364,7 @@ figcaption {
   margin-bottom: 100px;
   display: none;
 }
-//popup
+/* popup */
 .mask {
   position: fixed;
   top: 0;
@@ -489,8 +489,8 @@ figcaption {
 [data-popup-rules="visible"] .avatar {
   display: none;
 }
-// end popup
+/* end popup */
 
-// end game
+/* end game */
 
 
