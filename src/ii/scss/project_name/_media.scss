@@ -57,9 +57,16 @@
     .game__header, .game__content {
       width: 90%;
     }
-
+    
+    .answer-left {
+      margin-right: 20px;
+    }
     .answers-pairs .option{
-      width: 430px;
+      width: 380px;
+    }
+
+    .btn-message {
+      width: 350px;
     }
 }
 

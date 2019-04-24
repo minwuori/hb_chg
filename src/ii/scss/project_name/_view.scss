@@ -21,7 +21,7 @@
 }
 
 [data-view="pairs"] .message-btn,
-[data-view="pairs"] .message-description {
+[data-view="pairs"] .statistic-description {
 	display: none;
 }
 
@@ -50,7 +50,7 @@
 
 [data-game-type="pairs"] .btn-participate,
 [data-game-type="questions"] .btn-participate,
-[data-game-type="statistics"] .btn-participate {
+[data-game-type="statistics"] .btn-participate,{
 	display: none;
 }
 
@@ -59,6 +59,28 @@
 	display: none;
 }
 
-[data-game-type="statistics"] .message {
+[data-game-type="statistics"] .message-statistic,
+[data-game-type="coupon"] .message-coupon,
+[data-game-type="couponused"] .message-coupon-used,
+[data-game-type="noparticipate"] .message-noparticipate,
+[data-game-type="end"] .message-end,
+[data-game-type="reload"] .message-reload{
 	display: block;
+}
+
+[data-game-type="coupon"] .game__header,
+[data-game-type="couponused"] .game__header,
+[data-game-type="noparticipate"] .game__header,
+[data-game-type="end"] .game__header,
+[data-game-type="reload"] .game__header,
+[data-game-type="coupon"] .game-description,
+[data-game-type="couponused"] .game-description,
+[data-game-type="noparticipate"] .game-description,
+[data-game-type="end"] .game-description,
+[data-game-type="reload"] .game-description,
+[data-game-type="coupon"] .avatar,
+[data-game-type="couponused"] .avatar,
+[data-game-type="noparticipate"] .avatar,
+[data-game-type="end"] .avatar {
+	display: none;
 }

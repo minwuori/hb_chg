@@ -111,7 +111,7 @@
 .answers-pairs {
   display: flex;
   flex-wrap: nowrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   margin: 45px auto 100px;
 
@@ -168,7 +168,7 @@ figcaption {
 
 
 // statistics
-.message {
+.message-statistic {
   font-family: 'Roboto', sans-serif;
   font-weight: 900;
   font-size: 36px;
@@ -177,6 +177,32 @@ figcaption {
   display: none;
 }
 
+.message-title {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+  font-size: 36px;
+  text-align: center;
+}
+
+.message-description {
+  font-family: 'PT Sans', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: normal;
+  text-align: center;
+  color: $color_black;
+}
+.statistic-description {
+  font-family: 'PT Sans', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: normal;
+  text-align: justify;
+  width: 90%;
+  margin: 25px auto 0;
+}
 .message-title, .message-counter, .message-discount{
   color: $color_green;
 }
@@ -186,6 +212,13 @@ figcaption {
 }
 
 .message-counter {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 36px;
+  line-height: normal;
+  text-align: center;
+  color: #8DC63F;
   margin: 40px 0 0;
 }
 .message-discount {
@@ -220,16 +253,7 @@ figcaption {
   background: $color_pink;
   margin-right: 20px;
 }
-.message-description {
-  text-align: left;
-  font-family: 'PT Sans', sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: normal;
-  text-align: justify;
-  
-}
+
 
 .daily-statistics {
   width: 806px; 
@@ -282,7 +306,72 @@ figcaption {
 }
 // end statistics
 
+.message-coupon .daily-statistics,
+.message-coupon-used .daily-statistics{
+  margin-top: 20px;
+  margin-bottom: 28px;
+}
+.message-coupon .message-discount,
+.message-coupon-used .message-discount {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 36px;
+  line-height: normal;
+  text-align: center;
+  color: #27AAE2;
+  margin: 0;
+}
 
+.coupon-code {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 72px;
+  line-height: normal;
+  color: #27AAE2;
+  margin-top: 0;
+}
+
+.coupon-message {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 24px;
+  font-weight: normal;
+  line-height: normal;
+  text-align: center;
+  margin-top: 25px;
+  margin-bottom: 0;
+}
+
+.coupon-steps {
+  font-family: 'PT Sans', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: normal;
+  text-align: center;
+}
+.coupon-link {
+  font-family: PT Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 25px;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 0;
+}
+
+.coupon-code__used {
+  color: rgba(39, 170, 226, 0.3);
+}
+
+.message-coupon,.message-coupon-used,
+.message-noparticipate,
+.message-end, .message-reload {
+  margin-bottom: 100px;
+  display: none;
+}
 //popup
 .mask {
   position: fixed;

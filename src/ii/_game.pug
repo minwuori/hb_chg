@@ -2,6 +2,7 @@ section.game(data-popup-rules="" data-game-type="")
 	.container
 		.game__header
 			.game__title
+				// до 13 мая
 				.game__title_before
 					span.accent 
 						| С 13 мая 
@@ -10,7 +11,7 @@ section.game(data-popup-rules="" data-game-type="")
 					| Получайте баллы за правильные ответы и обменивайте их на 
 					span.accent 
 						| скидку до 15%.
-
+				// во время игр с парами
 				.game__title_pairs
 					span.accent
 						| Сегодня 
@@ -20,7 +21,8 @@ section.game(data-popup-rules="" data-game-type="")
 					span.accent
 						| 1 балл. 
 					| Успейте отгадать все пары за одну минуту.
-
+				
+				// во время игр вопросов
 				.game__title_questions
 					span.accent
 						| Сегодня 
@@ -30,13 +32,14 @@ section.game(data-popup-rules="" data-game-type="")
 					span.accent
 						| 1 балл. 
 
-				
+			// с 13 по 19 мая	
 			button.btn.btn-participate.js__btn_participate(type="button" value="Начать игру") Начать игру
-
+		
+		// экран с играми показывается при data-game-type="pairs" / data-game-type="questions" после события "Начать игру"
 		.game__content
 
 			.game-description
-
+				
 				.task
 
 					.task__title
@@ -48,11 +51,13 @@ section.game(data-popup-rules="" data-game-type="")
 					.task__quote
 						| «А Байкал в остывающем, меркнущем свете всё больше погружался не во мрак, а в сияние. Алёша шёл, и огромное водное полотно справа, стоящее от переполненности горкой, «перелистывало» цвета: только что было оранжевым и бликующим, играющим с зарёй, затем фиолетовым, кладущим длинные мутные тени, затем изумрудным, с самоцветными вспышками, и становилось всё глубже, всё ярче. И надо всем этим нескончаемая музыка – и от ласкового чмока воды о камни, и от небесной натуги, и от слабого потрескивания горящих звёздочек, и от неслышного трепетанья трав и листьев, и от немой песни камня, в эту пору кого-то зовущего, точно тихо и сладко играли рядом склянки»
 					
+					// для игр с парами
 					.task__timer
 						| 01:00
-
+					// для игр с парами
 					button.btn.btn-start.js__btn_start(type="button" value="Я готов!") Я готов!
 
+				// при data-view="pairs"
 				section.answers-pairs
 					.answer-left
 						label
@@ -79,7 +84,8 @@ section.game(data-popup-rules="" data-game-type="")
 							span.option.option__error(data-label="")
 								span(data-value="")
 								span(data-text="") Похороните меня за плинтусом
-
+				
+				// показывыается при data-view="questions"
 				section.answers-questions
 					label
 						input.question__options_input(type="radio" value="Менее 15 минут" name="question-1" data-name="question-1" data-answer-number="1" hidden)
@@ -98,8 +104,11 @@ section.game(data-popup-rules="" data-game-type="")
 						span.option(data-label="")
 							span(data-value="")
 							span(data-text="") «Зулейха открывает глаза», Гузель Яхина
+			
+			// показывается при data-game-type="statistics"
+			.message-statistic
 
-			.message(data-statistic="")
+				// без класса .title-incorrect по умолчанию зеленый заголовок о правильном ответе
 				p.message-title.title-incorrect
 					| Увы... Это неправильный ответ
 
@@ -110,7 +119,7 @@ section.game(data-popup-rules="" data-game-type="")
 					.btn-message
 						| «Зулейха открывает глаза», Гузель Яхина 
 
-				p.message-description
+				p.statistic-description
 					| Зимой 1930 года 
 					a(href="/catalog/book/827140/").link крестьянку Зулейху 
 					| вместе с сотнями других переселенцев отправляют из глухой татарской деревушки в вагоне-теплушке по извечному каторжному маршруту в Сибирь. Дремучие крестьяне и ленинградские интеллигенты, деклассированный элемент и уголовники, мусульмане и христиане, язычники и атеисты, русские, татары, немцы, чуваши - все встретятся на берегах Ангары. Вы дали неверный ответ.
@@ -145,8 +154,114 @@ section.game(data-popup-rules="" data-game-type="")
 						.month мая
 
 				p.message-wish Ждём вас завтра!
+			
+			// с 19 мая сообщение с купоном показывается при data-game-type="coupon"
+			.message-coupon
+				p.message-counter
+					| Правильных ответов: 3 из 7.
+				.daily-statistics
+					.statistics__item.statistics__item_correct
+						.number 13 
+						.month мая
+					.statistics__item.statistics__item_incorrect
+						.number 14 
+						.month мая
+					.statistics__item.statistics__item_correct
+						.number 15 
+						.month мая
+					.statistics__item.statistics__item_incorrect
+						.number 16 
+						.month мая
+					.statistics__item.statistics__item_missed
+						.number 17 
+						.month мая
+					.statistics__item.statistics__item_missed
+						.number 18 
+						.month мая
+					.statistics__item.statistics__item_correct
+						.number 19 
+						.month мая
+
+				p.message-discount Ваш купон на скидку 10%
+				p.coupon-code 41104-QRJK-JCAP-UJ4D3
+				button.btn.btn-coupon.js__btn_coupon Копировать код
+				
+				p.coupon-message.accent Как получить скидку:
+				ol.coupon-steps
+					li Копируйте код; 
+					li Вставьте его в специальное поле в Корзине; 
+					li Нажмите «Активировать».
+				
+				p.coupon-link
+					a.link.js__ancor(href="#rules") Полные правила акции
+			
+			// сообщение об использованном купоне показывается при data-game-type="couponused"
+			.message-coupon-used
+				p.message-counter
+					| Правильных ответов: 3 из 7.
+				.daily-statistics
+					.statistics__item.statistics__item_correct
+						.number 13 
+						.month мая
+					.statistics__item.statistics__item_incorrect
+						.number 14 
+						.month мая
+					.statistics__item.statistics__item_correct
+						.number 15 
+						.month мая
+					.statistics__item.statistics__item_incorrect
+						.number 16 
+						.month мая
+					.statistics__item.statistics__item_missed
+						.number 17 
+						.month мая
+					.statistics__item.statistics__item_missed
+						.number 18 
+						.month мая
+					.statistics__item.statistics__item_correct
+						.number 19 
+						.month мая
+
+				p.message-discount Ваш купон на скидку 10%
+
+				p.coupon-code.coupon-code__used 41104-QRJK-JCAP-UJ4D3
+				
+				p.coupon-message Вы уже получили скидку по этому купону.
+				
+				p.coupon-link
+					a.link.js__ancor(href="#rules") Полные правила акции
+
+			// сообщение, если пользователя нет в участниках акции показывается при data-game-type="noparticipate"
+			.message-noparticipate
+				p.message-title Мы не нашли вас в списке участников
+				p.message-description Если вы участвовали в игре, 
+					a.link(href="/contacts/") напишите нам через форму обратной связи.
+					br
+					| Мы ответим в течение дня.
+
+			// сообщение о завершении игры показывается при data-game-type="end"
+			.message-end
+				p.message-title Игра завершена
+				p.message-description
+					| К сожалению, вы не заработали баллы в этой игре. 
+					br
+					| Мы уверены, что в следующий раз у вас всё получится! 
+					br 
+					| Следите за новостями, а пока можете сыграть в 
+					a.link(href="/games/fillword") «Книжный филворд».
+
+			// сообщение об ошибке для перезагрузки страницы показывается при data-game-type="reload"
+			.message-reload
+				p.message-title 
+					| Вашей победе пытаются помешать.
+					br
+					| Но мы этого не допустим!
+				button.btn.btn-reload.js__btn_reload Сыграем снова? 
+
 
 	.mask.js__mask
+
+	// попап с краткими правилами игры доступен до 19 мая
 	.pop-up
 		.pop-up__wrap
 			.pop-up__content
@@ -188,3 +303,5 @@ section.game(data-popup-rules="" data-game-type="")
 	figure.avatar.js__avatar(data-avatar-position="")
 		img(src="/ii/img/project_name/avatar.svg" alt="аватар медведя")
 		figcaption Как играть? 
+
+// end screen game

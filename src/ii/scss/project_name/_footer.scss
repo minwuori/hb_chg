@@ -1,63 +1,27 @@
 // футер
-.footer {
-	background-image: url("");
-	background-repeat: repeat-x;
-	background-position: 0 2px;
+
+footer {
+	background: $color_green;
+	padding: 20px;
 }
-	
-.footer .container {
-	padding-top: 80px;
-	margin-bottom: 0;
-}
-	
 .footer__items {
+	max-width: 960px;
+	margin: 0 auto;
 	display: flex;
-	justify-content: space-between;
-	width: 940px;
+	-webkit-align-items: center;
+	        align-items: center;
+	-webkit-justify-content: space-between;
+	        justify-content: space-between;
 }
-	
-	
-.footer__item {
-	display: inline-block;
-	margin-bottom: 20px;
-}
-	
-.footer__item {
 
-	.name {
-		font-size: 18px;
-		color: $color_white;
-	}
-		
-}
 .footer__item {
-
-	.icon {
-		display: inline-block;
-		font-size: 14px;
-		width: 34px;
-		height: 34px;
-		background-image: url("/ii/img/project_name/icons.png");
-	}
-		
-}
-.footer__item:nth-child(1) .icon {
-	background-position: 1px 0;
-}
-.footer__item:nth-child(2) .icon {
-	background-position: -37px 0;
-}
-.footer__item:nth-child(3) .icon {
-	background-position: -78px 0;
-}
-.footer__item:nth-child(4) .icon {
-	width: 30px;
-	background-position: -112px 0;
-}
-	
-.footer__item:hover {
-	text-decoration: underline;
 	color: $color_white;
 }
-	
-	
+
+.footer__item:hover {
+	opacity: 0.5;
+}
+
+.footer__items img {
+	width: 25px;
+}

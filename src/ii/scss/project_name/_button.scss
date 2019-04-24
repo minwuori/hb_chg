@@ -42,8 +42,22 @@ button:active, button:focus, button:hover {
   display: none;
 }
 
+.btn-coupon {
+  background-color: #27AAE2;
+  margin: 0 auto;
+}
+
+.btn-coupon:hover {
+	box-shadow: 0px 5px 15px rgba(39, 170, 226, 0.5);
+	transition: 0.2s ease-in-out;
+}
+
+.btn-reload {
+	margin: 0 auto;
+}
+
 .option {
-	width: 500px;
+	width: 460px;
 	height: 80px;
 	padding: 0 20px;
 	color: $color_white;

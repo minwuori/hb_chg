@@ -13,6 +13,8 @@
   text-align: center;
   letter-spacing: 0.02em;
   color: $color_blue;
+  width: 85%;
+  margin: 0 auto;
 }
 
 .rules__subtitle {
@@ -23,17 +25,23 @@
   text-align: center;
   letter-spacing: 0.02em;
   color: $color_blue;
+  background: transparent;
+  cursor: pointer;
 }
 
 .rules__list {
   margin-top: 3.8125rem;
   list-style: none;
   font-size: 18px;
-  line-height: 19px;
+  line-height: 1.3;
   font-weight: normal;
   text-align: left;
   color: $color_black;
   display: none;
+}
+
+.rules__list li {
+  margin-top: 1rem;
 }
 
 ol {
@@ -60,5 +68,5 @@ td:nth-child(1){
 }
 .rules__show {
   display: block;
-  max-height: 2000px;
+  max-height: 3000px;
 }

@@ -3,23 +3,31 @@
   <div class="container">
     <div class="game__header">
       <div class="game__title">
+        <!-- до 13 мая-->
         <div class="game__title_before"><span class="accent">
              С 13 мая </span>на этой странице будут появляться вопросы и задания. <br/>Получайте баллы за правильные ответы и обменивайте их на <span class="accent">
              скидку до 15%.</span></div>
+        <!-- во время игр с парами-->
         <div class="game__title_pairs"><span class="accent">Сегодня </span>вас ждёт вопрос о Республике Коми. <br/>За правильный ответ вы получите <span class="accent">1 балл. </span>Успейте отгадать все пары за одну минуту.</div>
+        <!-- во время игр вопросов-->
         <div class="game__title_questions"><span class="accent">Сегодня </span>вас ждёт вопрос о Республике Коми. <br/>За правильный ответ вы получите <span class="accent">1 балл. </span></div>
       </div>
+      <!-- с 13 по 19 мая	-->
       <button class="btn btn-participate js__btn_participate" type="button" value="Начать игру">Начать игру</button>
     </div>
+    <!-- экран с играми показывается при data-game-type="pairs" / data-game-type="questions" после события "Начать игру"-->
     <div class="game__content">
       <div class="game-description">
         <div class="task">
           <div class="task__title">Путешествуем к озеру Байкал</div>
           <div class="task__description">Самое большое пресноводное озеро нашего континента и самое глубокое озеро на всей планете местные жители в древности называли Святым морем. Его площадь – почти 32 тысячи квадратных километров, примерно как целая Бельгия или Нидерланды. По легенде, озеро Байкал родилось на месте огнедышащей горы, а его возраст может достигать 35 миллионов лет. Немало писателей восхищались местной красотой, исключительной прозрачностью воды и ее целебной силой. Кому из них принадлежат эти строки?</div>
           <div class="task__quote">«А Байкал в остывающем, меркнущем свете всё больше погружался не во мрак, а в сияние. Алёша шёл, и огромное водное полотно справа, стоящее от переполненности горкой, «перелистывало» цвета: только что было оранжевым и бликующим, играющим с зарёй, затем фиолетовым, кладущим длинные мутные тени, затем изумрудным, с самоцветными вспышками, и становилось всё глубже, всё ярче. И надо всем этим нескончаемая музыка – и от ласкового чмока воды о камни, и от небесной натуги, и от слабого потрескивания горящих звёздочек, и от неслышного трепетанья трав и листьев, и от немой песни камня, в эту пору кого-то зовущего, точно тихо и сладко играли рядом склянки»</div>
+          <!-- для игр с парами-->
           <div class="task__timer">01:00</div>
+          <!-- для игр с парами-->
           <button class="btn btn-start js__btn_start" type="button" value="Я готов!">Я готов!</button>
         </div>
+        <!-- при data-view="pairs"-->
         <section class="answers-pairs">
           <div class="answer-left">
             <label>
@@ -38,6 +46,7 @@
             </label>
           </div>
         </section>
+        <!-- показывыается при data-view="questions"-->
         <section class="answers-questions">
           <label>
             <input class="question__options_input" type="radio" value="Менее 15 минут" name="question-1" data-name="question-1" data-answer-number="1" hidden="hidden"/><span class="option" data-label=""><span data-value=""></span><span data-text="">«Царь-рыба», Виктор Астафьев</span></span>
@@ -50,13 +59,15 @@
           </label>
         </section>
       </div>
-      <div class="message" data-statistic="">
+      <!-- показывается при data-game-type="statistics"-->
+      <div class="message-statistic">
+        <!-- без класса .title-incorrect по умолчанию зеленый заголовок о правильном ответе-->
         <p class="message-title title-incorrect">Увы... Это неправильный ответ</p>
         <div class="message-btn">
           <div class="btn-message btn-incorrect">«Прощание с Матерой», Валентин Распутин</div>
           <div class="btn-message">«Зулейха открывает глаза», Гузель Яхина </div>
         </div>
-        <p class="message-description">Зимой 1930 года <a class="link" href="/catalog/book/827140/">крестьянку Зулейху </a>вместе с сотнями других переселенцев отправляют из глухой татарской деревушки в вагоне-теплушке по извечному каторжному маршруту в Сибирь. Дремучие крестьяне и ленинградские интеллигенты, деклассированный элемент и уголовники, мусульмане и христиане, язычники и атеисты, русские, татары, немцы, чуваши - все встретятся на берегах Ангары. Вы дали неверный ответ.</p>
+        <p class="statistic-description">Зимой 1930 года <a class="link" href="/catalog/book/827140/">крестьянку Зулейху </a>вместе с сотнями других переселенцев отправляют из глухой татарской деревушки в вагоне-теплушке по извечному каторжному маршруту в Сибирь. Дремучие крестьяне и ленинградские интеллигенты, деклассированный элемент и уголовники, мусульмане и христиане, язычники и атеисты, русские, татары, немцы, чуваши - все встретятся на берегах Ангары. Вы дали неверный ответ.</p>
         <p class="message-counter">Правильных ответов: 0 из 7. </p>
         <p class="message-discount">Ваша скидка: 0%</p>
         <div class="daily-statistics">
@@ -91,9 +102,108 @@
         </div>
         <p class="message-wish">Ждём вас завтра!</p>
       </div>
+      <!-- с 19 мая сообщение с купоном показывается при data-game-type="coupon"-->
+      <div class="message-coupon">
+        <p class="message-counter">Правильных ответов: 3 из 7.</p>
+        <div class="daily-statistics">
+          <div class="statistics__item statistics__item_correct">
+            <div class="number">13 </div>
+            <div class="month">мая</div>
+          </div>
+          <div class="statistics__item statistics__item_incorrect">
+            <div class="number">14 </div>
+            <div class="month">мая</div>
+          </div>
+          <div class="statistics__item statistics__item_correct">
+            <div class="number">15 </div>
+            <div class="month">мая</div>
+          </div>
+          <div class="statistics__item statistics__item_incorrect">
+            <div class="number">16 </div>
+            <div class="month">мая</div>
+          </div>
+          <div class="statistics__item statistics__item_missed">
+            <div class="number">17 </div>
+            <div class="month">мая</div>
+          </div>
+          <div class="statistics__item statistics__item_missed">
+            <div class="number">18 </div>
+            <div class="month">мая</div>
+          </div>
+          <div class="statistics__item statistics__item_correct">
+            <div class="number">19 </div>
+            <div class="month">мая</div>
+          </div>
+        </div>
+        <p class="message-discount">Ваш купон на скидку 10%</p>
+        <p class="coupon-code">41104-QRJK-JCAP-UJ4D3</p>
+        <button class="btn btn-coupon js__btn_coupon">Копировать код</button>
+        <p class="coupon-message accent">Как получить скидку:</p>
+        <ol class="coupon-steps">
+          <li>Копируйте код; </li>
+          <li>Вставьте его в специальное поле в Корзине; </li>
+          <li>Нажмите «Активировать».</li>
+        </ol>
+        <p class="coupon-link"><a class="link js__ancor" href="#rules">Полные правила акции</a></p>
+      </div>
+      <!-- сообщение об использованном купоне показывается при data-game-type="couponused"-->
+      <div class="message-coupon-used">
+        <p class="message-counter">Правильных ответов: 3 из 7.</p>
+        <div class="daily-statistics">
+          <div class="statistics__item statistics__item_correct">
+            <div class="number">13 </div>
+            <div class="month">мая</div>
+          </div>
+          <div class="statistics__item statistics__item_incorrect">
+            <div class="number">14 </div>
+            <div class="month">мая</div>
+          </div>
+          <div class="statistics__item statistics__item_correct">
+            <div class="number">15 </div>
+            <div class="month">мая</div>
+          </div>
+          <div class="statistics__item statistics__item_incorrect">
+            <div class="number">16 </div>
+            <div class="month">мая</div>
+          </div>
+          <div class="statistics__item statistics__item_missed">
+            <div class="number">17 </div>
+            <div class="month">мая</div>
+          </div>
+          <div class="statistics__item statistics__item_missed">
+            <div class="number">18 </div>
+            <div class="month">мая</div>
+          </div>
+          <div class="statistics__item statistics__item_correct">
+            <div class="number">19 </div>
+            <div class="month">мая</div>
+          </div>
+        </div>
+        <p class="message-discount">Ваш купон на скидку 10%</p>
+        <p class="coupon-code coupon-code__used">41104-QRJK-JCAP-UJ4D3</p>
+        <p class="coupon-message">Вы уже получили скидку по этому купону.</p>
+        <p class="coupon-link"><a class="link js__ancor" href="#rules">Полные правила акции</a></p>
+      </div>
+      <!-- сообщение, если пользователя нет в участниках акции показывается при data-game-type="noparticipate"-->
+      <div class="message-noparticipate">
+        <p class="message-title">Мы не нашли вас в списке участников</p>
+        <p class="message-description">Если вы участвовали в игре, <a class="link" href="/contacts/">напишите нам через форму обратной связи.</a><br/>Мы ответим в течение дня.</p>
+      </div>
+      <!-- сообщение о завершении игры показывается при data-game-type="end"-->
+      <div class="message-end">
+        <p class="message-title">Игра завершена</p>
+        <p class="message-description">К сожалению, вы не заработали баллы в этой игре. <br/>Мы уверены, что в следующий раз у вас всё получится! <br/>Следите за новостями, а пока можете сыграть в <a class="link" href="/games/fillword">«Книжный филворд».</a></p>
+      </div>
+      <!-- сообщение об ошибке для перезагрузки страницы показывается при data-game-type="reload"-->
+      <div class="message-reload">
+        <p class="message-title">
+           Вашей победе пытаются помешать.<br/>Но мы этого не допустим!</p>
+        <button class="btn btn-reload js__btn_reload">Сыграем снова? </button>
+      </div>
     </div>
   </div>
   <div class="mask js__mask"></div>
+  <!-- попап с краткими правилами игры доступен до 19 мая-->
   <div class="pop-up">
     <div class="pop-up__wrap">
       <div class="pop-up__content">
@@ -134,3 +244,4 @@
     <figcaption>Как играть? </figcaption>
   </figure>
 </section>
+<!-- end screen game-->
