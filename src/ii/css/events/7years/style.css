@@ -1243,14 +1243,15 @@ body {
     background: transparent;
     cursor: pointer; }
   .hb-chg .rules__list {
-    margin-top: 3.8125rem;
+    font-family: 'PT Sans', sans-serif;
     list-style: none;
     font-size: 18px;
-    line-height: 1.3;
+    line-height: 24px;
     font-weight: normal;
     text-align: left;
     color: rgba(0, 0, 0, 0.8);
-    display: none; }
+    overflow-y: hidden;
+    max-height: 0; }
   .hb-chg .rules__list li {
     margin-top: 1rem; }
   .hb-chg ol {
@@ -1270,8 +1271,37 @@ body {
   .hb-chg td:nth-child(1) {
     width: 40%; }
   .hb-chg .rules__show {
-    display: block;
-    max-height: 3000px; }
+    -webkit-animation: show 3s 1;
+            animation: show 3s 1;
+    max-height: 10000px; }
+
+@-webkit-keyframes show {
+  0% {
+    max-height: 0; }
+  100% {
+    max-height: 10000px; } }
+
+@keyframes show {
+  0% {
+    max-height: 0; }
+  100% {
+    max-height: 10000px; } }
+  .hb-chg .rules__hide {
+    -webkit-animation: hide 1.5s 1;
+            animation: hide 1.5s 1;
+    max-height: 0; }
+
+@-webkit-keyframes hide {
+  0% {
+    max-height: 4000px; }
+  100% {
+    max-height: 0; } }
+
+@keyframes hide {
+  0% {
+    max-height: 4000px; }
+  100% {
+    max-height: 0; } }
   .hb-chg footer {
     background: #8DC63F;
     padding: 20px; }

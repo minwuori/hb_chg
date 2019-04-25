@@ -626,16 +626,16 @@ var showRules = (function(){
             if (btn.querySelector('.rules__show')) {
 
                 // Скрываем блок правил
-                $(rules).slideUp(400, function () {
+                
                     rules.classList.remove('rules__show');
-                });
+					rules.classList.add('rules__hide');
 
             } else{
 
                 // Отображем блок правил
-                $(rules).slideDown(400, function () {
-                    rules.classList.add('rules__show')
-                });
+
+                    rules.classList.add('rules__show');
+					rules.classList.remove('rules__hide');
 
             }
 
