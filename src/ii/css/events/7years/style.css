@@ -59,6 +59,7 @@ body {
     min-width: 940px;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
+    width: 100%;
     font-size: inherit;
     padding: 0 20px;
     margin: auto; }
@@ -374,7 +375,7 @@ body {
   .hb-chg .bear, .hb-chg .bear__hat, .hb-chg .bear__left, .hb-chg .bear__right, .hb-chg .bear__cap,
   .hb-chg .bear__eyebrows, .hb-chg .bear__eyebrow1, .hb-chg .bear__eyebrow2, .hb-chg .bear__nose, .hb-chg .bear__mouth,
   .hb-chg .clouds, .hb-chg .kremlin, .hb-chg .glade-1, .hb-chg .glade-2,
-  .hb-chg .tree-1, .hb-chg .tree-2, .hb-chg .tree-3, .hb-chg .doll, .hb-chg .hill, .hb-chg .ray, .hb-chg .line {
+  .hb-chg .tree-1, .hb-chg .tree-2, .hb-chg .tree-3, .hb-chg .doll, .hb-chg .hill, .hb-chg .ray, .hb-chg .line, .hb-chg .fill {
     position: absolute; }
   .hb-chg .bear {
     width: 432px;
@@ -479,6 +480,12 @@ body {
     height: 48px;
     width: 100%;
     z-index: 2; }
+  .hb-chg .fill {
+    bottom: -200px;
+    background-color: #FFFFFF;
+    height: 200px;
+    width: 100%;
+    z-index: 3; }
   .hb-chg .map {
     position: relative;
     width: 100%;

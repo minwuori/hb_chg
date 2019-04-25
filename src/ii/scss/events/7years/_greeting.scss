@@ -62,7 +62,7 @@
 .bear, .bear__hat, .bear__left, .bear__right, .bear__cap,
 .bear__eyebrows, .bear__eyebrow1, .bear__eyebrow2, .bear__nose, .bear__mouth,
 .clouds, .kremlin, .glade-1, .glade-2, 
-.tree-1, .tree-2, .tree-3, .doll, .hill, .ray, .line {
+.tree-1, .tree-2, .tree-3, .doll, .hill, .ray, .line, .fill {
   position: absolute;
 }
 .bear {
@@ -192,6 +192,13 @@
   width: 100%;
   z-index: 2;
 }
+
+.fill {
+  bottom: -200px;
+  background-color: #FFFFFF;
+  height: 200px;
+  width: 100%;
+  z-index: 3; }
 
 /* end greeting background */
 

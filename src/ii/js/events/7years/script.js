@@ -14,6 +14,7 @@ var animateScreen = (function(){
 		nose = bear.querySelector('.bear__nose'),
 		ray = document.querySelector('.ray'),
 		clouds = document.querySelector('.clouds'),
+		doll = document.querySelector('.doll'),
 		bearAnimate = new TimelineMax({});
 
 	function balalaikaAnimate(){
@@ -50,8 +51,33 @@ var animateScreen = (function(){
 	});
 	animate.fromTo(ray, 3, {opacity: 1}, {opacity: 0.3}).to(ray, 3, {opacity: 1});
 
+	TweenMax.fromTo(doll, 2, {x: -30, y: 150, opacity: 0},{ x: 0, y: 0, opacity: 1, ease: Bounce.easeOut});
 
-	bear.addEventListener('mouseenter', function(){
+	doll.addEventListener('click', function(){
+	var dollAnimate= new TweenMax( doll, .5, {			
+		// bezier:{
+		// 	type:"soft",
+		// 	values:[{x:0, y: 0}, {x: 150, y: 150},{x:-100, y: 300}, {x:-500, y:50}, {x:0, y:0}],
+		// 	autoRotate: 15
+		// },
+		// ease: Expo.easeOut,
+		 });
+
+	var dollAnima = new TimelineMax({});
+
+		dollAnima.to(doll, .5, { x: 120, y: 150, rotation: 90,ease: Power4.easeIn})
+			.to(doll, 2, { rotation: 90, x: -80, y: 200, ease: Power4.easeIn})
+			.to(doll, 1, { x: 0, y: 0,transformOrigin: 'center center', rotation: 15,	ease: Bounce.easeOut})
+	});
+
+	var eyebrowAnimate = new TweenMax([eyebrowLeft, eyebrowRight] , 0.8, {
+		bezier:{
+			type:"soft", 
+			values:[{x:0, y:-20}, {x:0, y:0}],
+			autoRotate:false
+		},
+		ease:Linear.easeInOut, repeat:-1});
+	bear.addEventListener('click', function(){
 		bearAnimate.to(balalaika, 1, { y: 30, x: 0})
 			.to(balalaika, 2, { y: -105, x: 30, rotation: -30, transformOrigin: 'center right' })
 			.to(balalaika, 1, { y: -115, x: 30, ease:Back.easeOut })
@@ -63,13 +89,7 @@ var animateScreen = (function(){
 			.to(hatLeft, 2, { y: 0, x: 0, rotation: 0, transformOrigin: 'center right', ease:Bounce.easeOut }, "-=1.5")
 			.to(mouth, 4, { y: 0, x: 0, rotation: 0 }, "-=1");
 
-		var eyebrowAnimate = new TweenMax([eyebrowLeft, eyebrowRight] , 0.8, {
-		bezier:{
-			type:"soft", 
-			values:[{x:0, y:-20}, {x:0, y:0}],
-			autoRotate:false
-		},
-		ease:Linear.easeInOut, repeat:-1});
+		
 		bearAnimate.to(nose, 0.2, { x: -3}).to(nose, 0.2, {x: 3}).to(nose, 0.2, {x: -3}).to(nose, 0.2, {x: 3}).to(nose, 0.2, {x: 0});
 	});
 
