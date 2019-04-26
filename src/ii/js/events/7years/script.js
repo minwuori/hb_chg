@@ -15,6 +15,7 @@ var animateScreen = (function(){
 		ray = document.querySelector('.ray'),
 		clouds = document.querySelector('.clouds'),
 		doll = document.querySelector('.doll'),
+		tree = document.querySelector('.tree-1'),
 		bearAnimate = new TimelineMax({});
 
 	function balalaikaAnimate(){
@@ -54,20 +55,21 @@ var animateScreen = (function(){
 	TweenMax.fromTo(doll, 2, {x: -30, y: 150, opacity: 0},{ x: 0, y: 0, opacity: 1, ease: Bounce.easeOut});
 
 	doll.addEventListener('click', function(){
-	var dollAnimate= new TweenMax( doll, .5, {			
-		// bezier:{
-		// 	type:"soft",
-		// 	values:[{x:0, y: 0}, {x: 150, y: 150},{x:-100, y: 300}, {x:-500, y:50}, {x:0, y:0}],
-		// 	autoRotate: 15
-		// },
-		// ease: Expo.easeOut,
-		 });
 
-	var dollAnima = new TimelineMax({});
+		var dollAnima = new TimelineMax({});
 
 		dollAnima.to(doll, .5, { x: 120, y: 150, rotation: 90,ease: Power4.easeIn})
-			.to(doll, 2, { rotation: 90, x: -80, y: 200, ease: Power4.easeIn})
-			.to(doll, 1, { x: 0, y: 0,transformOrigin: 'center center', rotation: 15,	ease: Bounce.easeOut})
+			.to(doll, 2, { rotation: 15, x: -80, y: 200, ease: Power4.easeIn})
+			.to(doll, 1, { x: 0, y: 0,	ease: Bounce.easeOut})
+	});
+
+	tree.addEventListener('click', function(){
+
+		var treeAnima = new TimelineMax({});
+
+		treeAnima
+			.to(tree, .5, { x: 10, y: 0, ease: Power4.easeNone})
+			.to(tree, 1, { x: 0, y: 0, ease: Elastic.easeOut})
 	});
 
 	var eyebrowAnimate = new TweenMax([eyebrowLeft, eyebrowRight] , 0.8, {
@@ -93,15 +95,91 @@ var animateScreen = (function(){
 		bearAnimate.to(nose, 0.2, { x: -3}).to(nose, 0.2, {x: 3}).to(nose, 0.2, {x: -3}).to(nose, 0.2, {x: 3}).to(nose, 0.2, {x: 0});
 	});
 
-	bear.addEventListener('mouseleave', function(){
-		balalaikaAnimate();
-			
-	});
-
-
 	document.querySelector('.bear__nose').addEventListener('click', function(){
 		animate.to(nose, 0.2, {x: -3}).to(nose, 0.2, {x: 3}).to(nose, 0.2, {x: -3}).to(nose, 0.2, {x: 3}).to(nose, 0.2, {x: 0});
 	});
+})();
+
+// параллакс на приветственном экране 
+var parallax = (function() {
+  
+  var treeLeft = document.querySelector(".tree-1"),
+      treeCenter = document.querySelector(".tree-2"),
+      treeRight = document.querySelector(".tree-3"),
+      gladeBig = document.querySelector(".glade-1"),
+      gladeLittle = document.querySelector(".glade-2"),
+      kremlin = document.querySelector(".kremlin");
+
+  // создаем объекты с данными о значениях для положения х и величины параллакса
+  var oneTree = {
+    handle: treeLeft,
+    xPosition: treeLeft.offsetLeft,
+    yPosition: treeLeft.offsetTop,
+    parallax: 0.05
+  };
+
+  var twoTree = {
+    handle: treeCenter,
+    xPosition: treeCenter.offsetLeft,
+    yPosition: treeCenter.offsetTop,
+    parallax: 0.01
+  };
+
+  var threeTree = {
+    handle: treeRight,
+    xPosition: treeRight.offsetLeft,
+    yPosition: treeRight.offsetTop,
+    parallax: 0.03
+  };
+
+  var oneGlade = {
+    handle: gladeBig,
+    xPosition: gladeBig.offsetLeft,
+    yPosition: gladeBig.offsetTop,
+    parallax: 0.03
+  };
+
+  var twoGlade = {
+    handle: gladeLittle,
+    xPosition: gladeLittle.offsetLeft,
+    yPosition: gladeLittle.offsetTop,
+    parallax: 0.03
+  };
+
+  var $kremlin = {
+    handle: kremlin,
+    xPosition: kremlin.offsetLeft,
+    yPosition: kremlin.offsetTop,
+    parallax: 0.01
+  };
+
+  // помещаем их в массивы
+  var trees = [oneTree, twoTree, threeTree];
+
+  var glades = [ oneGlade, twoGlade, $kremlin];
+
+  // перемещаем элементы в зависимости от положения мыши по оси  х
+  document.addEventListener("mousemove", function(){
+  	var mouseX = event.x;
+    var windowWidth = window.innerWidth / 2;
+
+    // в противоположную от мыши сторону
+    for (var tree in trees) {
+      var thisElement = trees[tree];
+      var xPosition = thisElement.xPosition;
+      var elementPositionX = thisElement.parallax * (windowWidth - mouseX) + thisElement.xPosition;
+      thisElement.handle.style.left = elementPositionX + "px";
+    }
+
+    // в направлении мыши
+     for (var glade in glades) {
+      var thisElement = glades[glade];
+      var xPosition = thisElement.xPosition;
+      var elementPositionX = -thisElement.parallax * (windowWidth - mouseX) + thisElement.xPosition;
+      thisElement.handle.style.left = elementPositionX + "px";
+    }
+  });
+
 })();
 
 

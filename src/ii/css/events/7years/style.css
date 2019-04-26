@@ -573,25 +573,25 @@ body {
     border-right: 20px solid #FFFFFF; }
   .hb-chg .hint-komi {
     right: 500px;
-    top: 55px; }
+    bottom: 365px; }
   .hb-chg .hint-irkutsk {
     right: 220px;
-    top: 265px; }
+    bottom: 185px; }
   .hb-chg .hint-kamchatka {
     right: 181px;
-    top: 225px; }
+    bottom: 185px; }
   .hb-chg .hint-peter {
-    right: 240px;
-    top: 75px; }
+    right: 275px;
+    bottom: 310px; }
   .hb-chg .hint-caucasus {
     left: 200px;
-    top: 330px; }
+    bottom: 110px; }
   .hb-chg .hint-volgograd {
     left: 255px;
-    top: 281px; }
+    bottom: 140px; }
   .hb-chg .hint-moscow {
     left: 262px;
-    top: 185px; }
+    bottom: 213px; }
   .hb-chg .game {
     position: relative;
     height: auto;
