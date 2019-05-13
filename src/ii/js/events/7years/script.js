@@ -1,104 +1,115 @@
 document.addEventListener('DOMContentLoaded', function(){ 
+var header = document.querySelector('.js__header-birthday');
+	var greeting = document.querySelector('.js__greeting');
 
-//анимация первого экрана
-var animateScreen = (function(){
+    var headerHeight = header.offsetHeight;
+    var greetingHeight = greeting.offsetHeight;
+    var mainScreenHeight = +headerHeight + +greetingHeight;
 
-	var bear = document.querySelector('.bear'),
-		balalaika = bear.querySelector('.bear__balalaika'),
-		hat = bear.querySelector('.bear__hat'),
-		hatLeft = bear.querySelector('.bear__left'),
-		mouth = bear.querySelector('.bear__mouth'),
-		eyebrow = bear.querySelector('.bear__eyebrows'),
-		eyebrowLeft = bear.querySelector('.bear__eyebrow1'),
-		eyebrowRight = bear.querySelector('.bear__eyebrow2'),
-		nose = bear.querySelector('.bear__nose'),
-		ray = document.querySelector('.ray'),
-		clouds = document.querySelector('.clouds'),
-		doll = document.querySelector('.doll'),
-		tree = document.querySelector('.tree-1'),
-		bearAnimate = new TimelineMax({});
+	//анимация первого экрана
+	(function(){
+		var bear = document.querySelector('.bear'),
+			balalaika = bear.querySelector('.bear__balalaika'),
+			hat = bear.querySelector('.bear__hat'),
+			hatLeft = bear.querySelector('.bear__left'),
+			mouth = bear.querySelector('.bear__mouth'),
+			eyebrowLeft = bear.querySelector('.bear__eyebrow1'),
+			eyebrowRight = bear.querySelector('.bear__eyebrow2'),
+			nose = bear.querySelector('.bear__nose'),
+			clouds = document.querySelector('.clouds'),
+			doll = document.querySelector('.doll'),
+			bearAnimate = new TimelineMax({});
 
-	function balalaikaAnimate(){
-		var bezierBalalaika = new TweenMax(balalaika , 4, {
-		bezier:{
-			type:"soft", 
-			values:[{x:0, y: 0}, 
-					{x:-10, y:-10}, 
-					{x: 0, y: -20}, 
-					{x: 0, y: 30}, 
-					{x: 10, y: 10},
-					{x: 0, y: 0}],
-		},
-		//rotation: 45, 
-		ease:Linear.easeInOut, repeat: -1});
-	};
-	balalaikaAnimate();
+        //Флаг можно ли вызвать функцию проверки активности в анимации при скролле
+        var canStartAnimationScrollEvent = true;
 
-	var animate = new TimelineMax({repeat: -1});
-	animate.fromTo(clouds, 3, {y: 110 }, {y: 0, yoyo: true})
-		.to(clouds, 3, {opacity: 0.5})
-		.to(clouds, 1, {opacity: 1})
-		.to(clouds, 10, {x: -1200, y: 190, ease:Linear.easeOut}, "+=1")
+		var animate = new TimelineMax({repeat: -1});
+		animate.fromTo(clouds, 5, {y: 110, opacity: 0.5}, {y: 0, opacity: 1, ease:Linear.easeOut})
+		.to(clouds, 10, {x: -1200, y: 190, ease:Linear.easeOut}, "+=0.5")
 		.to(clouds, 30, {
-		bezier:{
-			type:"soft", 
-			values:[{x: -1200, y: 190},
-					{x: -200, y: -190},
-					{x: 190, y: 110},
-					{x: 1800, y: -150}],
-		},
-		ease:Linear.easeIn,
-		opacity: 0.6
-	});
-	animate.fromTo(ray, 3, {opacity: 1}, {opacity: 0.3}).to(ray, 3, {opacity: 1});
+			bezier:{
+				type:"soft",
+				values:[{x: -1200, y: 190},
+						{x: -200, y: -190},
+						{x: 190, y: 110},
+						{x: 1800, y: -150}]
+			},
+			ease:Linear.easeInOut,
+			opacity: 0.6
+		});
 
-	TweenMax.fromTo(doll, 2, {x: -30, y: 150, opacity: 0},{ x: 0, y: 0, opacity: 1, ease: Bounce.easeOut});
 
-	doll.addEventListener('click', function(){
+		var eyebrow = new TweenMax([eyebrowLeft, eyebrowRight] , 1, {
+			bezier:{
+				type:"soft",
+				values:[{x:0, y:-20}, {x:0, y:0}],
+				autoRotate:false
+			},
+			ease:Linear.easeInOut, repeat:-1});
 
-		var dollAnima = new TimelineMax({});
+		var dollAnimation = TweenMax.fromTo(doll, 2, {x: -30, y: 150, opacity: 0},{ x: 0, y: 0, opacity: 1, ease: Bounce.easeOut});
 
-		dollAnima.to(doll, .5, { x: 120, y: 150, rotation: 90,ease: Power4.easeIn})
-			.to(doll, 2, { rotation: 15, x: -80, y: 200, ease: Power4.easeIn})
-			.to(doll, 1, { x: 0, y: 0,	ease: Bounce.easeOut})
-	});
+		doll.addEventListener('click', function(){
+			var dollAnimate = new TimelineMax({});
 
-	tree.addEventListener('click', function(){
+			dollAnimate.to(doll, .5, { x: 120, y: 150, rotation: 90,ease: Power4.easeIn})
+				.to(doll, 2, { rotation: 15, x: -80, y: 200, ease: Power4.easeIn})
+				.to(doll, 1, { x: 0, y: 0,	ease: Bounce.easeOut});
+		});
 
-		var treeAnima = new TimelineMax({});
+		bear.addEventListener('click', function(){
+			bearAnimate.to(balalaika, 1, { y: 30, x: 0})
+				.to(balalaika, 2, { y: -105, x: 30, rotation: -30, transformOrigin: 'center right' })
+				.to(balalaika, 1, { y: -115, x: 30, ease:Back.easeOut })
+				.to(hat, 2, { y: -90, x: -60, rotation: -30, transformOrigin: 'center right', ease:Back.easeOut }, "-=2.5")
+				.to(hatLeft, 2, { y: -10, x: -30, rotation: 60, transformOrigin: 'center right', ease:Bounce.easeOut }, "-=2")
+				.to(mouth, 1, {	delay: 1.5,	y: -5, x: -5,	rotation: 10, transformOrigin: 'center center' }, "-=3")
+				.to(balalaika, 2, { y: 0, x: 0, rotation: 0, transformOrigin: 'center right' })
+				.to(hat, 2, { y: 0, x: 0, rotation: 0, transformOrigin: 'center right', ease:Back.easeOut },"-=1.5")
+				.to(hatLeft, 2, { y: 0, x: 0, rotation: 0, transformOrigin: 'center right', ease:Bounce.easeOut }, "-=1.5")
+				.to(mouth, 2, { y: 0, x: 0, rotation: 0 }, "-=1");
 
-		treeAnima
-			.to(tree, .5, { x: 10, y: 0, ease: Power4.easeNone})
-			.to(tree, 1, { x: 0, y: 0, ease: Elastic.easeOut})
-	});
 
-	var eyebrowAnimate = new TweenMax([eyebrowLeft, eyebrowRight] , 0.8, {
-		bezier:{
-			type:"soft", 
-			values:[{x:0, y:-20}, {x:0, y:0}],
-			autoRotate:false
-		},
-		ease:Linear.easeInOut, repeat:-1});
-	bear.addEventListener('click', function(){
-		bearAnimate.to(balalaika, 1, { y: 30, x: 0})
-			.to(balalaika, 2, { y: -105, x: 30, rotation: -30, transformOrigin: 'center right' })
-			.to(balalaika, 1, { y: -115, x: 30, ease:Back.easeOut })
-			.to(hat, 2, { y: -90, x: -60, rotation: -30, transformOrigin: 'center right', ease:Back.easeOut }, "-=2.5")
-			.to(hatLeft, 2, { y: -10, x: -30, rotation: 60, transformOrigin: 'center right', ease:Bounce.easeOut }, "-=2")
-			.to(mouth, 1, {	delay: 1.5,	y: -5, x: -5,	rotation: 10, transformOrigin: 'center center' }, "-=3")
-			.to(balalaika, 2, { y: 0, x: 0, rotation: 0, transformOrigin: 'center right' })
-			.to(hat, 2, { y: 0, x: 0, rotation: 0, transformOrigin: 'center right', ease:Back.easeOut },"-=1.5")
-			.to(hatLeft, 2, { y: 0, x: 0, rotation: 0, transformOrigin: 'center right', ease:Bounce.easeOut }, "-=1.5")
-			.to(mouth, 4, { y: 0, x: 0, rotation: 0 }, "-=1");
+			bearAnimate.to(nose, 0.2, { x: -3}).to(nose, 0.2, {x: 3}).to(nose, 0.2, {x: -3}).to(nose, 0.2, {x: 3}).to(nose, 0.2, {x: 0});
+		});
 
-		
-		bearAnimate.to(nose, 0.2, { x: -3}).to(nose, 0.2, {x: 3}).to(nose, 0.2, {x: -3}).to(nose, 0.2, {x: 3}).to(nose, 0.2, {x: 0});
-	});
+		//Попробуем остановить анимацию вне вьюпорта
+        stopAnimationOuterViewport();
 
-	document.querySelector('.bear__nose').addEventListener('click', function(){
-		animate.to(nose, 0.2, {x: -3}).to(nose, 0.2, {x: 3}).to(nose, 0.2, {x: -3}).to(nose, 0.2, {x: 3}).to(nose, 0.2, {x: 0});
-	});
-})();
+		//Поставим обработчик прокрутки, чтобы тормозить анимацию, когда пользователь ее не видит
+		window.addEventListener('scroll', function (e){
+			e.preventDefault();
+
+			if(canStartAnimationScrollEvent){//Если можно запустить обработчик события. Защищаемся от частых вызовов без повода
+                //Поставим флаг что нельзя вызывать функцию
+                canStartAnimationScrollEvent = false;
+
+                //Остановим анимацию вне вьюпорта
+                stopAnimationOuterViewport();
+
+                setTimeout(function(){
+					canStartAnimationScrollEvent = true;
+				}, 800);
+			}
+		});
+
+		//Функция остановки анимации вне вьюпорта
+		function stopAnimationOuterViewport(){
+            //Получим отступ экрана от начала страницы
+            var pageOffset = window.pageYOffset || document.documentElement.scrollTop;
+
+            if(pageOffset > mainScreenHeight){//Если вышли за пределы видимости экрана приветствия, то ставим на паузу анимацию
+                eyebrow.pause();
+                dollAnimation.pause();
+                animate.pause();
+            } else {//Иначе запускаем
+                eyebrow.play();
+                dollAnimation.play();
+                animate.play();
+            }
+		}
+
+	})();
 
 // параллакс на приветственном экране 
 var parallax = (function() {
