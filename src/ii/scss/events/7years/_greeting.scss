@@ -70,7 +70,8 @@
   left: 0;
   right: 0;
   margin: 47px auto 0;
-  z-index: 5
+  z-index: 5;
+  cursor: pointer;
 }
 .bear__body {
   width: 395px;
@@ -140,7 +141,7 @@
   bottom: 23px;
   transform: rotate(15deg);
   z-index: 3;
-  
+  cursor: pointer;
 }
 .tree-1 {
   width: 180px;

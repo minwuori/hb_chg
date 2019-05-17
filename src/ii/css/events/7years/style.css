@@ -382,7 +382,8 @@ body {
     left: 0;
     right: 0;
     margin: 47px auto 0;
-    z-index: 5; }
+    z-index: 5;
+    cursor: pointer; }
   .hb-chg .bear__body {
     width: 395px; }
   .hb-chg .bear__hat {
@@ -437,7 +438,8 @@ body {
     -webkit-transform: rotate(15deg);
         -ms-transform: rotate(15deg);
             transform: rotate(15deg);
-    z-index: 3; }
+    z-index: 3;
+    cursor: pointer; }
   .hb-chg .tree-1 {
     width: 180px;
     right: 1210px;
