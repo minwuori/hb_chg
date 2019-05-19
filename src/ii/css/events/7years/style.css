@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700,900&amp;subset=cyrillic");
 * {
   margin: 0;
@@ -12,41 +11,78 @@ body {
   font-family: 'PT Sans', sans-serif;
   font-size: 18px; }
 
-.container {
-  max-width: 1260px;
-  min-width: 940px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  width: 100%;
-  font-size: inherit;
-  padding: 0 20px;
-  margin: auto; }
-
-.container__inner {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-          justify-content: space-between; }
-
 .hb-chg {
-  /* полный экран */
-  /* блок правил */ }
+  /* basic */
+  /* end basic */
+  /* button */
+  /* end button */
+  /* header */
+  /* end header */
+  /* greeting */
+  /* greeting background */
+  /* end greeting background */
+  /* end greeting */
+  /* map */
+  /* end map */
+  /* game */
+  /* task */
+  /* end yask */
+  /* answers */
+  /* answers end */
+  /* avatar */
+  /* avatar end */
+  /* message statistic */
+  /* statistic daily */
+  /* end statistic daily */
+  /* end message statistic */
+  /* message coupon */
+  /* end message coupon */
+  /* popup */
+  /* end popup */
+  /* end game */
+  /* calendar */
+  /* slider */
+  /* end slider */
+  /* end calendar */
+  /* rules */
+  /* end rules */
+  /* footer */
+  /* end footer */
+  /* data-view */
+  /* end data-view */
+  /* data-regiion */
+  /* end data-region */
+  /* data-game-type */
+  /* end data-game-type */ }
+  .hb-chg .container {
+    max-width: 1260px;
+    min-width: 940px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    font-size: inherit;
+    padding: 0 20px;
+    margin: auto; }
+  .hb-chg .container__inner {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
   .hb-chg .page-wrap {
     display: -webkit-inline-box;
     display: -webkit-inline-flex;
@@ -239,35 +275,6 @@ body {
     color: #27AAE2;
     -webkit-box-shadow: 0px 5px 15px rgba(39, 170, 226, 0.5);
             box-shadow: 0px 5px 15px rgba(39, 170, 226, 0.5); } }
-  .hb-chg .screen {
-    position: relative;
-    z-index: 1; }
-  .hb-chg .screen__content {
-    position: relative;
-    max-width: 809px;
-    height: 100%;
-    margin: 0 auto;
-    text-align: center;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-        -ms-flex-pack: center;
-            justify-content: center; }
-  .hb-chg .screen__title img {
-    max-width: 100%;
-    margin: 0 auto; }
-  .hb-chg .screen__description {
-    margin-top: 0.8em; }
-  .hb-chg .screen_bg {
-    position: relative; }
   .hb-chg .header-birthday {
     background-color: #8DC63F;
     height: 105px;
@@ -316,6 +323,35 @@ body {
       cursor: pointer; }
     .hb-chg .social-list__item:hover {
       opacity: 0.5; }
+  .hb-chg .screen {
+    position: relative;
+    z-index: 1; }
+  .hb-chg .screen__content {
+    position: relative;
+    max-width: 809px;
+    height: 100%;
+    margin: 0 auto;
+    text-align: center;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+  .hb-chg .screen__title img {
+    max-width: 100%;
+    margin: 0 auto; }
+  .hb-chg .screen__description {
+    margin-top: 0.8em; }
+  .hb-chg .screen_bg {
+    position: relative; }
   .hb-chg .greeting {
     background: #27AAE1; }
   .hb-chg .greeting .screen__content {
@@ -471,16 +507,6 @@ body {
     -o-transition: all 150ms;
     transition: all 150ms;
     position: relative; }
-  .hb-chg [data-region="komi"] .region-komi path,
-  .hb-chg [data-region="irkutsk"] .region-irkutsk path,
-  .hb-chg [data-region="kamchatka"] .region-kamchatka path,
-  .hb-chg [data-region="peter"] .region-peter path,
-  .hb-chg [data-region="caucasus"] .region-caucasus path,
-  .hb-chg [data-region="volgograd"] .region-volgograd path,
-  .hb-chg [data-region="moscow"] .region-moscow path {
-    fill: #FFB943; }
-  .hb-chg [data-region-state="after"] .region path, .hb-chg [data-region-state="after"] .region :hover path {
-    fill: #7FAF33; }
   .hb-chg .region:hover path {
     fill: #FFB943; }
   .hb-chg .hint {
@@ -559,14 +585,6 @@ body {
   .hb-chg .hint-moscow {
     left: 262px;
     top: 185px; }
-  .hb-chg [data-region="komi"] .hint-komi,
-  .hb-chg [data-region="irkutsk"] .hint-irkutsk,
-  .hb-chg [data-region="kamchatka"] .hint-kamchatka,
-  .hb-chg [data-region="peter"] .hint-peter,
-  .hb-chg [data-region="caucasus"] .hint-caucasus,
-  .hb-chg [data-region="volgograd"] .hint-volgograd,
-  .hb-chg [data-region="moscow"] .hint-moscow {
-    display: block; }
   .hb-chg .game {
     position: relative;
     height: auto;
@@ -1271,6 +1289,89 @@ body {
     opacity: 0.5; }
   .hb-chg .footer__items img {
     width: 25px; }
+  .hb-chg [data-view="after"] .btn-participate {
+    display: none; }
+  .hb-chg [data-view="pairs"] .btn-participate,
+  .hb-chg [data-view="questions"] .btn-participate {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; }
+  .hb-chg [data-view="pairs"] .game__title_pairs,
+  .hb-chg [data-view="questions"] .game__title_questions {
+    display: block; }
+  .hb-chg [data-view="pairs"] .game__title_before,
+  .hb-chg [data-view="questions"] .game__title_before,
+  .hb-chg [data-view="after"] .game__title_before {
+    display: none; }
+  .hb-chg [data-view="pairs"] .message-btn,
+  .hb-chg [data-view="pairs"] .statistic-description {
+    display: none; }
+  .hb-chg [data-region="komi"] .region-komi path,
+  .hb-chg [data-region="irkutsk"] .region-irkutsk path,
+  .hb-chg [data-region="kamchatka"] .region-kamchatka path,
+  .hb-chg [data-region="peter"] .region-peter path,
+  .hb-chg [data-region="caucasus"] .region-caucasus path,
+  .hb-chg [data-region="volgograd"] .region-volgograd path,
+  .hb-chg [data-region="moscow"] .region-moscow path {
+    fill: #FFB943; }
+  .hb-chg [data-region-state="after"] .region path, .hb-chg [data-region-state="after"] .region :hover path {
+    fill: #7FAF33; }
+  .hb-chg [data-region="komi"] .hint-komi,
+  .hb-chg [data-region="irkutsk"] .hint-irkutsk,
+  .hb-chg [data-region="kamchatka"] .hint-kamchatka,
+  .hb-chg [data-region="peter"] .hint-peter,
+  .hb-chg [data-region="caucasus"] .hint-caucasus,
+  .hb-chg [data-region="volgograd"] .hint-volgograd,
+  .hb-chg [data-region="moscow"] .hint-moscow {
+    display: block; }
+  .hb-chg [data-game-type="pairs"] .task,
+  .hb-chg [data-game-type="questions"] .task {
+    display: block; }
+  .hb-chg [data-game-type="questions"] .answers-questions {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; }
+  .hb-chg [data-game-type="pairs"] .task__timer {
+    display: block; }
+  .hb-chg [data-game-type="pairs"] .btn-start {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; }
+  .hb-chg [data-game-type="pairs"] .task,
+  .hb-chg [data-game-type="questions"] .task {
+    display: block; }
+  .hb-chg [data-game-type="pairs"] .btn-participate,
+  .hb-chg [data-game-type="questions"] .btn-participate,
+  .hb-chg [data-game-type="statistics"] .btn-participate {
+    display: none; }
+  .hb-chg [data-game-type="statistics"] .task,
+  .hb-chg [data-game-type="statistics"] .answers-pairs {
+    display: none; }
+  .hb-chg [data-game-type="statistics"] .message-statistic,
+  .hb-chg [data-game-type="coupon"] .message-coupon,
+  .hb-chg [data-game-type="couponused"] .message-coupon-used,
+  .hb-chg [data-game-type="noparticipate"] .message-noparticipate,
+  .hb-chg [data-game-type="end"] .message-end,
+  .hb-chg [data-game-type="reload"] .message-reload {
+    display: block; }
+  .hb-chg [data-game-type="coupon"] .game__header,
+  .hb-chg [data-game-type="couponused"] .game__header,
+  .hb-chg [data-game-type="noparticipate"] .game__header,
+  .hb-chg [data-game-type="end"] .game__header,
+  .hb-chg [data-game-type="reload"] .game__header,
+  .hb-chg [data-game-type="coupon"] .game-description,
+  .hb-chg [data-game-type="couponused"] .game-description,
+  .hb-chg [data-game-type="noparticipate"] .game-description,
+  .hb-chg [data-game-type="end"] .game-description,
+  .hb-chg [data-game-type="reload"] .game-description,
+  .hb-chg [data-game-type="coupon"] .avatar,
+  .hb-chg [data-game-type="couponused"] .avatar,
+  .hb-chg [data-game-type="noparticipate"] .avatar,
+  .hb-chg [data-game-type="end"] .avatar {
+    display: none; }
   @media screen and (max-width: 1268px) {
     .hb-chg .ray {
       display: none; }
@@ -1321,68 +1422,3 @@ body {
     .hb-chg .avatar-clone {
       bottom: 20px;
       right: 50px; } }
-  .hb-chg [data-view="after"] .btn-participate {
-    display: none; }
-  .hb-chg [data-view="pairs"] .btn-participate,
-  .hb-chg [data-view="questions"] .btn-participate {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex; }
-  .hb-chg [data-view="pairs"] .game__title_pairs,
-  .hb-chg [data-view="questions"] .game__title_questions {
-    display: block; }
-  .hb-chg [data-view="pairs"] .game__title_before,
-  .hb-chg [data-view="questions"] .game__title_before,
-  .hb-chg [data-view="after"] .game__title_before {
-    display: none; }
-  .hb-chg [data-view="pairs"] .message-btn,
-  .hb-chg [data-view="pairs"] .statistic-description {
-    display: none; }
-  .hb-chg [data-game-type="pairs"] .task,
-  .hb-chg [data-game-type="questions"] .task {
-    display: block; }
-  .hb-chg [data-game-type="questions"] .answers-questions {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex; }
-  .hb-chg [data-game-type="pairs"] .task__timer {
-    display: block; }
-  .hb-chg [data-game-type="pairs"] .btn-start {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex; }
-  .hb-chg [data-game-type="pairs"] .task,
-  .hb-chg [data-game-type="questions"] .task {
-    display: block; }
-  .hb-chg [data-game-type="pairs"] .btn-participate,
-  .hb-chg [data-game-type="questions"] .btn-participate,
-  .hb-chg [data-game-type="statistics"] .btn-participate {
-    display: none; }
-  .hb-chg [data-game-type="statistics"] .task,
-  .hb-chg [data-game-type="statistics"] .answers-pairs {
-    display: none; }
-  .hb-chg [data-game-type="statistics"] .message-statistic,
-  .hb-chg [data-game-type="coupon"] .message-coupon,
-  .hb-chg [data-game-type="couponused"] .message-coupon-used,
-  .hb-chg [data-game-type="noparticipate"] .message-noparticipate,
-  .hb-chg [data-game-type="end"] .message-end,
-  .hb-chg [data-game-type="reload"] .message-reload {
-    display: block; }
-  .hb-chg [data-game-type="coupon"] .game__header,
-  .hb-chg [data-game-type="couponused"] .game__header,
-  .hb-chg [data-game-type="noparticipate"] .game__header,
-  .hb-chg [data-game-type="end"] .game__header,
-  .hb-chg [data-game-type="reload"] .game__header,
-  .hb-chg [data-game-type="coupon"] .game-description,
-  .hb-chg [data-game-type="couponused"] .game-description,
-  .hb-chg [data-game-type="noparticipate"] .game-description,
-  .hb-chg [data-game-type="end"] .game-description,
-  .hb-chg [data-game-type="reload"] .game-description,
-  .hb-chg [data-game-type="coupon"] .avatar,
-  .hb-chg [data-game-type="couponused"] .avatar,
-  .hb-chg [data-game-type="noparticipate"] .avatar,
-  .hb-chg [data-game-type="end"] .avatar {
-    display: none; }

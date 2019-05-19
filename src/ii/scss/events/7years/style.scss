@@ -1,4 +1,17 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700,900&amp;subset=cyrillic");
 
+* {
+	margin: 0;
+	padding: 0;
+}
+	
+body {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'PT Sans', sans-serif;
+	font-size: 18px;
+}
 
 $color_white: #FFFFFF;
 $color_black: rgba(0, 0, 0, 0.8);

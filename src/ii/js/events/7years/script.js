@@ -81,7 +81,7 @@ var animateScreen = (function(){
 
 	document.querySelector('.bear__nose').addEventListener('click', function(){
 		animate.to(nose, 0.2, {x: -3}).to(nose, 0.2, {x: 3}).to(nose, 0.2, {x: -3}).to(nose, 0.2, {x: 3}).to(nose, 0.2, {x: 0});
-	})
+	});
 })();
 
 
@@ -148,7 +148,7 @@ var sliderCalendar = (function movingCarousel(slide) {
 	//показываем активную дату на календаре
 	for (var i = 0; i < dateItems.length; i++) {
 		if (now.getMonth() == 4) {
-	    //если есть совпадение дата-атрибутов, то показываем дату
+	    	//если есть совпадение дата-атрибутов, то выделяем эту дату
 			if(now.getDate() == +dateItems[i].dataset.date){
 				
 				dateItems[i].dataset.state = "active"
@@ -177,22 +177,69 @@ var sliderCalendar = (function movingCarousel(slide) {
 		}
 	}
 
+	// перебираем эл-ты дат
+	dateItems.forEach(function(dateItem){
+		// навешиваем событие на дату
+		dateItem.addEventListener('click', function(){
+
+			// перебираем слайды 
+			slideItems.forEach(function(slideItem) {
+				// если дата-атрибуты совпали, то передвинуть на соответствующий слайд
+				if ( dateItem.dataset.date == slideItem.dataset.slide) {
+					positionLeftItem = +slideItem.dataset.slide - 13;
+					transform = (13 - +slideItem.dataset.slide) * step;
+					sliderWrapper.style.transform = 'translateX(' + transform + '%)';
+				
+				}
+			});
+
+			// перебираем матрешки
+			dolls.forEach(function(doll) {
+				// если дата-атрибуты совпали, то показываем соотвутствующую матрешку
+				if ( dateItem.dataset.date == doll.dataset.doll) {
+					doll.dataset.dollState = "visible"
+				} else {
+					doll.dataset.dollState = "unvisible"
+				}
+			});
+
+
+			// если это первый элемент с датой, то задизейблить кнопку назад
+			if (dateItem.dataset.date == 13 ) {
+				prev.dataset.sliderPrev = "disable";	
+			
+			// если последний, то задизейблить кнопку вперед
+			} else if (+dateItem.dataset.date == 19) {
+				next.dataset.sliderNext = "disable";
+				prev.dataset.sliderPrev = "";	
+
+			// иначе обе кнопки активировать
+			} else {
+				prev.dataset.sliderPrev = "";	
+				next.dataset.sliderNext = "";
+
+			}
+			
+		});
+
+
+	});
 
 	//при нажатии на кнопку назад
 	prev.addEventListener("click", function(evt) {
 		evt.preventDefault();
 		//если позиция крайнего левого элемента нулевая, то ничего не делать
 		if (positionLeftItem <= position.getMin) {
-		return;
+			return;
 		}
 		//если кнопка вперед задизейблена, то активировать ее
 		if (next.dataset.sliderNext == "disable") {
-		next.dataset.sliderNext = "";
+			next.dataset.sliderNext = "";
 		}
 
 		//если достигли крайнего левого элемента и кнопка назад активна, то задизейблить ее
 		if (prev.dataset.sliderPrev == "" && positionLeftItem - 1 <= position.getMin) {
-		prev.dataset.sliderPrev = "disable";
+			prev.dataset.sliderPrev = "disable";
 		}
 		positionLeftItem--;
 		transform += step;
@@ -436,11 +483,13 @@ var mapSvg = (function(){
 
 						//добавляем анимацию появления кодсказки
 						TweenMax.fromTo(hint, 1, {y: 20}, {y: 0, ease:Bounce.easeOut})
+					
 					// иначе скрываем (при повторном клике)
 					} else {
 						hint.style.display = "none";
 
 					}
+
 				// если не соответствует, то скрываем все подсказки 
 				} else {
 					hint.style.display = "none";
